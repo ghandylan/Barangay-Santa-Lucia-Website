@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  height: 200vh;
+  height:fit-content;
   width: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -25,6 +25,18 @@ body {
 
 .top4em {
   margin-top: 4em;
+}
+
+.top6em {
+  margin-top: 6em;
+}
+
+.top8em {
+  margin-top: 8em;
+}
+
+.top10em {
+  margin-top: 10em;
 }
 
 
@@ -78,7 +90,7 @@ body {
   width: 100%;
 }
 
-.header__section1-1 {
+.section1__community {
   height: 60px;
   width: 100%;
 }
@@ -97,18 +109,18 @@ body {
   font-size: 3em;
 }
 
-.header__section1-2 {
+.section1__menus {
   display: flex;
   height: 50px;
   width: 100%;
 }
 
-.header__section1-2 ul {
+.section1__menus ul {
   display:flex;
   margin-left: -3em;
 }
 
-.header__section1-2 ul li {
+.section1__menus ul li {
     cursor: pointer;
     list-style: none;
     margin-left: 3vw;
@@ -117,7 +129,7 @@ body {
     transition: 0.3s;
 }
 
-.header__section1-2 ul li:hover {
+.section1__menus ul li:hover {
   text-decoration: underline;
   color: white;
 }
@@ -148,7 +160,7 @@ body {
   padding-right: 15vw;
 }
 
-.section2__text1 {
+.homepage__section2__text1 {
   margin-top: 1em;
   font-family: Arial;
   font-size: 2.5em;
@@ -156,11 +168,176 @@ body {
   text-align: center;
 }
 
-.section2__text2 {
+.homepage__section2__text2 {
   margin-top: -2em;
   font-family: Arial;
   font-size: 0.9em;
   text-align: center;
+}
+
+.homepage__section3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage__section3__vision,
+.homepage__section3__mission {
+  height: auto;
+  width: 30vw;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-bottom: 2vw;
+  border-radius: 10px;
+  background-color: lightslategray;
+}
+
+.homepage__section3__mission {
+  margin-left: 5vw;
+}
+
+.homepage__section3__text1 {
+  margin-top: 1em;
+  font-family: Arial;
+  font-size: 2.5em;
+  font-weight:700;
+  text-align: center;
+}
+
+.homepage__section3__text2 {
+  margin-top: -2em;
+  font-family: Arial;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.homepage__section4 {
+  display: block;
+}
+
+.homepage__section4__events {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10em;
+}
+
+.homepage__section4__text1 {
+  padding-left: 1vw;
+  font-family: Arial;
+  font-size: 0.9em;
+  text-align: right;
+}
+
+.homepage__section4__text2 {
+  margin-left: 0.5vw;
+  width: 8em;
+  font-family: Arial;
+  font-size: 5em;
+  font-weight:600;
+  text-align: left;
+}
+
+.homepage__section4__images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage__section4__image1,
+.homepage__section4__image2,
+.homepage__section4__image3 {
+  margin-left: 3vw;
+  height: 20em;
+  width: 20em;
+  border-radius: 10px;
+}
+
+.homepage__section4__image1 {
+  margin-left: 0vw;
+}
+
+.homepage__section5 {
+  display: block;
+}
+
+.homepage__section5__text1 {
+  padding-top: 1vw;
+  margin-left: 6vw;
+  font-family: Arial;
+  font-size: 5em;
+  font-weight:600;
+}
+
+.homepage__section5__aboutus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -4em;
+}
+
+.homepage__section5__aboutus__imagecont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 60%;
+}
+
+.homepage__section5__aboutus__image {
+  height: 20em;
+  width: 40em;
+  border-radius: 10px;
+}
+
+.homepage__section5__aboutus__learnmore {
+  display: block;
+  height: auto;
+  width: 40%;
+}
+
+.homepage__section5__text2 {
+  padding-left: 3em;
+  padding-right: 3em;
+  font-family: Arial;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.homepage__section5__buttoncont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+}
+
+.homepage__section5__button {
+  cursor: pointer;
+  height: 2.5em;
+  width: 8em;
+  border: 2px solid black;
+  border-radius: 30px;
+  font-size: 1em;
+  color: white;
+  background-color: black;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.homepage__section5__button:hover {
+  transition: 0.3s;
+  height: 3em;
+  width: 10em;
+  color: white;
+}
+
+
+
+
+
+
+
+.footer {
+  height: 3em;
 }
 
 
@@ -190,6 +367,45 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.certapplication .bodycon .leftbtn,
+.certapplication .bodycon .rightbtn {
+    height: 10vh;
+    width: 20vw;
+    border: 2px solid black;
+    border-radius: 100px;
+    font-size: 1.2em;
+    color: rgba(0, 131, 52, 0.492);
+    background-color: white;
+}
+.certapplication .bodycon .rightbtn {
+    margin-left: 5vw;
+}
+    .certapplication .bodycon .leftbtn:hover,
+    .certapplication .bodycon .rightbtn:hover {
+        transition: 0.3s;
+        color: white;
+        background-color: rgba(0, 136, 53);
+    }
 
 
 
