@@ -56,9 +56,13 @@ body {
   align-items: center;
 }
 
-.green {
+.rowgreen {
   background-color: rgba(16, 98, 14, 1);
   color: white
+}
+
+.textgreen {
+  color: #068303;
 }
 
 
@@ -159,6 +163,189 @@ body {
 .header__section1-2 ul li:hover {
   text-decoration: underline;
   color: rgba(255, 253, 209, 1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.login {
+  background-color: #FFFDD1;
+  overflow: hidden;
+  height: auto;
+  
+}
+.login__logocont {
+  margin-bottom: 2vh;
+  height: auto;
+  width: 13vw;
+}
+
+.login__leftcont {
+  width:40%;
+  margin-left: 8vw;
+}
+
+.login__rightcont {
+  width:70%;
+  margin-bottom: 1vh;
+  margin-left: 2vw;
+}
+
+.login__text1,
+.login__text2{
+  font-size: 5em;
+  font-weight: bolder;
+  -webkit-text-stroke-width: 4px;
+}
+
+.login__text2 {
+  margin-top: -14vh;
+}
+
+.login .login__leftcont .emailtxt input[type="email"],
+.login .login__leftcont .passwordtxt input[type="password"] {
+  width: 23vw;
+  padding: 2vh;
+  margin-top: 2vh;
+  margin-left: 1vw;
+  border-style: solid;
+  border-color: black;
+  border-radius: 15px;
+  background-color: #f2f2f2;
+  box-sizing: border-box;
+}
+
+.loginbtn {
+  cursor: pointer;
+  width: 20vw;
+  padding: 2vh;
+  margin-top: 4vh;
+  margin-left: 1vw;
+  border-style: solid;
+  border-color: black;
+  border-radius: 15px;
+  background-color: #068303;
+  box-sizing: border-box;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.home {
+  background-color: rgba(255, 253, 209, 1);
+}
+
+.home__imgbackground {
+  position: absolute;
+  margin-top: -2.9em;
+}
+
+.home__welcomebackground {
+  position: absolute;
+  height: 20.2em;
+  width: 100vw;
+  top: 33.3em;
+  left: 0px;
+  background-color:  rgba(55, 120, 32, 1);
+  z-index: -1;
+}
+
+.welcome__text1, 
+.welcome__text2{
+  margin-top: 5.6em;
+  margin-left: 0.5em;
+  color: rgba(255, 253, 209, 1);
+  font-size: 4.4em;
+  font-weight: 900;
+  -webkit-text-stroke-width: 3px;
+}
+
+.welcome__text2 {
+  margin-top: -13.5vh;
+  margin-bottom: 4vh;
+}
+
+.welcome__bodytext1, .welcome__bodytext2,
+.welcome__bodytext3, .welcome__bodytext4,
+.welcome__bodytext5 {
+  margin-top: -0.9em;
+  margin-left: 10em;
+  font-size: -1em;
+  color: rgba(255, 253, 209, 1);
+  font-weight: 400;
+}
+
+.home__background {
+  position: absolute;
+  height: 60em;
+  width: 100vw;
+  top: 53em;
+  left: 0px;
+  background-color:   rgba(255, 253, 209, 1);
+}
+
+.home__missionvisioncont {
+  margin-top: 9vh;
+}
+
+.mission__container {
+  background-color: red;
+  height: 35vh;
+  width: 25vw;
+  border-radius: 40px;
+  border-style: solid;
+  border-color: rgba(55, 120, 32, 1);
+  background-color: #ffffff;
+  box-shadow: 10px 10px 5px  rgba(55, 120, 32, 1);
+}
+
+.vision__container {
+  height: 35vh;
+  width: 25vw;
+  margin-left: 4em;
+  border-radius: 40px;
+  border-style: solid;
+  border-color:  rgba(55, 120, 32, 1);
+  background-color: #ffffff;
+  box-shadow: 10px 10px 5px  rgba(55, 120, 32, 1);
+}
+
+.mission__headtext, .vision__headtext {
+  color: rgba(55, 120, 32, 1);
+  font-size: 3em;
+  font-weight: 900;
+  -webkit-text-stroke-width: 3px;
+}
+
+.mtext1, .mtext2, .mtext3, .mtext4,
+.vtext1, .vtext2, .vtext3, .vtext4 {
+  margin-top: -1em;
+  font-size: 1em;
+  color: rgb(0, 0, 0);
+  font-weight: 400;
 }
 
 
