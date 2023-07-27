@@ -3,7 +3,7 @@ from flask_login import LoginManager
 from flask_migrate import Migrate
 
 from config import Config
-from models import db, Admin
+from models import db, BarangayOfficial, Resident
 from views import views_blueprint
 
 
@@ -18,7 +18,15 @@ def create_app():
 
     @login_manager.user_loader
     def load_user(user_id):
-        return Admin.query.get(int(user_id))
+        barangay_official = BarangayOfficial.query.get(int(user_id))
+        if barangay_official:
+            return barangay_official
+
+        resident = Resident.query.get(int(user_id))
+        if resident:
+            return resident
+
+        return None
 
     # initialize the db
     migrate = Migrate()
