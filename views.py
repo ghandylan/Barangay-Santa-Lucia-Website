@@ -1,5 +1,7 @@
 from flask import redirect, render_template, request, Blueprint
-from models import Admin, db
+from flask_login import login_required, login_user, current_user, logout_user
+
+from models import *
 
 views_blueprint = Blueprint('views', __name__)
 
@@ -14,10 +16,52 @@ def login():
     if request.method == 'POST':
         username = request.form.get("username")
         password = request.form.get("password")
-        # noinspection PyArgumentList
-        new_admin = Admin(username=username, password=password)
-        db.session.add(new_admin)
-        db.session.commit()
-        db.session.close()
+
+        # check if user is a BarangayOfficial or Resident
+        user = BarangayOfficial.query.filter_by(username=username).first()
+        if user:
+            if user.password == password:
+                login_user(user, remember=True)
+                return redirect('/barangay_official')
+            else:
+                return render_template('login.html', error="Incorrect Password")
+        else:
+            user = Resident.query.filter_by(username=username).first()
+            if user:
+                if user.password == password:
+                    login_user(user, remember=True)
+                    return redirect('/resident')
+                else:
+                    return render_template('login.html', error="Incorrect Password")
+            else:
+                return render_template('login.html', error="User does not exist")
 
     return render_template('login.html')
+
+
+@views_blueprint.route('/barangay_official')
+@login_required
+def barangay_official():
+    user = current_user.get_id()
+    user_name = BarangayOfficial.query.filter_by(id=user).first()
+    return render_template('barangayofficial/draft-home.html', user_name=user_name.username)
+
+
+@views_blueprint.route('/resident')
+@login_required
+def resident():
+    user = current_user.get_id()
+    user_name = Resident.query.filter_by(id=user).first()
+    return render_template('resident/draft-home.html', user_name=user_name.username)
+
+
+@views_blueprint.route('/home')
+def home():
+    return render_template('draft-home.html')
+
+
+@views_blueprint.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect('/home')
