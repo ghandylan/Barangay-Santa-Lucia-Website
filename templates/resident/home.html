@@ -24,6 +24,11 @@
                     <li onclick="window.location.href='XXX'">Residents</li>
                     <li onclick="window.location.href='XXX'">Services</li>
                     <li onclick="window.location.href='XXX'">Profile</li>
+                    {% if current_user.is_authenticated %}
+                        <li onclick="window.location.href='{{ url_for('views.logout')}}'">Logout</li>
+                    {% else %}
+                        <li onclick="window.location.href='{{ url_for('views.login') }}'">Login</li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
