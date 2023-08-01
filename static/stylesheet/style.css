@@ -65,6 +65,10 @@ body {
   color: #068303;
 }
 
+.right {
+  text-align: right;
+}
+
 
 
 
@@ -355,7 +359,7 @@ body {
 
 .recent__headtext1, .recent__headtext2 {
   margin-top: 0.4em;
-  margin-left: -0.7em;
+  margin-left: -0.5em;
   color: rgb(0, 0, 0);
   font-size: 5em;
   font-weight: 900;
@@ -368,19 +372,15 @@ body {
   color:#068303;
 }
 
-.recent__bodytext1, .recent__bodytext2,
-.recent__bodytext3, .recent__bodytext4,
-.recent__bodytext5 {
-  margin-top: -0.9em;
+.recent__bodytext1 {
+  text-align: right;
+  width: 48vw;
+  margin-top: 2em;
   margin-left: 4em;
   margin-right: 4em;
   font-size: -1em;
   color: rgb(0, 0, 0);
   font-weight: 400;
-}
-
-.recent__bodytext5 {
-  margin-bottom: -1em;
 }
 
 .recent__image1, .recent__image2, .recent__image3 {
@@ -480,6 +480,9 @@ body {
 
 
 
+.barangay {
+    background-color: rgba(255, 253, 209, 1);
+}
 
 
 .barangay__headertext {
@@ -625,7 +628,7 @@ body {
 }
 
 .barangay__officials {
-  margin-top: -50em;
+  margin-top: -53em;
 }
 
 .image1__container {
@@ -718,16 +721,85 @@ body {
 
 .barangay__subtext{
   text-align: right;
-  margin-top: -0.8em;
-  margin-left: -3em;
+  margin-top: -1.5em;
+  margin-left: -9em;
+  color:rgba(255, 253, 209, 1);
+  font-size: 1.2em;
+  font-weight: 800;
+}
+
+.chairman__text {
+  width: 40vw;
+  text-align: right;
+  margin-top: -0.5em;
+  margin-left: -24.7em;
   color:rgba(255, 253, 209, 1);
   font-size: 1.2em;
   font-weight: 500;
 }
 
 .contactus__bgimg {
-  height: 80vh;
-  width: auto;
+  margin-top: 6em;
+  z-index: -1;
+}
+
+.contactus__cont {
+  margin-top: -22.5em;
+  margin-right: -50em;
+  height: 50vh;
+}
+
+.contactus__headtext {
+  margin-top: -0.5em;
+  margin-left: 0em;
+  color:rgba(255, 253, 209, 1);
+  font-size: 4.5em;
+  font-weight: 900;
+  -webkit-text-stroke-width: 4px;
+}
+
+.contactus__headtext1 {
+  margin-top: -1em;
+  margin-left: 0em;
+  color:rgba(255, 253, 209, 1);
+  font-size: 1.5em;
+  font-weight: 900;
+}
+
+.contactus__bodytext1, .contactus__bodytext2,
+.contactus__bodytext3, .contactus__bodytext4 {
+  width: 40vw;
+  margin-top: -1.5em;
+  color:rgba(255, 253, 209, 1);
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.contactus__bodytext1 {
+  margin-bottom: 2em;
+}
+
+.contactus__bodytext2 {
+  margin-bottom: 2em;
+}
+
+.contactus__bodytext3 {
+  margin-bottom: 2em;
+}
+
+.contactus__bodytext4 {
+  margin-bottom: 2em;
+}
+
+
+.contactus__subtext1, .contactus__subtext2,
+.contactus__subtext3, .contactus__subtext4 {
+  width: 40vw;
+  margin-top: -0.9em;
+  text-align: right;
+  color:rgba(255, 253, 209, 1);
+  font-size: 1.5em;
+  font-weight: 900;
 }
 
 

@@ -60,6 +60,11 @@ def home():
     return render_template('home.html')
 
 
+@views_blueprint.route('/barangay')
+def barangay():
+    return render_template('barangay.html')
+
+
 @views_blueprint.route('/logout')
 @login_required
 def logout():
