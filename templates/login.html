@@ -1,15 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login Page</title>
-</head>
-<body>
-<form action="/login" method="POST">
-    <input type="text" name="username" placeholder="Username">
-    <input type="password" name="password" placeholder="Password">
-    <input type="submit" value="Login">
-</form>
-
-</body>
+<html>
+    <head>
+        <link rel="stylesheet" href="../static/stylesheet/style.css">
+		<link href='https://fonts.googleapis.com/css?family=Anek Gujarati' rel='stylesheet'>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body class="login">
+        <form method="POST" action="/login" >
+            <div class="container centeredflex top8em">
+                <div class="login__leftcont ">
+                    <div class = "centeredflex">
+                        <img class = "login__logocont" alt="BRGLogo" src="../static/images/logo.png">
+                    </div>
+                    <div class="emailtxt centeredflex">
+                        <input name="emaillogin" type = "text" id = "username" placeholder = "Username" required/>
+                    </div>
+                    <div class="passwordtxt centeredflex">
+                        <input name="passwordlogin" type = "password" id = "password" placeholder = "Password" required/>
+                    </div>
+                    <div class = "centeredflex">
+                        <button class="loginbtn" type="submit">LOGIN</button>
+                    </div>
+                </div>
+                <div class = "login__rightcont">
+                    <p class = "login__text1">WELCOME TO</p> 
+                    <p class = "login__text2">BARANGAY</p>
+                    <p class = "login__text2 textgreen">SANTA LUCIA</p>
+                </div>
+            </div>
+        </form>
+    </body>
 </html>
