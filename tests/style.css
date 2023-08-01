@@ -845,11 +845,6 @@ body {
   font-weight: 400;
 }
 
-.fac1__cont, .fac2__cont, .fac3__cont, {
-  margin-top: 2em;
-  z-index: -1;
-}
-
 .fac1__bgimg {
   margin-top: 4.1em;
   z-index: -1;
