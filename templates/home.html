@@ -18,7 +18,7 @@
             </div>
             <div class="header__section1-2">
                 <ul>
-                    <li class="firstlist" onclick="window.location.href='XXX'">Home</li>
+                    <li class="firstlist" onclick="window.location.href='{{ url_for('views.home') }}'">Home</li>
                     <li onclick="window.location.href='{{ url_for('views.barangay') }}'">The Barangay</li>
                     <li onclick="window.location.href='XXX'">Facilities</li>
                     <li onclick="window.location.href='XXX'">Residents</li>
@@ -33,78 +33,71 @@
         </div>
     </div>
 </div>
-<div class="home__imgbackground">
-    <img class="home__img" alt="Image" src="../static/images/homeimg.png"/>
-</div>
-<div class=home__welcomebackground></div>
-<div class="container">
-    <div class="welcome__section1">
-        <p class="welcome__headtext1"> Welcome to </p>
-        <p class="welcome__headtext2"> Barangay Santa Lucia</p>
-    </div>
-</div>
-<div class="container">
-    <div class="welcome__section2">
-        <p class="welcome__bodytext1"> Nestled in the heart of Pasig, Barangay Sta. Lucia is a vibrant and welcoming
-            community.
-            Experience the perfect blend of tradition and modernity as you explore our bustling streets,
-            lush parks, and engaging local culture. We invite you to be part of our close-knit family,
-            where unity and camaraderie flourish. Discover the warmth and hospitality of our residents
-            as you create lasting memories in our beautiful barangay. Welcome home! </p>
-    </div>
-</div>
-<div class="container centeredflex top2em">
-    <div class="recent__rightcont">
-        <p class="recent__bodytext1"> Nestled in the heart of Pasig, Barangay Sta. Lucia is a vibrant and welcoming
-            community. </p>
-        <p class="recent__bodytext2"> Experience the perfect blend of tradition and modernity as you explore our
-            bustling streets, </p>
-        <p class="recent__bodytext3"> lush parks, and engaging local culture. We invite you to be part of our close-knit
-            family, </p>
-        <p class="recent__bodytext4"> where unity and camaraderie flourish. Discover the warmth and hospitality of our
-            residents </p>
-        <p class="recent__bodytext5"> as you create lasting memories in our beautiful barangay. Welcome home!</p>
-    </div>
-    <div class="recent__leftcont">
-        <p class="recent__headtext1"> Recent </p>
-        <p class="recent__headtext2"> Activities </p>
-    </div>
-</div>
-<div class="home__recentcont"></div>
-<div class="container centeredflex">
-    <div class="">
-        <img class="recent__image1" alt="Image" src="../static/images/liga.jpg"/>
-    </div>
-    <div class="">
-        <img class="recent__image2" alt="Image" src="../static/images/image1.png"/>
-    </div>
-    <div class="">
-        <img class="recent__image3" alt="Image" src="../static/images/image2.jpg"/>
-    </div>
-</div>
-<div class="home__aboutuscont">
-    <img class="aboutus__bgimg" alt="Image" src="../static/images/homeimg.png"/>
-</div>
-<div class="container centeredflex">
-    <div class="aboutus__leftcont">
-        <div class="">
-            <p class="aboutus__headtext">ABOUT US</p>
-            <img class="aboutus__image1" alt="Image" src="../static/images/barangay.jpg"/>
+<div class = "home__imgbackground">
+            <img class = "home__img" alt="Image" src="../static/images/homeimg.png"/>
         </div>
-    </div>
-    <div class="aboutus__rightcont">
-        <p class="aboutus__bodytext1"> Nestled in the heart of Pasig, Barangay Sta. Lucia is a vibrant and welcoming
-            community.
-            Experience the perfect blend of tradition and modernity as you explore our bustling streets,
-            lush parks, and engaging local culture. We invite you to be part of our close-knit family,
-            where unity and camaraderie flourish. Discover the warmth and hospitality of our residents
-            as you create lasting memories in our beautiful barangay. Welcome home! </p>
-        <button class="learnmorebtn centeredflex" onclick="window.location.href='https://w3docs.com';"> Learn More
-            Here
-        </button>
-    </div>
-</div>
-</body>
-</html>
+        <div class = home__welcomebackground></div>
+        <div class = "container">
+            <div class = "welcome__section1">
+                <p class = "welcome__headtext1"> Welcome to </p>
+                <p class = "welcome__headtext2"> Barangay Santa Lucia</p>
+            </div>
+        </div>
+        <div class = "container">
+            <div class = "welcome__section2">
+                <p class = "welcome__bodytext1"> Nestled in the heart of Pasig, Barangay Sta. Lucia is a vibrant and welcoming community.
+                                                 Experience the perfect blend of tradition and modernity as you explore our bustling streets,
+                                                 lush parks, and engaging local culture. We invite you to be part of our close-knit family,
+                                                 where unity and camaraderie flourish. Discover the warmth and hospitality of our residents
+                                                 as you create lasting memories in our beautiful barangay. Welcome home! </p>
+            </div>
+        </div>
+        <div class = "container centeredflex top2em">
+            <div class = "recent__rightcont">
+                <p class = "recent__bodytext1"> Barangay Sta. Lucia recently held a welcoming event for residents and outsiders,
+                                                including a basketball tournament where players demonstrate their skills in competition
+                                                with other teams, an LGBTQ+ rally for celebrating Pride month in Pasig City, and a
+                                                Job Fair for providing unique options with valuable resources for recruiting
+                                                non-employees to find their future jobs. </p>
+            </div>
+            <div class = "recent__leftcont">
+                <p class = "recent__headtext1"> Recent </p>
+                <p class = "recent__headtext2"> Activities </p>
+            </div>
+        </div>
+        <div class = "home__recentcont"></div>
+        <div class = "container centeredflex">
+            <div class = "">
+                <img class = "recent__image1" alt="Image" src="../static/images/liga.jpg"/>
+            </div>
+            <div class = "">
+                <img class = "recent__image2" alt="Image" src="../static/images/image1.png"/>
+            </div>
+            <div class = "">
+                <img class = "recent__image3" alt="Image" src="../static/images/image2.jpg"/>
+            </div>
+        </div>
+        <div class = "home__aboutuscont">
+            <img class = "aboutus__bgimg" alt="Image" src="../static/images/aboutus.png"/>
+        </div>
+        <div class = "container centeredflex">
+            <div class = "aboutus__leftcont">
+                <div class = "">
+                    <p class = "aboutus__headtext">ABOUT US</p>
+                    <img class = "aboutus__image1" alt="Image" src="../static/images/house.png"/>
+                </div>
+            </div>
+            <div class = "aboutus__rightcont">
+                <p class = "aboutus__bodytext1"> "Magandang Araw sa inyong Lahat!" Here in Barangay Sta. Lucia
+                                                  where accepts each and every one in the community.
+                                                  We provide and serve as a vibrant place for forming a well-developed
+                                                  community that established unity between residents and reaching our
+                                                  maximum potential by providing the best services and contributions here in our community.
+                     </p>
+                <button class = "learnmorebtn centeredflex" onclick="window.location.href='https://w3docs.com';"> Learn More Here </button>
+            </div>
+        </div>
+    </body>
+</html>>
 
 
