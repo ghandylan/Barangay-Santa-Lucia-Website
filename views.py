@@ -14,8 +14,8 @@ def hello_world():  # put application's code here
 @views_blueprint.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        username = request.form.get("username")
-        password = request.form.get("password")
+        username = request.form.get("emaillogin")
+        password = request.form.get("passwordlogin")
 
         # check if user is a BarangayOfficial or Resident
         user = BarangayOfficial.query.filter_by(username=username).first()
@@ -57,7 +57,7 @@ def resident():
 
 @views_blueprint.route('/home')
 def home():
-    return render_template('draft-home.html')
+    return render_template('home.html')
 
 
 @views_blueprint.route('/logout')
