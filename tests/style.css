@@ -311,8 +311,8 @@ body {
   z-index: -1;
 }
 
-.welcome__text1, 
-.welcome__text2{
+.welcome__headtext1, 
+.welcome__headtext2{
   margin-top: 5.6em;
   margin-left: 0.5em;
   color: rgba(255, 253, 209, 1);
@@ -321,7 +321,7 @@ body {
   -webkit-text-stroke-width: 4px;
 }
 
-.welcome__text2 {
+.welcome__headtext2 {
   margin-top: -13.5vh;
   margin-bottom: 4vh;
 }
