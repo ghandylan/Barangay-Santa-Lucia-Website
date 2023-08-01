@@ -1,3 +1,4 @@
-
 .env
 *.pyc
+misc.xml
+sqldialects.xml
