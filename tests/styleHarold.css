@@ -6,7 +6,7 @@ h1, h2, h3, h4, h5, h6, p, a, li, ul, span, div, td {
 
 body {
   margin: 0;
-  height: 200vh;
+  height: fit-content;
   width: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -936,7 +936,7 @@ body {
 }
 
 .reservationadmin__tablerow {
-    height: 4vw;
+    min-height: 4vw;
     font-size: 1em;
 }
 
@@ -1004,82 +1004,133 @@ body {
 
 
 .residents {
-  background-color: rgba(255, 253, 209, 1);
+    background-color: rgba(255, 253, 209, 1);
 }
 
 .residents__label {
-  margin-top: 0em;
-  margin-bottom: 0em;
-  font-size: 3.8em;
-  font-weight: 900;
-  -webkit-text-stroke-width: 3px;
-  text-shadow: 0px 7px rgb(157, 157, 157);
+    margin-top: 0em;
+    margin-bottom: 0em;
+    font-size: 3.8em;
+    font-weight: 900;
+    -webkit-text-stroke-width: 3px;
+    /* text-shadow: 0px 7px rgb(157, 157, 157); */
 }
 
 .residents__searchtxt {
-  display: flex;
-  height: 1.8em;
-  width: 11em;
-  padding-left: 2vw;
-  padding-right: 2vw;
-  margin-top: 0vh;
-  margin-left: 4vw;
-  font-size: 1em;
-  color: black;
-  border: none;
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
-  background-color: white;
-  text-align: center;
+    display: flex;
+    height: 2em;
+    width: 35em;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    margin-top: 0vh;
+    margin-left: 4vw;
+    font-size: 1em;
+    color: black;
+    border: none;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    background-color: white;
+    text-align: center;
 }
 
 .residents__searchbtn,
-.residents__deletebtn,
-.residents__addbtn,
-.residents__editbtn {
-  cursor: pointer;
-  height: 1.8em;
-  width: 8em;
-  font-size: 1em;
-  color: white;
-  background-color: rgba(16, 98, 14, 1);
+.residents__addbtn {
+    cursor: pointer;
+    height: 2em;
+    width: 8em;
+    font-size: 1em;
+    color: white;
+    background-color: rgba(16, 98, 14, 1);
 }
 
 .residents__searchbtn {
-  border: none;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-}
-
-.residents__deletebtn {
-  margin-left: 13em;
-  border: none;
-  border-radius: 50px;
+    border: none;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
 }
 
 .residents__addbtn {
-  margin-left: 1em;
-  border: none;
-  border-radius: 50px;
+    margin-left: 10em;
+    width: 10em;
+    border: none;
+    border-radius: 50px;
 }
 
-.residents__editbtn {
-  margin-left: 1em;
-  border: none;
-  border-radius: 50px;
+.residents__searchbtn:hover,
+.residents__addbtn:hover {
+    transition: 0.3s;
+    background-color: rgba(55, 120, 32, 1);
 }
 
 .residents table {
-  width: 90vw;
-  border-collapse: collapse;
-  background-color: white;
-  font-size: 1em;
+    width: 90vw;
+    border-collapse: collapse;
+    background-color: white;
 }
 
 .residents td {
-  border: 1px solid black;
+    border: 1px solid black;
 }
 
+
+
+.residents__tableheader {
+    height: 4vw;
+    font-size: 1em;
+}
+
+.residents__tablerow {
+    height: 4vw;
+    font-size: 1em;
+}
+
+.residents__brdynum {
+    width: 10%;
+    text-align: center;
+}
+
+.residents__name {
+    padding: 0.5vw;
+    width: 25%;
+}
+
+.residents__sex {
+    width: 3%;
+    text-align: center;
+}
+
+.residents__bdate {
+    width: 8%;
+    text-align: center;
+}
+
+.residents__relocation {
+    width: 4%;
+    text-align: center;
+}
+
+.residents__address {
+    padding: 0.5vw;
+    width: 35%;
+}
+
+.residents__operation {
+    width: 5%;
+    text-align: center;
+}
+
+.residents__edit {
+    cursor: pointer;
+    width: 5%;
+    text-align: center;
+    color: white;
+    background-color: rgba(16, 98, 14, 1);
+}
+.residents__edit:hover {
+    transition: 0.2s;
+    color: black;
+    background-color: yellow;
+}
 
 
 

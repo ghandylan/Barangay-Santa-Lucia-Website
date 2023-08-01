@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Residents</title>
+        <link rel="stylesheet" href="styleHarold.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body class = "residents">
+        <div class = header__backgroundtop></div>
+        <div class = header__backgroundbottom></div>
+        <div class = "container">
+            <div class = header__container>
+                <img class = "header__icon" alt="Brgy Logo" src="images/logo.png"/>
+                <div class = header__section1>
+                    <div class = "header__section1-1">
+                        <p class = "header__text1">Pasig City, Metro Manila</p>
+                        <p class = "header__text2">BARANGAY SANTA LUCIA</p>
+                    </div>
+                    <div class = "header__section1-2">
+                        <ul>
+                            <li class = "firstlist" onclick="window.location.href='XXX'">Home</li>
+                            <li onclick="window.location.href='XXX'">The Barangay</li>
+                            <li onclick="window.location.href='XXX'">Facilities</li>
+                            <li onclick="window.location.href='XXX'">Residents</li>
+                            <li onclick="window.location.href='XXX'">Services</li>
+                            <li onclick="window.location.href='XXX'">Profile</li>
+                            <li onclick="window.location.href='XXX'">Logout</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <div class = "container centeredflex top2em">
+            <p class = "residents__label">Residents Information</p>
+        </div>
+        <form action="draft-residents.html" method="post">
+            <div class = "container centeredflex top4em">
+                <input type = "text" class = "residents__searchtxt"  name = "search" placeholder="Search a resident">
+                <input type = "submit" class = "residents__searchbtn"  name = "submit" value = "Enter">
+                <button class = "residents__addbtn" onclick="window.location.href='draft-residents.html'">Add Resident</button>
+            </div>
+        </form>
+        <div class = "container centeredflex top2em">
+            <table class = "bottom2em">
+                <tr class = "rowgreen">
+                    <td class = "residents__tableheader residents__brdynum">Barangay Number</td>
+                    <td class = "residents__tableheader residents__name textalign">Full Name</td>
+                    <td class = "residents__tableheader residents__sex">Sex</td>
+                    <td class = "residents__tableheader residents__bdate">Birthdate</td>
+                    <td class = "residents__tableheader residents__relocation">Relocation Year</td>
+                    <td class = "residents__tableheader residents__address textalign">Address</td>
+                    <td class = "residents__tableheader residents__operation">Operation</td>
+                </tr>
+                <tr class = "residents__tablerow">
+                    <td class = "residents__brdynum">2021100518</td>
+                    <td class = "residents__name">Harold Russell Potestas Visperas</td>
+                    <td class = "residents__sex">M</td>
+                    <td class = "residents__bdate">9/17/2002</td>
+                    <td class = "residents__relocation">2012</td>
+                    <td class = "residents__address">B 24 L 15 Malugay Street, Rosario Subdivision</td>
+                    <td class = "residents__edit" onclick="window.location.href='draft-residents.html'">Edit</td>
+                </tr>
+                <tr class = "residents__tablerow">
+                    <td class = "residents__brdynum">2021100518</td>
+                    <td class = "residents__name">Harold Russell Potestas Visperas</td>
+                    <td class = "residents__sex">M</td>
+                    <td class = "residents__bdate">9/17/2002</td>
+                    <td class = "residents__relocation">2012</td>
+                    <td class = "residents__address">B 24 L 15 Malugay Street, Rosario Subdivision</td>
+                    <td class = "residents__edit" onclick="window.location.href='draft-residents.html'">Edit</td>
+                </tr>
+                <tr class = "residents__tablerow">
+                    <td class = "residents__brdynum">2021100518</td>
+                    <td class = "residents__name">Harold Russell Potestas Visperas</td>
+                    <td class = "residents__sex">F</td>
+                    <td class = "residents__bdate">9/17/2002</td>
+                    <td class = "residents__relocation">2012</td>
+                    <td class = "residents__address">B 24 L 15 Malugay Street, Rosario Subdivision</td>
+                    <td class = "residents__edit" onclick="window.location.href='draft-residents.html'">Edit</td>
+                </tr>
+                <tr class = "residents__tablerow">
+                    <td class = "residents__brdynum">2021100518</td>
+                    <td class = "residents__name">Harold Russell Potestas Visperas</td>
+                    <td class = "residents__sex">F</td>
+                    <td class = "residents__bdate">9/17/2002</td>
+                    <td class = "residents__relocation">2012</td>
+                    <td class = "residents__address">B 24 L 15 Malugay Street, Rosario Subdivision</td>
+                    <td class = "residents__edit" onclick="window.location.href='draft-residents.html'">Edit</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
