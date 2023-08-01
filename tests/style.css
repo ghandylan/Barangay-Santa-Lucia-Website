@@ -246,7 +246,7 @@ body {
   margin-top: -14vh;
 }
 
-.login .login__leftcont .emailtxt input[type="email"],
+.login .login__leftcont .emailtxt input[type="text"],
 .login .login__leftcont .passwordtxt input[type="password"] {
   width: 23vw;
   padding: 2vh;
