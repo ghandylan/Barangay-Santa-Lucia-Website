@@ -37,57 +37,59 @@
             </div>
             <div class = "">
                 <div class = "reservation__header">
-                    <p class = "reservation__headertxt">Court 1 Reservation</p>
+                    <p class = "reservation__headertxt">Maligaya<br>Court Reservation</p>
                 </div>
-                <form method = "POST">
-                    <div class = "reservation__formcont">
-                        <div class = "flex">
-                            <p class = "reservation__formlabel">Name</p>
-                            <p class = "reservation__inputName formlabelName" name = "name">NAME NUNG USER</p>
+                <div class = "centeredflex">
+                    <form method = "POST">
+                        <div class = "reservation__formcont">
+                            <div class = "flex">
+                                <p class = "reservation__formlabel">Name</p>
+                                <p class = "reservation__inputName formlabelName" name = "name">NAME NUNG USER</p>
+                            </div>
+                            <div class = "flex">
+                                <p class = "reservation__formlabel">Purpose of Use</p>
+                                <input class = "reservation__inputPurpose" type = "text" name = "name" placeholder = "Enter Purpose" required/>
+                            </div>
+                            <div class = "flex">
+                                <p class = "reservation__formlabel">Number of Attendees</p>
+                                <input class = "reservation__inputAttendees" type = "number" name = "name" min="1" max="50" placeholder = "Enter no. of attendees" required/>
+                            </div>
+                            <div class = "flex">
+                                <p class = "reservation__formlabel">Reservation Date</p>
+                                <select class = "reservation__inputDate" name="date">
+                                    <option value="Placeholder">Choose a Day</option>
+                                    <option value="Tuesday">Tuesday</option>
+                                    <option value="Wednesday">Wednesday</option>
+                                    <option value="Thursday">Thursday</option>
+                                    <option value="Friday">Friday</option>
+                                    <option value="Saturday">Saturday</option>
+                                    <option value="Sunday">Sunday</option>
+                                </select>
+                            </div>
+                            <div class = "flex">
+                                <p class = "reservation__formlabel">Reservation Time</p>
+                                <select class = "reservation__inputTime" name="time">
+                                    <option value="Placeholder">Choose a Time</option>
+                                    <option value="7amslot">7:00 to 7:59</option>
+                                    <option value="8amslot">8:00 to 8:59</option>
+                                    <option value="9amslot">9:00 to 9:59</option>
+                                    <option value="10amslot">10:00 to 10:59</option>
+                                    <option value="11amslot">11:00 to 11:59</option>
+                                    <option value="12pmslot">12:00 to 12:59</option>
+                                    <option value="1pmslot">13:00 to 13:59</option>
+                                    <option value="2pmslot">14:00 to 14:59</option>
+                                    <option value="3pmslot">15:00 to 15:59</option>
+                                    <option value="4pmslot">16:00 to 16:59</option>
+                                    <option value="5pmslot">17:00 to 17:59</option>
+                                    <option value="6pmslot">18:00 to 18:59</option>
+                                </select>
+                            </div>
+                            <div class = "centeredflex">
+                                <input class = "reservation__formsubmit" type = "submit" name = "submit" value = "Submit"/>
+                            </div>
                         </div>
-                        <div class = "flex">
-                            <p class = "reservation__formlabel">Purpose of Use</p>
-                            <input class = "reservation__inputPurpose" type = "text" name = "name" placeholder = "Enter Purpose" required/>
-                        </div>
-                        <div class = "flex">
-                            <p class = "reservation__formlabel">Number of Attendees</p>
-                            <input class = "reservation__inputAttendees" type = "number" name = "name" min="1" max="50" placeholder = "Enter no. of attendees" required/>
-                        </div>
-                        <div class = "flex">
-                            <p class = "reservation__formlabel">Reservation Date</p>
-                            <select class = "reservation__inputDate" name="date">
-                                <option value="Placeholder">Choose a Day</option>
-                                <option value="Tuesday">Tuesday</option>
-                                <option value="Wednesday">Wednesday</option>
-                                <option value="Thursday">Thursday</option>
-                                <option value="Friday">Friday</option>
-                                <option value="Saturday">Saturday</option>
-                                <option value="Sunday">Sunday</option>
-                              </select>
-                        </div>
-                        <div class = "flex">
-                            <p class = "reservation__formlabel">Reservation Time</p>
-                            <select class = "reservation__inputTime" name="time">
-                                <option value="Placeholder">Choose a Time</option>
-                                <option value="7amslot">7:00 to 7:59</option>
-                                <option value="8amslot">8:00 to 8:59</option>
-                                <option value="9amslot">9:00 to 9:59</option>
-                                <option value="10amslot">10:00 to 10:59</option>
-                                <option value="11amslot">11:00 to 11:59</option>
-                                <option value="12pmslot">12:00 to 12:59</option>
-                                <option value="1pmslot">13:00 to 13:59</option>
-                                <option value="2pmslot">14:00 to 14:59</option>
-                                <option value="3pmslot">15:00 to 15:59</option>
-                                <option value="4pmslot">16:00 to 16:59</option>
-                                <option value="5pmslot">17:00 to 17:59</option>
-                                <option value="6pmslot">18:00 to 18:59</option>
-                              </select>
-                        </div>
-                        <div class = "centeredflex">
-                            <input class = "reservation__formsubmit" type = "submit" name = "submit" value = "Submit"/>
-                        </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
 
