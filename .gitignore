@@ -2,3 +2,16 @@
 *.pyc
 misc.xml
 sqldialects.xml
+/migrations/versions/1ec87e23fbff_.py
+/migrations/versions/2b517d3f48c1_.py
+/migrations/versions/7ad4bfe60139_.py
+/migrations/versions/7e71d353b22e_.py
+/migrations/versions/612a4d7945e6_.py
+/migrations/alembic.ini
+/migrations/versions/b343f8f6699e_.py
+/migrations/versions/e1f277664fd5_.py
+/migrations/env.py
+/migrations/versions/f35e8111973c_initial_migration.py
+/.idea/jpa-buddy.xml
+/migrations/README
+/migrations/script.py.mako
