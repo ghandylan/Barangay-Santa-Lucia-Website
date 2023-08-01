@@ -44,7 +44,7 @@ def login():
 def barangay_official():
     user = current_user.get_id()
     user_name = BarangayOfficial.query.filter_by(id=user).first()
-    return render_template('barangayofficial/draft-home.html', user_name=user_name.username)
+    return render_template('barangayofficial/home.html', user_name=user_name.username)
 
 
 @views_blueprint.route('/resident')
@@ -52,7 +52,7 @@ def barangay_official():
 def resident():
     user = current_user.get_id()
     user_name = Resident.query.filter_by(id=user).first()
-    return render_template('resident/draft-home.html', user_name=user_name.username)
+    return render_template('resident/home.html', user_name=user_name.username)
 
 
 @views_blueprint.route('/home')
