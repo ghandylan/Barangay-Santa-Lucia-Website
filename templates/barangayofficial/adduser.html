@@ -67,7 +67,7 @@
                  src="../../static/images/defaultphoto.png"/>
         </div>
         <div class="centeredflex">
-            <input type="file" accept="image/*" id="changeprofileimage" name="changeprofileimage" required/>
+            <input type="file" accept="image/*" id="changeprofileimage" name="changeprofileimage"/>
             <label for="changeprofileimage">
                 <img class="inputicon" alt="Upload Icon" src="../../static/images/uploadimage.png"/>
                 Upload a Photo
@@ -139,21 +139,21 @@
     </div>
 
 
-    <div class="profileedit__popup">
-        <button class="profileedit__popupexitbutton" id="editclose">&times;</button>
-        <p class="profileedit__popuplabelnew">New Password</p>
-        <input class="profile__popupnewpass" type="password" id="changenewpass" name="changenewpass"
-               placeholder="Enter New Password" required>
-        <p class="profile__popuplabel">Confirm New Password</p>
-        <input class="profile__popupconfirmpass" type="password" id="changeconfirmpass" name="changeconfirmpass"
-               placeholder="Re-enter New Password" required>
-        <div class="centeredflex">
-            <input class="profileedit__popupsavebtn" type="" value="Submit">
-        </div>
-    </div>
+{#    <div class="profileedit__popup">#}
+{#        <button class="profileedit__popupexitbutton" id="editclose">&times;</button>#}
+{#        <p class="profileedit__popuplabelnew">New Password</p>#}
+{#        <input class="profile__popupnewpass" type="password" id="changenewpass" name="changenewpass"#}
+{#               placeholder="Enter New Password" required>#}
+{#        <p class="profile__popuplabel">Confirm New Password</p>#}
+{#        <input class="profile__popupconfirmpass" type="password" id="changeconfirmpass" name="changeconfirmpass"#}
+{#               placeholder="Re-enter New Password" required>#}
+{#        <div class="centeredflex">#}
+{#            <input class="profileedit__popupsavebtn" type="" value="Submit">#}
+{#        </div>#}
+{#    </div>#}
 
     <div class="centeredflex">
-        <button type="submit" value="submit" class="profileedit__savebtn">Save</button>
+        <input type="submit" value="Submit" class="profileedit__savebtn">
         <input class="profileedit__cancelbtn" type="button" value="Cancel"
                onclick="window.location.href='{{ url_for('brngyofficial_views.barangay_official_residents') }}'">
     </div>
