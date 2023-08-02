@@ -42,7 +42,27 @@ class Resident(db.Model, UserMixin):
 
 
 class MaligayaCourtReservationList(db.Model, UserMixin):
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    full_name = db.Column(db.String(255))
+    purpose = db.Column(db.String(255))
+    number_of_attendees = db.Column(db.Integer)
+    reservation_date = db.Column(db.String(255))
+    reservation_time = db.Column(db.String(255))
+    resident_id = db.Column(db.String(255), db.ForeignKey('resident.id'), nullable=False)
+
+
+class CountrysideCourtReservationList(db.Model, UserMixin):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    full_name = db.Column(db.String(255))
+    purpose = db.Column(db.String(255))
+    number_of_attendees = db.Column(db.Integer)
+    reservation_date = db.Column(db.String(255))
+    reservation_time = db.Column(db.String(255))
+    resident_id = db.Column(db.String(255), db.ForeignKey('resident.id'), nullable=False)
+
+
+class TennisCourtReservationList(db.Model, UserMixin):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     full_name = db.Column(db.String(255))
     purpose = db.Column(db.String(255))
     number_of_attendees = db.Column(db.Integer)
