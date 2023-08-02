@@ -60,7 +60,7 @@
 </div>
 
 
-<form action="/barangay_official/residents/add" method="POST" id="add-user-form">
+<form method="POST" action="{{ url_for('brngyofficial_views.barangay_official_add_residents') }}">
     <div class="container profile__topinfocont top-1em">
         <div class="centeredflex top2em">
             <img class="profile__image" id="profileimage" alt="Profile Picture"
@@ -138,11 +138,7 @@
         </div>
     </div>
 
-    <div class="centeredflex">
-        <button type="submit" value="Submit" class="profileedit__savebtn">Save</button>
-        <input class="profileedit__cancelbtn" type="button" value="Cancel"
-               onclick="window.location.href='{{ url_for('brngyofficial_views.barangay_official_residents') }}'">
-    </div>
+
     <div class="profileedit__popup">
         <button class="profileedit__popupexitbutton" id="editclose">&times;</button>
         <p class="profileedit__popuplabelnew">New Password</p>
@@ -152,8 +148,14 @@
         <input class="profile__popupconfirmpass" type="password" id="changeconfirmpass" name="changeconfirmpass"
                placeholder="Re-enter New Password" required>
         <div class="centeredflex">
-            <input class="profileedit__popupsavebtn" type="submit" value="Submit">
+            <input class="profileedit__popupsavebtn" type="" value="Submit">
         </div>
+    </div>
+
+    <div class="centeredflex">
+        <button type="submit" value="submit" class="profileedit__savebtn">Save</button>
+        <input class="profileedit__cancelbtn" type="button" value="Cancel"
+               onclick="window.location.href='{{ url_for('brngyofficial_views.barangay_official_residents') }}'">
     </div>
 </form>
 

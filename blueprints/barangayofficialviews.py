@@ -32,42 +32,36 @@ def barangay_official_residents():
     return render_template('barangayofficial/residents.html')
 
 
-@brngyofficial_views_blueprint.route('/barangay_official/residents/add', methods=['GET', 'POST'])
+@brngyofficial_views_blueprint.route('/barangay_official/residents/add', methods=['POST', 'GET'])
 @login_required
 def barangay_official_add_residents():
-    if request.method == ['POST']:
-        # create a minimized uuidv4
-        resident_id = str(uuid.uuid4())[:8]
+    # create a minimized uuidv4
+    resident_id = str(uuid.uuid4())[:8]
 
-        # profile_picture = request.form.get('profile_picture')
-        full_name = request.form.get('fullname')
-        barangay_number = uuid.uuid4()
-        sex = request.form.get('sex')
-        username = request.form.get('username')
-        # password = request.form.get('password')
+    # profile_picture = request.form.get('profile_picture')
+    full_name = request.form.get('fullname')
+    barangay_number = uuid.uuid4()
+    sex = request.form.get('sex')
+    username = request.form.get('username')
+    # password = request.form.get('password')
 
-        birth_date = request.form.get('birthdate')
-        relocation_year = request.form.get('relocationyear')
-        address = request.form.get('address')
-
-        new_resident = Resident(
-            id=resident_id,
-            photo=None,
-            full_name=full_name,
-            barangay_number=barangay_number,
-            sex=sex, username=username,
-            password=None,
-            birthdate=birth_date,
-            relocation_year=relocation_year,
-            address=address
-        )
+    birth_date = request.form.get('birthdate')
+    relocation_year = request.form.get('relocationyear')
+    address = request.form.get('address')
+    if request.method == 'POST':
+        new_resident = Resident(id=resident_id, photo=None, full_name=full_name, barangay_number=barangay_number,
+            sex=sex, username=username, password=None, birthdate=birth_date, relocation_year=relocation_year,
+            address=address)
 
         db.session.add(new_resident)
         db.session.commit()
+
         return render_template('barangayofficial/residents.html')
 
     return render_template('barangayofficial/adduser.html')
 
+
+# @brngyofficial_views_blueprint.route('/', methods=['GET', 'POST'])
 
 @brngyofficial_views_blueprint.route('/barangay_official/services')
 @login_required
