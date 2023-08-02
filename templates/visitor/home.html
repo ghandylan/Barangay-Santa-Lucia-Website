@@ -10,7 +10,7 @@
 <div class=header__backgroundbottom></div>
 <div class="container">
     <div class=header__container>
-        <img class="header__icon" alt="Brgy Logo" src="../static/images/logo.png"/>
+        <img class="header__icon" alt="Brgy Logo" src="../../static/images/logo.png"/>
         <div class=header__section1>
             <div class="header__section1-1">
                 <p class="header__text1">Pasig City, Metro Manila</p>
@@ -19,10 +19,11 @@
             <div class="header__section1-2">
                 <ul>
                     <li class="firstlist" onclick="window.location.href='{{ url_for('views.home') }}'">Home</li>
-                    <li onclick="window.location.href='{{ url_for('views.barangay') }}'">The Barangay</li>
-                    <li onclick="window.location.href='XXX'">Facilities</li>
-                    <li onclick="window.location.href='XXX'">Residents</li>
-                    <li onclick="window.location.href='XXX'">Services</li>
+                    <li onclick="window.location.href='{{ url_for('views.the_barangay') }}'">The Barangay</li>
+                    <li onclick="window.location.href='{{ url_for('views.facilities') }}'">Facilities</li>
+                    {% if current_user.is_authenticated %}
+                        <li onclick="window.location.href='XXX'">Residents</li>
+                    {% endif %}
                     {% if current_user.is_authenticated %}
                         <li onclick="window.location.href='XXX'">Profile</li>
                         <li onclick="window.location.href='{{ url_for('views.logout') }}'">Logout</li>
@@ -35,7 +36,7 @@
     </div>
 </div>
 <div class="home__imgbackground">
-    <img class="home__img" alt="Image" src="../static/images/homeimg.png"/>
+    <img class="home__img" alt="Image" src="../../static/images/homeimg.png"/>
 </div>
 <div class=home__welcomebackground></div>
 <div class="container">
@@ -70,23 +71,23 @@
 <div class="home__recentcont"></div>
 <div class="container centeredflex">
     <div class="">
-        <img class="recent__image1" alt="Image" src="../static/images/liga.jpg"/>
+        <img class="recent__image1" alt="Image" src="../../static/images/liga.jpg"/>
     </div>
     <div class="">
-        <img class="recent__image2" alt="Image" src="../static/images/image1.png"/>
+        <img class="recent__image2" alt="Image" src="../../static/images/image1.png"/>
     </div>
     <div class="">
-        <img class="recent__image3" alt="Image" src="../static/images/image2.jpg"/>
+        <img class="recent__image3" alt="Image" src="../../static/images/image2.jpg"/>
     </div>
 </div>
 <div class="home__aboutuscont">
-    <img class="aboutus__bgimg" alt="Image" src="../static/images/aboutus.png"/>
+    <img class="aboutus__bgimg" alt="Image" src="../../static/images/aboutus.png"/>
 </div>
 <div class="container centeredflex">
     <div class="aboutus__leftcont">
         <div class="">
             <p class="aboutus__headtext">ABOUT US</p>
-            <img class="aboutus__image1" alt="Image" src="../static/images/house.png"/>
+            <img class="aboutus__image1" alt="Image" src="../../static/images/house.png"/>
         </div>
     </div>
     <div class="aboutus__rightcont">

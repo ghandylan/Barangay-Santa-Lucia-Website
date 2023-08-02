@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Facilities</title>
+    <link rel="stylesheet" href="../../static/stylesheet/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="facilities">
+<div class=header__backgroundtop></div>
+<div class=header__backgroundbottom></div>
+<div class="container">
+    <div class=header__container>
+        <img class="header__icon" alt="Brgy Logo" src="../../static/images/logo.png"/>
+        <div class=header__section1>
+            <div class="header__section1-1">
+                <p class="header__text1">Pasig City, Metro Manila</p>
+                <p class="header__text2">BARANGAY SANTA LUCIA</p>
+            </div>
+            <div class="header__section1-2">
+                <ul>
+                     <li class="firstlist" onclick="window.location.href='{{ url_for('resident_views.resident_home') }}'">Home</li>
+                    <li onclick="window.location.href='{{ url_for('resident_views.resident_the_barangay') }}'">The Barangay</li>
+                    <li onclick="window.location.href='{{ url_for('resident_views.resident_facilities') }}'">Facilities</li>
+                    <li onclick="window.location.href='{{ url_for('resident_views.resident_services') }}'">Services</li>
+                    {% if current_user.is_authenticated %}
+                        <li onclick="window.location.href='{{ url_for('resident_views.resident_profile', username=current_user.username) }}'">Profile</li>
+
+                        <li id="logoutBtn">Logout</li>
+                    {% else %}
+                        <li onclick="window.location.href='{{ url_for('views.login') }}'">Login</li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="facilities__imgbackground">
+    <img class="home__img" alt="Image" src="../../static/images/homeimg.png"/>
+</div>
+<div class=facilities__greenbackground></div>
+<div class="container">
+    <div class="facilities__section1">
+        <p class="facilities__headtext1 centeredflex"> The Facilities </p>
+    </div>
+</div>
+<div class="container">
+    <div class="facilities__section2">
+        <p class="facilities__bodytext1 centeredflex"> Nestled in the heart of Pasig, Barangay Sta. Lucia is a vibrant
+            and welcoming community.
+            Experience the perfect blend of tradition and modernity as you explore our bustling streets,
+            lush parks, and engaging local culture. We invite you to be part of our close-knit family,
+            where unity and camaraderie flourish. Discover the warmth and hospitality of our residents
+            as you create lasting memories in our beautiful barangay. Welcome home! </p>
+    </div>
+</div>
+<div class="fac1__cont">
+    <img class="fac1__bgimg" alt="Image" src="../../static/images/Fac1.jpg"/>
+</div>
+<div class="container centeredflex">
+    <div class="fac1__leftcont">
+        <div class="">
+            <p class="fac1__headtext">Facility 1</p>
+            <img class="fac1__image1" alt="Image" src="../../static/images/facility1.jpeg"/>
+        </div>
+    </div>
+    <div class="fac1__rightcont">
+        <p class="fac1__subtext"> Rosario 5&6 Tennis Court</p>
+        <p class="fac1__bodytext1"> "Magandang Araw sa inyong Lahat!" Here in Barangay Sta. Lucia
+            where accepts each and every one in the community.
+            We provide and serve as a vibrant place for forming a well-developed
+            community that established unity between residents and reaching our
+            maximum potential by providing the best services and contributions here in our communit. </p>
+        <button class="reservebtn1 centeredflex" onclick="window.location.href='{{ url_for('resident_views.resident_facilities_tennis_court') }}';"> Reserve Here
+        </button>
+    </div>
+</div>
+<div class="fac2__cont">
+    <img class="fac2__bgimg" alt="Image" src="../../static/images/Fac2.jpg"/>
+</div>
+<div class="container centeredflex">
+    <div class="fac2__leftcont">
+        <p class="fac2__subtext centeredflex"> Maligaya Court</p>
+        <p class="fac2__bodytext1"> "Magandang Araw sa inyong Lahat!" Here in Barangay Sta. Lucia
+            where accepts each and every one in the community.
+            We provide and serve as a vibrant place for forming a well-developed
+            community that established unity between residents and reaching our
+            maximum potential by providing the best services and contributions here in our community. </p>
+        <button class="reservebtn2 centeredflex" onclick="window.location.href='{{ url_for('resident_views.resident_facilities_court1') }}';"> Reserve Here
+        </button>
+    </div>
+    <div class="fac2__rightcont">
+        <div class="">
+            <p class="fac2__headtext container centeredflex">Facility 2</p>
+            <img class="fac2__image1" alt="Image" src="../../static/images/facility2.jpeg"/>
+        </div>
+    </div>
+</div>
+<div class="fac3__cont">
+    <img class="fac3__bgimg" alt="Image" src="../../static/images/Fac3.jpg"/>
+</div>
+<div class="container centeredflex">
+    <div class="fac3__leftcont">
+        <div class="">
+            <p class="fac3__headtext">Facility 3</p>
+            <img class="fac3__image1" alt="Image" src="../../static/images/facility3.jpeg"/>
+        </div>
+    </div>
+    <div class="fac3__rightcont">
+        <p class="fac3__subtext"> Countryside Court</p>
+        <p class="fac3__bodytext1"> "Magandang Araw sa inyong Lahat!" Here in Barangay Sta. Lucia
+            where accepts each and every one in the community.
+            We provide and serve as a vibrant place for forming a well-developed
+            community that established unity between residents and reaching our
+            maximum potential by providing the best services and contributions here in our community.
+        </p>
+        <button class="reservebtn3 centeredflex" onclick="window.location.href='{{ url_for('resident_views.resident_facilities_court2') }}';"> Reserve Here
+        </button>
+    </div>
+</div>
+</body>
+</html>

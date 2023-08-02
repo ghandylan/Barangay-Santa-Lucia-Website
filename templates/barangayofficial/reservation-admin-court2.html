@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Residents</title>
+        <link rel="stylesheet" href="../../static/stylesheet/style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body class = "reservation">
+        <div class = header__backgroundtop></div>
+        <div class = header__backgroundbottom></div>
+        <div class = "container">
+            <div class = header__container>
+                <img class = "header__icon" alt="Brgy Logo" src="../../static/images/logo.png"/>
+                <div class = header__section1>
+                    <div class = "header__section1-1">
+                        <p class = "header__text1">Pasig City, Metro Manila</p>
+                        <p class = "header__text2">BARANGAY SANTA LUCIA</p>
+                    </div>
+                    <div class = "header__section1-2">
+                        <ul>
+                    <li class="firstlist"
+                        onclick="window.location.href='{{ url_for('brngyofficial_views.barangay_official_home') }}'">Home
+                    </li>
+                    <li onclick="window.location.href='{{ url_for('brngyofficial_views.barangay_official_the_barangay') }}'">The
+                        Barangay
+                    </li>
+                    <li onclick="window.location.href='{{ url_for('brngyofficial_views.barangay_official_facilities') }}'">
+                        Facilities
+                    </li>
+                     <li onclick="window.location.href='{{ url_for('brngyofficial_views.barangay_official_residents') }}'">
+                        Residents
+                    </li>
+                    <li class="header__dropdown">
+                        <p class="header__dropdownbtn">Services</p>
+                        <div class="header__dropdowncontent">
+                            <a href="{{ url_for('brngyofficial_views.barangay_official_maligaya_court_reservations') }}">Maligaya Court Reservation</a>
+                            <a href="{{ url_for('brngyofficial_views.barangay_official_countryside_court_reservations') }}">Countryside Court Reservation</a>
+                            <a href="{{ url_for('brngyofficial_views.barangay_official_tennis_court_reservations') }}">Tennis Court Reservation</a>
+                            <a href="{{ url_for('brngyofficial_views.barangay_official_item_tracking') }}">Item Reservation</a>
+                        </div>
+                    </li>
+                    {% if current_user.is_authenticated %}
+                        <li onclick="window.location.href='{{ url_for('brngyofficial_views.barangay_official_profile', username=current_user.username) }}'">
+                            Profile
+                        </li>
+                        <li id="logoutBtn">Logout</li>
+                    {% else %}
+                        <li onclick="window.location.href='{{ url_for('views.login') }}'">Login</li>
+                    {% endif %}
+                </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <div class = "container centeredflex top4em">
+            <p class = "reservation__label">Countryside Court Reservation List</p>
+        </div>
+
+
+
+        <div class = "container top4em">
+            <p class = "reservationadmin__dayLabel">Tuesday</p>
+        </div>
+
+        <div class = "container centeredflex top-1em">
+            <table>
+                <tr class = "rowgreen">
+                    <td class = "reservationadmin__tableheader reservationadmin__name">Name</td>
+                    <td class = "reservationadmin__tableheader reservationadmin__purpose">Purpose of Use</td>
+                    <td class = "reservationadmin__tableheader reservationadmin__attendees textalign">Number of Attendees</td>
+                    <td class = "reservationadmin__tableheader reservationadmin__date textalign">Reservation Date</td>
+                    <td class = "reservationadmin__tableheader reservationadmin__time textalign">Reservation Time</td>
+                </tr>
+                <tr class = "reservationadmin__tablerow">
+                    <td class = "reservationadmin__name">Harold Russell Potestas Visperas</td>
+                    <td class = "reservationadmin__purpose">Volleyball Practice</td>
+                    <td class = "reservationadmin__attendees">12</td>
+                    <td class = "reservationadmin__date">Tuesday</td>
+                    <td class = "reservationadmin__time">7:00 - 7:59</td>
+                </tr>
+                <tr class = "reservationadmin__tablerow">
+                    <td class = "reservationadmin__name">Harold Russell Potestas Visperas</td>
+                    <td class = "reservationadmin__purpose">Volleyball Practice</td>
+                    <td class = "reservationadmin__attendees">12</td>
+                    <td class = "reservationadmin__date">Tuesday</td>
+                    <td class = "reservationadmin__time">8:00 - 8:59</td>
+                </tr>
+                <tr class = "reservationadmin__tablerow">
+                    <td class = "reservationadmin__name">Harold Russell Potestas Visperas</td>
+                    <td class = "reservationadmin__purpose">Volleyball Practice</td>
+                    <td class = "reservationadmin__attendees">12</td>
+                    <td class = "reservationadmin__date">Tuesday</td>
+                    <td class = "reservationadmin__time">9:00 - 9:59</td>
+                </tr>
+            </table>
+        </div>
+
+
+
+        <div class = "container top4em">
+            <p class = "reservationadmin__dayLabel">Wednesday</p>
+        </div>
+
+        <div class = "container centeredflex top-1em">
+            <table>
+                <tr class = "rowgreen">
+                    <td class = "reservationadmin__tableheader reservationadmin__name">Name</td>
+                    <td class = "reservationadmin__tableheader reservationadmin__purpose">Purpose of Use</td>
+                    <td class = "reservationadmin__tableheader reservationadmin__attendees textalign">Number of Attendees</td>
+                    <td class = "reservationadmin__tableheader reservationadmin__date textalign">Reservation Date</td>
+                    <td class = "reservationadmin__tableheader reservationadmin__time textalign">Reservation Time</td>
+                </tr>
+                <tr class = "reservationadmin__tablerow">
+                    <td class = "reservationadmin__name">Ervin Mikhail Geronimo Garcia</td>
+                    <td class = "reservationadmin__purpose">Volleyball Scrimage</td>
+                    <td class = "reservationadmin__attendees">24</td>
+                    <td class = "reservationadmin__date">Wednesday</td>
+                    <td class = "reservationadmin__time">12:00 - 12:59</td>
+                </tr>
+                <tr class = "reservationadmin__tablerow">
+                    <td class = "reservationadmin__name">Ervin Mikhail Geronimo Garcia</td>
+                    <td class = "reservationadmin__purpose">Volleyball Scrimage</td>
+                    <td class = "reservationadmin__attendees">24</td>
+                    <td class = "reservationadmin__date">Wednesday</td>
+                    <td class = "reservationadmin__time">13:00 - 13:59</td>
+                </tr>
+            </table>
+        </div>
+
+
+
+        <div class = "container top4em">
+            <p class = "reservationadmin__dayLabel">Thursday</p>
+        </div>
+
+        <div class = "container centeredflex top-1em">
+            <table>
+                <tr class = "rowgreen">
+                    <td class = "reservationadmin__tableheader reservationadmin__name">Name</td>
+                    <td class = "reservationadmin__tableheader reservationadmin__purpose">Purpose of Use</td>
+                    <td class = "reservationadmin__tableheader reservationadmin__attendees textalign">Number of Attendees</td>
+                    <td class = "reservationadmin__tableheader reservationadmin__date textalign">Reservation Date</td>
+                    <td class = "reservationadmin__tableheader reservationadmin__time textalign">Reservation Time</td>
+                </tr>
+                <tr class = "reservationadmin__tablerow">
+                    <td class = "reservationadmin__name">Ervin Mikhail Geronimo Garcia</td>
+                    <td class = "reservationadmin__purpose">Volleyball Practice</td>
+                    <td class = "reservationadmin__attendees">12</td>
+                    <td class = "reservationadmin__date">Thursday</td>
+                    <td class = "reservationadmin__time">8:00 - 8:59</td>
+                </tr>
+                <tr class = "reservationadmin__tablerow">
+                    <td class = "reservationadmin__name">Dylan Louis Santander Tayag</td>
+                    <td class = "reservationadmin__purpose">Basketball Practice</td>
+                    <td class = "reservationadmin__attendees">10</td>
+                    <td class = "reservationadmin__date">Thursday</td>
+                    <td class = "reservationadmin__time">15:00 - 15:59</td>
+                </tr>
+                <tr class = "reservationadmin__tablerow">
+                    <td class = "reservationadmin__name">Dylan Louis Santander Tayag</td>
+                    <td class = "reservationadmin__purpose">Basketball Practice</td>
+                    <td class = "reservationadmin__attendees">10</td>
+                    <td class = "reservationadmin__date">Thursday</td>
+                    <td class = "reservationadmin__time">16:00 - 16:59</td>
+                </tr>
+            </table>
+        </div>
+
+
+
+        <div class = "container top4em">
+            <p class = "reservationadmin__dayLabel">Friday</p>
+        </div>
+
+        <div class = "container centeredflex top-1em">
+            <table>
+                <tr class = "rowgreen">
+                    <td class = "reservationadmin__tableheader reservationadmin__name">Name</td>
+                    <td class = "reservationadmin__tableheader reservationadmin__purpose">Purpose of Use</td>
+                    <td class = "reservationadmin__tableheader reservationadmin__attendees textalign">Number of Attendees</td>
+                    <td class = "reservationadmin__tableheader reservationadmin__date textalign">Reservation Date</td>
+                    <td class = "reservationadmin__tableheader reservationadmin__time textalign">Reservation Time</td>
+                </tr>
+                <tr class = "reservationadmin__tablerow">
+                    <td class = "reservationadmin__name">Dylan Louis Santander Tayag</td>
+                    <td class = "reservationadmin__purpose">Basketball Liga</td>
+                    <td class = "reservationadmin__attendees">50</td>
+                    <td class = "reservationadmin__date">Friday</td>
+                    <td class = "reservationadmin__time">8:00 - 8:59</td>
+                </tr>
+                <tr class = "reservationadmin__tablerow">
+                    <td class = "reservationadmin__name">Dylan Louis Santander Tayag</td>
+                    <td class = "reservationadmin__purpose">Basketball Liga</td>
+                    <td class = "reservationadmin__attendees">50</td>
+                    <td class = "reservationadmin__date">Friday</td>
+                    <td class = "reservationadmin__time">9:00 - 9:59</td>
+                </tr>
+                <tr class = "reservationadmin__tablerow">
+                    <td class = "reservationadmin__name">Dylan Louis Santander Tayag</td>
+                    <td class = "reservationadmin__purpose">Basketball Liga</td>
+                    <td class = "reservationadmin__attendees">50</td>
+                    <td class = "reservationadmin__date">Friday</td>
+                    <td class = "reservationadmin__time">10:00 - 10:59</td>
+                </tr>
+                <tr class = "reservationadmin__tablerow">
+                    <td class = "reservationadmin__name">Dylan Louis Santander Tayag</td>
+                    <td class = "reservationadmin__purpose">Basketball Liga</td>
+                    <td class = "reservationadmin__attendees">50</td>
+                    <td class = "reservationadmin__date">Friday</td>
+                    <td class = "reservationadmin__time">11:00 - 11:59</td>
+                </tr>
+                <tr class = "reservationadmin__tablerow">
+                    <td class = "reservationadmin__name">Dylan Louis Santander Tayag</td>
+                    <td class = "reservationadmin__purpose">Basketball Liga</td>
+                    <td class = "reservationadmin__attendees">50</td>
+                    <td class = "reservationadmin__date">Friday</td>
+                    <td class = "reservationadmin__time">12:00 - 12:59</td>
+                </tr>
+                <tr class = "reservationadmin__tablerow">
+                    <td class = "reservationadmin__name">Dylan Louis Santander Tayag</td>
+                    <td class = "reservationadmin__purpose">Basketball Liga</td>
+                    <td class = "reservationadmin__attendees">50</td>
+                    <td class = "reservationadmin__date">Friday</td>
+                    <td class = "reservationadmin__time">13:00 - 13:59</td>
+                </tr>
+            </table>
+        </div>
+
+
+
+        <div class = "container top4em">
+            <p class = "reservationadmin__dayLabel">Saturday</p>
+        </div>
+
+        <div class = "container centeredflex top-1em">
+            <table>
+                <tr class = "rowgreen">
+                    <td class = "reservationadmin__tableheader reservationadmin__name">Name</td>
+                    <td class = "reservationadmin__tableheader reservationadmin__purpose">Purpose of Use</td>
+                    <td class = "reservationadmin__tableheader reservationadmin__attendees textalign">Number of Attendees</td>
+                    <td class = "reservationadmin__tableheader reservationadmin__date textalign">Reservation Date</td>
+                    <td class = "reservationadmin__tableheader reservationadmin__time textalign">Reservation Time</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class = "container top4em">
+            <p class = "reservationadmin__dayLabel">Sunday</p>
+        </div>
+
+        <div class = "container centeredflex top-1em">
+            <table class = "bottom2em">
+                <tr class = "rowgreen">
+                    <td class = "reservationadmin__tableheader reservationadmin__name">Name</td>
+                    <td class = "reservationadmin__tableheader reservationadmin__purpose">Purpose of Use</td>
+                    <td class = "reservationadmin__tableheader reservationadmin__attendees textalign">Number of Attendees</td>
+                    <td class = "reservationadmin__tableheader reservationadmin__date textalign">Reservation Date</td>
+                    <td class = "reservationadmin__tableheader reservationadmin__time textalign">Reservation Time</td>
+                </tr>
+                <tr class = "reservationadmin__tablerow">
+                    <td class = "reservationadmin__name">Harold Russell Potestas Visperas</td>
+                    <td class = "reservationadmin__purpose">Badminton</td>
+                    <td class = "reservationadmin__attendees">4</td>
+                    <td class = "reservationadmin__date">Sunday</td>
+                    <td class = "reservationadmin__time">16:00 - 16:59</td>
+                </tr>
+            </table>
+        </div>
+
+
+
+
+
+
+    </body>
+</html>

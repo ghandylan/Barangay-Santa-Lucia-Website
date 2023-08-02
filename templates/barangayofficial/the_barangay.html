@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>The Barangay</title>
-    <link rel="stylesheet" href="../static/stylesheet/style.css">
+    <link rel="stylesheet" href="../../static/stylesheet/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body class="barangay">
@@ -10,7 +10,7 @@
 <div class=header__backgroundbottom></div>
 <div class="container">
     <div class=header__container>
-        <img class="header__icon" alt="Brgy Logo" src="../static/images/logo.png"/>
+        <img class="header__icon" alt="Brgy Logo" src="../../static/images/logo.png"/>
         <div class=header__section1>
             <div class="header__section1-1">
                 <p class="header__text1">Pasig City, Metro Manila</p>
@@ -18,13 +18,37 @@
             </div>
             <div class="header__section1-2">
                 <ul>
-                    <li class="firstlist" onclick="window.location.href='{{ url_for('views.home') }}'">Home</li>
-                    <li onclick="window.location.href='{{ url_for('views.barangay') }}'">The Barangay</li>
-                    <li onclick="window.location.href='XXX'">Facilities</li>
-                    <li onclick="window.location.href='XXX'">Residents</li>
-                    <li onclick="window.location.href='XXX'">Services</li>
+                    <li class="firstlist"
+                        onclick="window.location.href='{{ url_for('brngyofficial_views.barangay_official_home') }}'">
+                        Home
+                    </li>
+                    <li onclick="window.location.href='{{ url_for('brngyofficial_views.barangay_official_the_barangay') }}'">
+                        The
+                        Barangay
+                    </li>
+                    <li onclick="window.location.href='{{ url_for('brngyofficial_views.barangay_official_facilities') }}'">
+                        Facilities
+                    </li>
+                    <li onclick="window.location.href='{{ url_for('brngyofficial_views.barangay_official_residents') }}'">
+                        Residents
+                    </li>
+                    <li class="header__dropdown">
+                        <p class="header__dropdownbtn">Services</p>
+                        <div class="header__dropdowncontent">
+                            <a href="{{ url_for('brngyofficial_views.barangay_official_maligaya_court_reservations') }}">Maligaya
+                                Court Reservation</a>
+                            <a href="{{ url_for('brngyofficial_views.barangay_official_countryside_court_reservations') }}">Countryside
+                                Court Reservation</a>
+                            <a href="{{ url_for('brngyofficial_views.barangay_official_tennis_court_reservations') }}">Tennis
+                                Court Reservation</a>
+                            <a href="{{ url_for('brngyofficial_views.barangay_official_item_tracking') }}">Item
+                                Reservation</a>
+                        </div>
+                    </li>
                     {% if current_user.is_authenticated %}
-                        <li onclick="window.location.href='XXX'">Profile</li>
+                        <li onclick="window.location.href='{{ url_for('brngyofficial_views.barangay_official_profile', username=current_user.username) }}'">
+                            Profile
+                        </li>
                         <li id="logoutBtn">Logout</li>
                     {% else %}
                         <li onclick="window.location.href='{{ url_for('views.login') }}'">Login</li>
@@ -35,7 +59,7 @@
     </div>
 </div>
 <div class="barangay__icon">
-    <img class="barangay__bgimg" alt="Image" src="../static/images/barangay1.jpg"/>
+    <img class="barangay__bgimg" alt="Image" src="../../static/images/barangay1.jpg"/>
 </div>
 <div class="container centeredflex">
     <div class="barangay__section1"></div>
@@ -99,18 +123,18 @@
 <div class="backgroundgreen"></div>
 <div class="barangay__officials container centeredflex">
     <div class="barangay__div1__leftcol centeredflex">
-        <img class="image1__container" alt="image" src="../static/images/barangay2.jpg"/>
+        <img class="image1__container" alt="image" src="../../static/images/barangay2.jpg"/>
     </div>
     <div class="relative">
         <div class="barangay__div1__rightcol centeredflex">
-            <img class="image2__container" alt="image" src="../static/images/barangay1.jpg"/>
+            <img class="image2__container" alt="image" src="../../static/images/barangay1.jpg"/>
         </div>
         <div class="flex">
             <div class="barangay__div2__leftcol">
-                <img class="image3__container" alt="image" src="../static/images/logo.png"/>
+                <img class="image3__container" alt="image" src="../../static/images/logo.png"/>
             </div>
             <div class="barangay__div2__rightcol centeredflex">
-                <img class="image4__container" alt="image" src="../static/images/chairman.jpg"/>
+                <img class="image4__container" alt="image" src="../../static/images/chairman.jpg"/>
             </div>
         </div>
         <div class="barangay__div3__headtext">
@@ -126,7 +150,7 @@
     </div>
 </div>
 <div class="home__contactuscont">
-    <img class="contactus__bgimg" alt="Image" src="../static/images/aboutus.png"/>
+    <img class="contactus__bgimg" alt="Image" src="../../static/images/aboutus.png"/>
 </div>
 <div class="container centeredflex">
     <div class="contactus__cont">

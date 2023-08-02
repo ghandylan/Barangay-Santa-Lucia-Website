@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Home</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet/style.css') }}">
+    <title>Facilities</title>
+    <link rel="stylesheet" href="../../static/stylesheet/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body class="home">
+<body class="facilities">
 <div class=header__backgroundtop></div>
 <div class=header__backgroundbottom></div>
 <div class="container">
@@ -52,75 +52,94 @@
         </div>
     </div>
 </div>
-<div class="home__imgbackground">
+<div class="facilities__imgbackground">
     <img class="home__img" alt="Image" src="../../static/images/homeimg.png"/>
 </div>
-<div class=home__welcomebackground></div>
+<div class=facilities__greenbackground></div>
 <div class="container">
-    <div class="welcome__section1">
-        <p class="welcome__headtext1"> Welcome to </p>
-        <p class="welcome__headtext2"> Barangay Santa Lucia</p>
+    <div class="facilities__section1">
+        <p class="facilities__headtext1 centeredflex"> The Facilities </p>
     </div>
 </div>
 <div class="container">
-    <div class="welcome__section2">
-        <p class="welcome__bodytext1"> Nestled in the heart of Pasig, Barangay Sta. Lucia is a vibrant and welcoming
-            community.
+    <div class="facilities__section2">
+        <p class="facilities__bodytext1 centeredflex"> Nestled in the heart of Pasig, Barangay Sta. Lucia is a vibrant
+            and welcoming community.
             Experience the perfect blend of tradition and modernity as you explore our bustling streets,
             lush parks, and engaging local culture. We invite you to be part of our close-knit family,
             where unity and camaraderie flourish. Discover the warmth and hospitality of our residents
             as you create lasting memories in our beautiful barangay. Welcome home! </p>
     </div>
 </div>
-<div class="container centeredflex top2em">
-    <div class="recent__rightcont">
-        <p class="recent__bodytext1"> Barangay Sta. Lucia recently held a welcoming event for residents and outsiders,
-            including a basketball tournament where players demonstrate their skills in competition
-            with other teams, an LGBTQ+ rally for celebrating Pride month in Pasig City, and a
-            Job Fair for providing unique options with valuable resources for recruiting
-            non-employees to find their future jobs. </p>
-    </div>
-    <div class="recent__leftcont">
-        <p class="recent__headtext1"> Recent </p>
-        <p class="recent__headtext2"> Activities </p>
-    </div>
-</div>
-<div class="home__recentcont"></div>
-<div class="container centeredflex">
-    <div class="">
-        <img class="recent__image1" alt="Image" src="../../static/images/liga.jpg"/>
-    </div>
-    <div class="">
-        <img class="recent__image2" alt="Image" src="../../static/images/image1.png"/>
-    </div>
-    <div class="">
-        <img class="recent__image3" alt="Image" src="../../static/images/image2.jpg"/>
-    </div>
-</div>
-<div class="home__aboutuscont">
-    <img class="aboutus__bgimg" alt="Image" src="../../static/images/aboutus.png"/>
+<div class="fac1__cont">
+    <img class="fac1__bgimg" alt="Image" src="../../static/images/Fac1.jpg"/>
 </div>
 <div class="container centeredflex">
-    <div class="aboutus__leftcont">
+    <div class="fac1__leftcont">
         <div class="">
-            <p class="aboutus__headtext">ABOUT US</p>
-            <img class="aboutus__image1" alt="Image" src="../../static/images/house.png"/>
+            <p class="fac1__headtext">Facility 1</p>
+            <img class="fac1__image1" alt="Image" src="../../static/images/facility1.jpeg"/>
         </div>
     </div>
-    <div class="aboutus__rightcont">
-        <p class="aboutus__bodytext1"> "Magandang Araw sa inyong Lahat!" Here in Barangay Sta. Lucia
+    <div class="fac1__rightcont">
+        <p class="fac1__subtext"> Rosario 5&6 Tennis Court</p>
+        <p class="fac1__bodytext1"> "Magandang Araw sa inyong Lahat!" Here in Barangay Sta. Lucia
+            where accepts each and every one in the community.
+            We provide and serve as a vibrant place for forming a well-developed
+            community that established unity between residents and reaching our
+            maximum potential by providing the best services and contributions here in our communit. </p>
+        <button class="reservebtn1 centeredflex"
+                onclick="window.location.href='{{ url_for('resident_views.resident_facilities_tennis_court') }}';">
+            Reserve Here
+        </button>
+    </div>
+</div>
+<div class="fac2__cont">
+    <img class="fac2__bgimg" alt="Image" src="../../static/images/Fac2.jpg"/>
+</div>
+<div class="container centeredflex">
+    <div class="fac2__leftcont">
+        <p class="fac2__subtext centeredflex"> Maligaya Court</p>
+        <p class="fac2__bodytext1"> "Magandang Araw sa inyong Lahat!" Here in Barangay Sta. Lucia
+            where accepts each and every one in the community.
+            We provide and serve as a vibrant place for forming a well-developed
+            community that established unity between residents and reaching our
+            maximum potential by providing the best services and contributions here in our community. </p>
+        <button class="reservebtn2 centeredflex"
+                onclick="window.location.href='{{ url_for('resident_views.resident_facilities_court1') }}';"> Reserve
+            Here
+        </button>
+    </div>
+    <div class="fac2__rightcont">
+        <div class="">
+            <p class="fac2__headtext container centeredflex">Facility 2</p>
+            <img class="fac2__image1" alt="Image" src="../../static/images/facility2.jpeg"/>
+        </div>
+    </div>
+</div>
+<div class="fac3__cont">
+    <img class="fac3__bgimg" alt="Image" src="../../static/images/Fac3.jpg"/>
+</div>
+<div class="container centeredflex">
+    <div class="fac3__leftcont">
+        <div class="">
+            <p class="fac3__headtext">Facility 3</p>
+            <img class="fac3__image1" alt="Image" src="../../static/images/facility3.jpeg"/>
+        </div>
+    </div>
+    <div class="fac3__rightcont">
+        <p class="fac3__subtext"> Countryside Court</p>
+        <p class="fac3__bodytext1"> "Magandang Araw sa inyong Lahat!" Here in Barangay Sta. Lucia
             where accepts each and every one in the community.
             We provide and serve as a vibrant place for forming a well-developed
             community that established unity between residents and reaching our
             maximum potential by providing the best services and contributions here in our community.
         </p>
-        <button class="learnmorebtn centeredflex" onclick="window.location.href='https://w3docs.com';"> Learn More
+        <button class="reservebtn3 centeredflex"
+                onclick="window.location.href='{{ url_for('resident_views.resident_facilities_court2') }}';"> Reserve
             Here
         </button>
     </div>
 </div>
-<script src="{{ url_for('static', filename='scripts/logoutconfirm.js') }}"></script>
 </body>
-</html>>
-
-
+</html>

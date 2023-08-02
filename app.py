@@ -2,9 +2,11 @@ from flask import Flask
 from flask_login import LoginManager
 from flask_migrate import Migrate
 
+from blueprints.barangayofficialviews import brngyofficial_views_blueprint
+from blueprints.residentviews import resident_views_blueprint
+from blueprints.views import views_blueprint
 from config import Config
-from models import db, BarangayOfficial, Resident
-from views import views_blueprint
+from models import db
 
 
 def create_app():
@@ -18,15 +20,13 @@ def create_app():
 
     @login_manager.user_loader
     def load_user(user_id):
-        barangay_official = BarangayOfficial.query.get(int(user_id))
-        if barangay_official:
-            return barangay_official
-
-        resident = Resident.query.get(int(user_id))
-        if resident:
-            return resident
-
-        return None
+        from models import BarangayOfficial, Resident
+        if BarangayOfficial.query.get(int(user_id)):
+            return BarangayOfficial.query.get(int(user_id))
+        elif Resident.query.get(int(user_id)):
+            return Resident.query.get(int(user_id))
+        else:
+            return None
 
     # initialize the db
     migrate = Migrate()
@@ -36,6 +36,8 @@ def create_app():
     db.init_app(app)
 
     app.register_blueprint(views_blueprint)
+    app.register_blueprint(brngyofficial_views_blueprint)
+    app.register_blueprint(resident_views_blueprint)
 
     return app
 

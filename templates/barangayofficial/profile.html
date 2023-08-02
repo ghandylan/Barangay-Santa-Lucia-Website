@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Account Profile</title>
+    <link rel="stylesheet" href="../../static/stylesheet/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="profile">
+<div class=header__backgroundtop></div>
+<div class=header__backgroundbottom></div>
+<div class="container">
+    <div class=header__container>
+        <img class="header__icon" alt="Brgy Logo" src="../../static/images/logo.png"/>
+        <div class=header__section1>
+            <div class="header__section1-1">
+                <p class="header__text1">Pasig City, Metro Manila</p>
+                <p class="header__text2">BARANGAY SANTA LUCIA</p>
+            </div>
+            <div class="header__section1-2">
+                <ul>
+                    <li class="firstlist"
+                        onclick="window.location.href='{{ url_for('brngyofficial_views.barangay_official_home') }}'">Home
+                    </li>
+                    <li onclick="window.location.href='{{ url_for('brngyofficial_views.barangay_official_the_barangay') }}'">The
+                        Barangay
+                    </li>
+                    <li onclick="window.location.href='{{ url_for('brngyofficial_views.barangay_official_facilities') }}'">
+                        Facilities
+                    </li>
+                     <li onclick="window.location.href='{{ url_for('brngyofficial_views.barangay_official_residents') }}'">
+                        Residents
+                    </li>
+                    <li class="header__dropdown">
+                        <p class="header__dropdownbtn">Services</p>
+                        <div class="header__dropdowncontent">
+                            <a href="{{ url_for('brngyofficial_views.barangay_official_maligaya_court_reservations') }}">Maligaya Court Reservation</a>
+                            <a href="{{ url_for('brngyofficial_views.barangay_official_countryside_court_reservations') }}">Countryside Court Reservation</a>
+                            <a href="{{ url_for('brngyofficial_views.barangay_official_tennis_court_reservations') }}">Tennis Court Reservation</a>
+                            <a href="{{ url_for('brngyofficial_views.barangay_official_item_tracking') }}">Item Reservation</a>
+                        </div>
+                    </li>
+                    {% if current_user.is_authenticated %}
+                        <li onclick="window.location.href='{{ url_for('brngyofficial_views.barangay_official_profile', username=current_user.username) }}'">
+                            Profile
+                        </li>
+                        <li id="logoutBtn">Logout</li>
+                    {% else %}
+                        <li onclick="window.location.href='{{ url_for('views.login') }}'">Login</li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container profile__topinfocont top-1em">
+    <div class="centeredflex top2em">
+        <img class="profile__image" alt="Profile Picture" src="../../static/images/chairman.jpg"/>
+    </div>
+    <p class="profile__name">Harold Russell Potestas Visperas</p>
+    <p class="profile__guidetext">Basic Information</p>
+</div>
+
+<div class="container justifiedflex top2em">
+    <div class="profile__leftinfocont">
+        <div class="profile__inforow centeredflex">
+            <div class="width30">
+                <p class="textleft webkitwidth2">Barangay Number: </p>
+            </div>
+            <div class="width70">
+                <p class="textright">2021100518</p>
+            </div>
+        </div>
+        <div class="profile__inforow centeredflex">
+            <div class="width30">
+                <p class="textleft webkitwidth2">Sex: </p>
+            </div>
+            <div class="width70">
+                <p class="textright">M</p>
+            </div>
+        </div>
+        <div class="profile__inforow centeredflex">
+            <div class="width30">
+                <p class="textleft webkitwidth2">Username: </p>
+            </div>
+            <div class="width70">
+                <p class="textright">haroldrussellvisperas</p>
+            </div>
+        </div>
+        <div class="profile__infolastrow flex">
+            <div class="width73">
+                <p class="textleft webkitwidth2">Password: </p>
+            </div>
+            <div>
+                <p class="textright profile__changepass" id="changepass">Change Password?</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="profile__rightinfocont">
+        <div class="profile__inforow centeredflex">
+            <div class="width30">
+                <p class="textleft webkitwidth2">Birthdate: </p>
+            </div>
+            <div class="width70">
+                <p class="textright">9/17/2002</p>
+            </div>
+        </div>
+        <div class="profile__inforow centeredflex">
+            <div class="width30">
+                <p class="textleft webkitwidth2">Relocation Year: </p>
+            </div>
+            <div class="width70">
+                <p class="textright">2012</p>
+            </div>
+        </div>
+        <div class="profile__infolastrow centeredflex">
+            <div class="width30">
+                <p class="textleft webkitwidth2">Address: </p>
+            </div>
+            <div class="width70">
+                <p class="textright">Blk 29 L 14 Malugay Street, Rosario Subdivision</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="profile__popup">
+    <form action="profile.html" method="POST">
+        <button class="profile__popupexitbutton" id="close">&times;</button>
+        <p class="profile__popuplabelcurrent">Current Password</p>
+        <input class="profile__popupcurrent" type="password" id="changecurrentpass" name="changecurrentpass"
+               placeholder="Enter Current Password" required>
+        <p class="profile__popuplabel">New Password</p>
+        <input class="profile__popupnewpass" type="password" id="changenewpass" name="changenewpass"
+               placeholder="Enter New Password" required>
+        <p class="profile__popuplabel">Confirm New Password</p>
+        <input class="profile__popupconfirmpass" type="password" id="changeconfirmpass" name="changeconfirmpass"
+               placeholder="Re-enter New Password" required>
+        <div class="centeredflex">
+            <input class="profile__popupsavebtn" type="submit" value="submit">
+        </div>
+    </form>
+</div>
+
+<script src="{{ url_for('static', filename='scripts/popup.js') }}"></script>
+<script src="{{ url_for('static', filename='scripts/logoutconfirm.js') }}"></script>
+</body>
+</html>

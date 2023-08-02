@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Item Renting</title>
+    <link rel="stylesheet" href="../../static/stylesheet/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="renting">
+<div class=header__backgroundtop></div>
+<div class=header__backgroundbottom></div>
+<div class="container">
+    <div class=header__container>
+        <img class="header__icon" alt="Brgy Logo" src="../../static/images/logo.png"/>
+        <div class=header__section1>
+            <div class="header__section1-1">
+                <p class="header__text1">Pasig City, Metro Manila</p>
+                <p class="header__text2">BARANGAY SANTA LUCIA</p>
+            </div>
+            <div class="header__section1-2">
+                <ul>
+                    <li class="firstlist"
+                        onclick="window.location.href='{{ url_for('resident_views.resident_home') }}'">Home
+                    </li>
+                    <li onclick="window.location.href='{{ url_for('resident_views.resident_the_barangay') }}'">The
+                        Barangay
+                    </li>
+                    <li onclick="window.location.href='{{ url_for('resident_views.resident_facilities') }}'">
+                        Facilities
+                    </li>
+                    <li onclick="window.location.href='{{ url_for('resident_views.resident_services') }}'">Services</li>
+                    {% if current_user.is_authenticated %}
+                        <li onclick="window.location.href='{{ url_for('resident_views.resident_profile', username=current_user.username) }}'">
+                            Profile
+                        </li>
+                        <li id="logoutBtn">Logout</li>
+                    {% else %}
+                        <li onclick="window.location.href='{{ url_for('views.login') }}'">Login</li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container centeredflex top4em">
+    <p class="renting__header">Item Renting</p>
+</div>
+
+
+<div class="container centeredflex bottom2em">
+    <div class="renting__availabilitycont">
+        <div class="centeredflex">
+            <img class="renting__itemiconsfirst" alt="Chair Icon" src="../../static/images/chair.png"/>
+        </div>
+        <div class="renting__availability centeredflex">
+            <p>Available || </p>
+            <p class="itemcount">100</p>
+            <p class="itemcount">sets</p>
+        </div>
+
+        <div class="centeredflex">
+            <img class="renting__itemicons" alt="Table Icon" src="../../static/images/table.png"/>
+        </div>
+        <div class="renting__availability centeredflex">
+            <p>Available || </p>
+            <p class="itemcount">50</p>
+            <p class="itemcount">pcs</p>
+        </div>
+
+        <div class="centeredflex">
+            <img class="renting__itemicons" alt="Tent Icon" src="../../static/images/tent.png"/>
+        </div>
+        <div class="renting__availability centeredflex">
+            <p>Available || </p>
+            <p class="itemcount">25</p>
+            <p class="itemcount">pcs</p>
+        </div>
+    </div>
+
+
+    <div class="renting__formcont">
+        <form action="" method="POST">
+            <div class="alignedflex top1em">
+                <p class="renting__formlabel">Name</p>
+                <p class="renting__inputName">NAME NI USER</p>
+            </div>
+            <div class="alignedflex top1em">
+                <p class="renting__formlabel">Rent Date</p>
+                <input class="renting__input" type="date" name="rentdate" required>
+            </div>
+            <div class="alignedflex top1em">
+                <p class="renting__formlabel">Address</p>
+                <textarea class="renting__inputtextarea" name="address" required>ADDRESS NI USER</textarea>
+            </div>
+
+            <div>
+                <p class="renting__itemssection">Items to be rented:</p>
+            </div>
+            <div class="centeredflex">
+                <div class="centeredflex">
+                    <p class="renting__itemlabel">Chairs:</p>
+                    <input class="renting__inputitem" type="number" name="chair" min="0" max="100" value="0" required>
+                    <p class="renting__itemlabel">sets</p>
+                </div>
+                <div class="centeredflex">
+                    <p class="renting__itemlabel">Tables:</p>
+                    <input class="renting__inputitem" type="number" name="table" min="0" max="50" value="0" required>
+                    <p class="renting__itemlabel">pcs</p>
+                </div>
+                <div class="centeredflex">
+                    <p class="renting__itemlabel">Tents:</p>
+                    <input class="renting__inputitem" type="number" name="tent" min="0" max="25" value="0" required>
+                    <p class="renting__itemlabel">pcs</p>
+                </div>
+            </div>
+
+            <div class="centeredflex">
+                <input class="renting__formsubmit" type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+
+
+</div>

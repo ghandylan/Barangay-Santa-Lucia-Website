@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>The Barangay</title>
+    <link rel="stylesheet" href="../../static/stylesheet/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="barangay">
+<div class=header__backgroundtop></div>
+<div class=header__backgroundbottom></div>
+<div class="container">
+    <div class=header__container>
+        <img class="header__icon" alt="Brgy Logo" src="../../static/images/logo.png"/>
+        <div class=header__section1>
+            <div class="header__section1-1">
+                <p class="header__text1">Pasig City, Metro Manila</p>
+                <p class="header__text2">BARANGAY SANTA LUCIA</p>
+            </div>
+            <div class="header__section1-2">
+                <ul>
+                     <li class="firstlist" onclick="window.location.href='{{ url_for('views.home') }}'">Home</li>
+                    <li onclick="window.location.href='{{ url_for('views.the_barangay') }}'">The Barangay</li>
+                    <li onclick="window.location.href='{{ url_for('views.facilities') }}'">Facilities</li>
+                    {% if current_user.is_authenticated %}
+                        <li onclick="window.location.href='XXX'">Residents</li>
+                    {% endif %}
+                    {% if current_user.is_authenticated %}
+                        <li onclick="window.location.href='XXX'">Profile</li>
+                        <li onclick="window.location.href='{{ url_for('views.logout') }}'">Logout</li>
+                    {% else %}
+                        <li onclick="window.location.href='{{ url_for('views.login') }}'">Login</li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="barangay__icon">
+    <img class="barangay__bgimg" alt="Image" src="../../static/images/barangay1.jpg"/>
+</div>
+<div class="container centeredflex">
+    <div class="barangay__section1"></div>
+    <p class="barangay__headertext">The Barangay</p>
+</div>
+<div class="container centeredflex">
+    <div class="barangay__section2">
+        <p class="barangay__bodytext1 centeredflex"> Nestled in the heart of Pasig, Barangay Sta. Lucia is a vibrant and
+            welcoming community. </p>
+        <p class="barangay__bodytext2 centeredflex"> Experience the perfect blend of tradition and modernity as you
+            explore our bustling streets, </p>
+        <p class="barangay__bodytext3 centeredflex"> lush parks, and engaging local culture. We invite you to be part of
+            our close-knit family, </p>
+        <p class="barangay__bodytext4 centeredflex"> where unity and camaraderie flourish. Discover the warmth and
+            hospitality of our residents </p>
+        <p class="barangay__bodytext5 centeredflex"> as you create lasting memories in our beautiful barangay. Welcome
+            home!</p>
+    </div>
+</div>
+<div class="barangay__missionvisioncont">
+    <div class="container centeredflex">
+        <div class="mission__container">
+            <p class="mission__headtext container centeredflex">MISSION
+            <p>
+            <p class="mtext1 container centeredflex"> To be a representation of good governance that
+                gives/improves quality of life, balanced opportunity
+                and create a culpable community to the present
+                and future generations.</p>
+        </div>
+        <div class="vision__container">
+            <p class="vision__headtext container centeredflex">VISION
+            <p>
+            <p class="vtext1 container centeredflex"> To provide excellent quality of service for the
+                people and create a peaceful community to achieve
+                a positive social change within. To be an instrument
+                of certain social, economic and environmental climb
+                for the people of Barangay Santa Lucia.</p>
+        </div>
+    </div>
+</div>
+<div class="barangay__goalobjectivescont">
+    <div class="container centeredflex">
+        <div class="goal__container">
+            <p class="goal__headtext container centeredflex">GOALS</p>
+            <p class="goal__subtext container centeredflex">(Mithiin)</p>
+            <p class="gtext1 container"> Isang komunidad na may kahandaan sa mga
+                darating na sakuna at kalamidad upang maging
+                matatag at magkaroon ng sapat na kaalaman sa
+                kung ano ang gagawin tuwing may sakuna</p>
+        </div>
+        <div class="objectives__container">
+            <p class="objectives__headtext container centeredflex">OBJECTIVES
+            <p>
+            <p class="objectives__subtext container centeredflex">(Layunin)</p>
+            <p class="otext1 container centeredflex"> Matatag na komunidad na may wastong kaalaman
+                palaging handa, at matatag na kayang sumugpo sa
+                kahit anong uri ng disaster. </p>
+        </div>
+    </div>
+</div>
+<div class="backgroundgreen"></div>
+<div class="barangay__officials container centeredflex">
+    <div class="barangay__div1__leftcol centeredflex">
+        <img class="image1__container" alt="image" src="../../static/images/barangay2.jpg"/>
+    </div>
+    <div class="relative">
+        <div class="barangay__div1__rightcol centeredflex">
+            <img class="image2__container" alt="image" src="../../static/images/barangay1.jpg"/>
+        </div>
+        <div class="flex">
+            <div class="barangay__div2__leftcol">
+                <img class="image3__container" alt="image" src="../../static/images/logo.png"/>
+            </div>
+            <div class="barangay__div2__rightcol centeredflex">
+                <img class="image4__container" alt="image" src="../../static/images/chairman.jpg"/>
+            </div>
+        </div>
+        <div class="barangay__div3__headtext">
+            <p class="barangay__headtext1"> The Barangay </p>
+            <p class="barangay__headtext2"> Chairman </p>
+        </div>
+        <div class="barangay__div3__subtext">
+            <p class="barangay__subtext"> Elpidio "Popoy" Bunag </p>
+            <p class="chairman__text container"> SI Elpidio “POPOY” Bunag ang punong chairman ng minamahal na Barangay
+                Sta. Lucia,
+                ipinagpatuloy niya ang tapat na serbisyo para sa Barangay Sta. lucia. </p>
+        </div>
+    </div>
+</div>
+<div class="home__contactuscont">
+    <img class="contactus__bgimg" alt="Image" src="../../static/images/aboutus.png"/>
+</div>
+<div class="container centeredflex">
+    <div class="contactus__cont">
+        <div class="">
+            <p class="contactus__subtext1 right">7791-8283</p>
+            <p class="contactus__bodytext1 right">Brgy. Sta. Lucia</p>
+            <p class="contactus__subtext2 right">0917-1221857</p>
+            <p class="contactus__bodytext2 right">Brgy. Sta. Lucia</p>
+            <p class="contactus__subtext3 right">0998-5987880</p>
+            <p class="contactus__bodytext3 right">Police Station</p>
+            <p class="contactus__subtext4 right">0998-5787874</p>
+            <p class="contactus__bodytext4 right">EPD Headquarters</p>
+            <p class="contactus__headtext1 right">BARANGAY SECURITY FORCE</p>
+            <p class="contactus__headtext right">CONTACT US</p>
+        </div>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='scripts/logoutconfirm.js') }}"></script>
+</body>
+</html>
