@@ -147,20 +147,7 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* -------------------------------------------------------------------------------------------------------HEADER CSS */
 
 .header__backgroundtop {
   position: absolute;
@@ -248,6 +235,46 @@ body {
   color: rgba(255, 253, 209, 1);
 }
 
+.header__dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.header__dropdownbtn{
+  color: white;
+  border: none;
+  margin-top: 0em;
+}
+
+.header__dropdowncontent {
+  display: none;
+  position: absolute;
+  margin-top: -1.2em;
+  background-color: rgba(16, 98, 14, 1);
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border: 2px solid rgba(255, 253, 209, 1);
+  z-index: 1;
+}
+
+.header__dropdowncontent a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.header__dropdowncontent a:hover {
+  background-color: rgba(55, 120, 32, 1);
+}
+
+.header__dropdown:hover .header__dropdowncontent {
+  display: block;
+}
+
+.header__dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
 
 
 
@@ -259,13 +286,7 @@ body {
 
 
 
-
-
-
-
-
-
-
+/* -------------------------------------------------------------------------------------------------------LOGIN CSS */
 
 .login {
   background-color: #FFFDD1;
@@ -338,14 +359,7 @@ body {
 
 
 
-
-
-
-
-
-
-
-
+/* -------------------------------------------------------------------------------------------------------HOME CSS */
 
 .home {
   background-color: rgba(255, 253, 209, 1);
@@ -445,6 +459,14 @@ body {
   box-shadow: 10px 10px 5px  rgba(55, 120, 32, 1);
 }
 
+.recent__image1:hover,
+.recent__image2:hover,
+.recent__image3:hover {
+  box-shadow: 10px 10px 5px  rgba(55, 120, 32, 1);
+  transform: scale(1.1);
+  transition: 0.3s;
+} 
+
 .recent__image1 {
   margin-left: 0em;
 }
@@ -524,17 +546,11 @@ body {
 
 
 
-
-
-
-
-
-
+/* -------------------------------------------------------------------------------------------------------THE BARANGAY CSS */
 
 .barangay {
     background-color: rgba(255, 253, 209, 1);
 }
-
 
 .barangay__headertext {
   margin-top: 0.2em;
@@ -660,6 +676,7 @@ body {
   color: rgb(0, 0, 0);
   font-weight: 400;
 }
+
 .otext1 {
   margin-top: 1.5em;
 }
@@ -721,6 +738,14 @@ body {
   border-style: solid;
   border-color: rgba(255, 253, 209, 1);
   background-color: #ffffff;
+}
+
+.image1__container:hover,
+.image2__container:hover,
+.image4__container:hover {
+  box-shadow: 10px 10px 5px  rgba(55, 120, 32, 1);
+  transform: scale(1.1);
+  transition: 0.3s;
 }
 
 .barangay__div1__leftcol {
@@ -842,7 +867,6 @@ body {
   margin-bottom: 2em;
 }
 
-
 .contactus__subtext1, .contactus__subtext2,
 .contactus__subtext3, .contactus__subtext4 {
   width: 40vw;
@@ -857,6 +881,13 @@ body {
 
 
 
+
+
+
+
+
+
+/* -------------------------------------------------------------------------------------------------------FACILITIES CSS */
 
 .facilities {
   background-color: rgba(255, 253, 209, 1);
@@ -1080,60 +1111,47 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-/* DEVIATED FROM ORIG CSS STARTING HERE----------------------------------------------------------------------------------------*/
-
-
-
+/* -------------------------------------------------------------------------------------------------------FACILITY RESERVATION CSS */
 
 .reservation {
   background-color: rgba(255, 253, 209, 1);
 }
 
 .reservation__formcont {
-    background-color: rgba(55, 120, 32, 1);
-    padding: 1.5em;
-    border: none;
-    border-radius: 30px;
-    width: 50.3vw;
+  background-color: rgba(55, 120, 32, 1);
+  padding: 1.5em;
+  border: none;
+  border-radius: 30px;
+  width: 50.3vw;
 }
 
 .reservation__image {
-    margin-right: 3em;
-    height: 38em;
-    width: 25em;
-    border: none;
-    border-radius: 30px;
+  margin-right: 3em;
+  height: 38em;
+  width: 25em;
+  border: none;
+  border-radius: 30px;
 }
 
 .reservation__headertxt {
-    text-align: center;
-    margin-top: 0em;
-    margin-bottom: 0.5em;
-    font-size: 3.5em;
-    font-weight: 900;
-    -webkit-text-stroke-width: 3px;
+  text-align: center;
+  margin-top: 0em;
+  margin-bottom: 0.5em;
+  font-size: 3.5em;
+  font-weight: 900;
+  -webkit-text-stroke-width: 3px;
 }
 
 .reservation__formlabel {
-    font-size: 1em;
-    font-weight: 900;
-    margin-top: 0.6em;
-    margin-bottom: 1em;
-    color: rgba(255, 253, 209, 1);
+  font-size: 1em;
+  font-weight: 900;
+  margin-top: 0.6em;
+  margin-bottom: 1em;
+  color: rgba(255, 253, 209, 1);
 }
 
 .formlabelName {
-    margin-top: 0em;
+  margin-top: 0em;
 }
 
 .reservation__inputName,
@@ -1141,44 +1159,44 @@ body {
 .reservation__inputAttendees,
 .reservation__inputDate,
 .reservation__inputTime {
-    width: 39vw;
-    padding: 0.5em;
-    margin-left: 1em;
-    margin-bottom: 1em;
-    border: 3px solid #f2f2f2;
-    border-radius: 20px;
-    font-size: 1em;
-    background-color: #f2f2f2;
+  width: 39vw;
+  padding: 0.5em;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  border: 3px solid #f2f2f2;
+  border-radius: 20px;
+  font-size: 1em;
+  background-color: #f2f2f2;
 }
 
 .reservation__inputName {
-    width: 43.5vw;
+  width: 43.5vw;
 }
 
 .reservation__inputPurpose {
-    width: 33.5em;
+  width: 33.5em;
 }
 
 .reservation__inputAttendees {
-    width: 30.3em;
+  width: 30.3em;
 }
 
 .reservation__formsubmit {
-    cursor: pointer;
-    margin-top: 3vh;
-    height: 6vh;
-    width: 15vw;
-    font-size: 1em;
-    border: none;
-    border-radius: 50px;
-    color: black;
-    background-color: rgba(255, 253, 209, 1);
+  cursor: pointer;
+  margin-top: 3vh;
+  height: 6vh;
+  width: 15vw;
+  font-size: 1em;
+  border: none;
+  border-radius: 50px;
+  color: black;
+  background-color: rgba(255, 253, 209, 1);
 }
 
 .reservation__formsubmit:hover {
-    transition: 0.2s;
-    color: rgba(255, 253, 209, 1);
-    background-color: rgb(48, 48, 48);
+  transition: 0.2s;
+  color: rgba(255, 253, 209, 1);
+  background-color: rgb(48, 48, 48);
 }
 
 .reservation__todaybox {
@@ -1222,12 +1240,12 @@ body {
 }
 
 .table__row5em {
-    height: 5em;
+  height: 5em;
 }
 
 .table__header {
-    padding-top: 1em;
-    font-size: 1.5em;
+  padding-top: 1em;
+  font-size: 1.5em;
 }
 
 
@@ -1240,65 +1258,58 @@ body {
 
 
 
-
-
-
-
-
-/*----------------------------------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------------FACILITY RESERVATION ADMIN CSS */
 
 .reservation {
-    background-color: rgba(255, 253, 209, 1);
+  background-color: rgba(255, 253, 209, 1);
 }
 
 .reservation__label {
-    margin-top: 0em;
-    margin-bottom: 0em;
-    font-size: 3.8em;
-    font-weight: 900;
-    -webkit-text-stroke-width: 3px;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-size: 3.8em;
+  font-weight: 900;
+  -webkit-text-stroke-width: 3px;
 }
 
 .reservationadmin__dayLabel {
-    font-size: 2em;
-    font-weight: 700;
-    -webkit-text-stroke-width: 2px;
+  font-size: 2em;
+  font-weight: 700;
+  -webkit-text-stroke-width: 2px;
 }
 
-
-
 .reservationadmin__tableheader {
-    height: 4vw;
-    font-size: 1em;
+  height: 4vw;
+  font-size: 1em;
 }
 
 .reservationadmin__tablerow {
-    min-height: 4vw;
-    font-size: 1em;
+  min-height: 4vw;
+  font-size: 1em;
 }
 
 .reservationadmin__name {
-    padding-left: 1vw;
-    width: 30%;
+  padding-left: 1vw;
+  width: 30%;
 }
 
 .reservationadmin__purpose {
-    width: 40%;
+  width: 40%;
 }
 
 .reservationadmin__attendees {
-    width: 10%;
-    text-align: center;
+  width: 10%;
+  text-align: center;
 }
 
 .reservationadmin__date {
-    width: 10%;
-    text-align: center;
+  width: 10%;
+  text-align: center;
 }
 
 .reservationadmin__time {
-    width: 10%;
-    text-align: center;
+  width: 10%;
+  text-align: center;
 }
 
 
@@ -1311,162 +1322,132 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*----------------------------------------------------------------------------------------------------------------------------*/
-
-
+/* -------------------------------------------------------------------------------------------------------RESIDENTS LIST CSS */
 
 .residents {
-    background-color: rgba(255, 253, 209, 1);
+  background-color: rgba(255, 253, 209, 1);
 }
 
 .residents__label {
-    margin-top: 0em;
-    margin-bottom: 0em;
-    font-size: 3.8em;
-    font-weight: 900;
-    -webkit-text-stroke-width: 3px;
-    /* text-shadow: 0px 7px rgb(157, 157, 157); */
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-size: 3.8em;
+  font-weight: 900;
+  -webkit-text-stroke-width: 3px;
 }
 
 .residents__searchtxt {
-    display: flex;
-    height: 2em;
-    width: 35em;
-    padding-left: 2vw;
-    padding-right: 2vw;
-    margin-top: 0vh;
-    margin-left: 4vw;
-    font-size: 1em;
-    color: black;
-    border: none;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
-    background-color: white;
-    text-align: center;
+  display: flex;
+  height: 2em;
+  width: 35em;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  margin-top: 0vh;
+  margin-left: 4vw;
+  font-size: 1em;
+  color: black;
+  border: none;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  background-color: white;
+  text-align: center;
 }
 
 .residents__searchbtn,
 .residents__addbtn {
-    cursor: pointer;
-    height: 2em;
-    width: 8em;
-    font-size: 1em;
-    color: white;
-    background-color: rgba(16, 98, 14, 1);
+  cursor: pointer;
+  height: 2em;
+  width: 8em;
+  font-size: 1em;
+  color: white;
+  background-color: rgba(16, 98, 14, 1);
 }
 
 .residents__searchbtn {
-    border: none;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
+  border: none;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 
 .residents__addbtn {
-    margin-left: 10em;
-    width: 10em;
-    border: none;
-    border-radius: 50px;
+  margin-left: 10em;
+  width: 10em;
+  border: none;
+  border-radius: 50px;
 }
 
 .residents__searchbtn:hover,
 .residents__addbtn:hover {
-    transition: 0.3s;
-    background-color: rgba(55, 120, 32, 1);
+  transition: 0.3s;
+  background-color: rgba(55, 120, 32, 1);
 }
 
 .residents table {
-    width: 90vw;
-    border-collapse: collapse;
-    background-color: white;
+  width: 90vw;
+  border-collapse: collapse;
+  background-color: white;
 }
 
 .residents td {
-    border: 1px solid black;
+  border: 1px solid black;
 }
 
-
-
 .residents__tableheader {
-    height: 4vw;
-    font-size: 1em;
+  height: 4vw;
+  font-size: 1em;
 }
 
 .residents__tablerow {
-    height: 4vw;
-    font-size: 1em;
+  height: 4vw;
+  font-size: 1em;
 }
 
 .residents__brdynum {
-    width: 10%;
-    text-align: center;
+  width: 10%;
+  text-align: center;
 }
 
 .residents__name {
-    padding: 0.5vw;
-    width: 25%;
+  padding: 0.5vw;
+  width: 25%;
 }
 
 .residents__sex {
-    width: 3%;
-    text-align: center;
+  width: 3%;
+  text-align: center;
 }
 
 .residents__bdate {
-    width: 8%;
-    text-align: center;
+  width: 8%;
+  text-align: center;
 }
 
 .residents__relocation {
-    width: 4%;
-    text-align: center;
+  width: 4%;
+  text-align: center;
 }
 
 .residents__address {
-    padding: 0.5vw;
-    width: 35%;
+  padding: 0.5vw;
+  width: 35%;
 }
 
 .residents__operation {
-    width: 5%;
-    text-align: center;
+  width: 5%;
+  text-align: center;
 }
 
 .residents__edit {
-    cursor: pointer;
-    width: 5%;
-    text-align: center;
-    color: white;
-    background-color: rgba(16, 98, 14, 1);
+  cursor: pointer;
+  width: 5%;
+  text-align: center;
+  color: white;
+  background-color: rgba(16, 98, 14, 1);
 }
 .residents__edit:hover {
-    transition: 0.2s;
-    color: black;
-    background-color: yellow;
+  transition: 0.2s;
+  color: black;
+  background-color: yellow;
 }
 
 
@@ -1479,36 +1460,7 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*----------------------------------------------------------------------------------------------------------------------------*/
-
-
+/* -------------------------------------------------------------------------------------------------------USER PROFILE CSS */
 
 .profile {
   background-color: rgba(255, 253, 209, 1);
@@ -1657,37 +1609,7 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*----------------------------------------------------------------------------------------------------------------------------*/
-
-
-
+/* -------------------------------------------------------------------------------------------------------USER ADD/EDIT CSS */
 
 .profileedit {
   background-color: rgba(255, 253, 209, 1);
@@ -1758,7 +1680,6 @@ body {
   color: blue;
 }
 
-
 .profileedit__savebtn,
 .profileedit__addbtn,
 .profileedit__otherbtns,
@@ -1787,13 +1708,6 @@ body {
   transition: 0.3s;
   background-color: rgba(0, 136, 53);
 }
-
-
-
-
-
-
-
 
 .profileedit__popup {
   background-color: rgba(55, 120, 32, 1);
@@ -1879,38 +1793,7 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*----------------------------------------------------------------------------------------------------------------------------*/
-
-
-
+/* -------------------------------------------------------------------------------------------------------ITEM RENTING CSS */
 
 .renting {
   background-color: rgba(255, 253, 209, 1);
@@ -1960,8 +1843,6 @@ body {
   margin-left: 0.5em;
 }
 
-
-
 .renting__formcont {
   height: fit-content;
   width: 70%;
@@ -1970,7 +1851,6 @@ body {
   border: none;
   border-radius: 30px;
 }
-
 
 .renting__formlabel,
 .renting__itemssection {
@@ -2063,41 +1943,7 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*----------------------------------------------------------------------------------------------------------------------------*/
-
-
-
+/* -------------------------------------------------------------------------------------------------------ITEM TRACKER CSS */
 
 .tracker {
   background-color: rgba(255, 253, 209, 1);
@@ -2117,7 +1963,6 @@ body {
   font-weight: 600;
   -webkit-text-stroke-width: 1px;
 }
-
 
 .tracker__itemlabel,
 .tracker__itemlabel2 {
@@ -2146,10 +1991,6 @@ body {
   border-collapse: collapse;
   background-color: rgba(244, 238, 238, 1);
 }
-
-
-
-
 
 .tracker__tableheader {
   height: 4vw;
@@ -2205,45 +2046,8 @@ body {
 
 
 
+/* -------------------------------------------------------------------------------------------------------MEDIA QUERIES CSS */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
 /* 2xl */
 @media (max-width: 1536px) {
   .container {
