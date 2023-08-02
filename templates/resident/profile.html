@@ -27,11 +27,21 @@
                     <li onclick="window.location.href='{{ url_for('resident_views.resident_facilities') }}'">
                         Facilities
                     </li>
-                    <li onclick="window.location.href='{{ url_for('resident_views.resident_services') }}'">Services</li>
+                    <li class="header__dropdown">
+                        <p class="header__dropdownbtn">Services</p>
+                        <div class="header__dropdowncontent">
+                            <a href="{{ url_for('resident_views.resident_facilities_court1') }}">Maligaya Court Reservation</a>
+                            <a href="{{ url_for('resident_views.resident_facilities_court2') }}">Countryside Court Reservation</a>
+                            <a href="{{ url_for('resident_views.resident_facilities_tennis_court') }}">Tennis Court Reservation</a>
+                            <a href="{{ url_for('resident_views.resident_services') }}">Item
+                                Reservation</a>
+                        </div>
+                    </li>
                     {% if current_user.is_authenticated %}
                         <li onclick="window.location.href='{{ url_for('resident_views.resident_profile', username=current_user.username) }}'">
                             Profile
                         </li>
+
                         <li id="logoutBtn">Logout</li>
                     {% else %}
                         <li onclick="window.location.href='{{ url_for('views.login') }}'">Login</li>
@@ -47,7 +57,7 @@
     <div class="centeredflex top2em">
         <img class="profile__image" alt="Profile Picture" src="../../static/images/chairman.jpg"/>
     </div>
-    <p class="profile__name">Harold Russell Potestas Visperas</p>
+    <p class="profile__name">{{ resident_full_name }}</p>
     <p class="profile__guidetext">Basic Information</p>
 </div>
 
@@ -58,7 +68,7 @@
                 <p class="textleft webkitwidth2">Barangay Number: </p>
             </div>
             <div class="width70">
-                <p class="textright">2021100518</p>
+                <p class="textright">{{ resident_barangay_number }}</p>
             </div>
         </div>
         <div class="profile__inforow centeredflex">
@@ -66,7 +76,7 @@
                 <p class="textleft webkitwidth2">Sex: </p>
             </div>
             <div class="width70">
-                <p class="textright">M</p>
+                <p class="textright">{{ resident_sex }}</p>
             </div>
         </div>
         <div class="profile__inforow centeredflex">
@@ -74,7 +84,7 @@
                 <p class="textleft webkitwidth2">Username: </p>
             </div>
             <div class="width70">
-                <p class="textright">haroldrussellvisperas</p>
+                <p class="textright">{{ resident_username }}</p>
             </div>
         </div>
         <div class="profile__infolastrow flex">
@@ -94,7 +104,7 @@
                 <p class="textleft webkitwidth2">Birthdate: </p>
             </div>
             <div class="width70">
-                <p class="textright">9/17/2002</p>
+                <p class="textright">{{ resident_birthdate }}</p>
             </div>
         </div>
         <div class="profile__inforow centeredflex">
@@ -102,7 +112,7 @@
                 <p class="textleft webkitwidth2">Relocation Year: </p>
             </div>
             <div class="width70">
-                <p class="textright">2012</p>
+                <p class="textright">{{ resident_relocation_year }}</p>
             </div>
         </div>
         <div class="profile__infolastrow centeredflex">
@@ -110,7 +120,7 @@
                 <p class="textleft webkitwidth2">Address: </p>
             </div>
             <div class="width70">
-                <p class="textright">Blk 29 L 14 Malugay Street, Rosario Subdivision</p>
+                <p class="textright">{{ resident_address }}</p>
             </div>
         </div>
     </div>

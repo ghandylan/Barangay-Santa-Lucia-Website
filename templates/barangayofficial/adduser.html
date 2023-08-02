@@ -60,7 +60,7 @@
 </div>
 
 
-<form method="POST" action="{{ url_for('brngyofficial_views.barangay_official_add_residents') }}">
+<form action="{{ url_for('brngyofficial_views.barangay_official_add_residents')}}" method="POST">
     <div class="container profile__topinfocont top-1em">
         <div class="centeredflex top2em">
             <img class="profile__image" id="profileimage" alt="Profile Picture"
@@ -138,20 +138,6 @@
         </div>
     </div>
 
-
-{#    <div class="profileedit__popup">#}
-{#        <button class="profileedit__popupexitbutton" id="editclose">&times;</button>#}
-{#        <p class="profileedit__popuplabelnew">New Password</p>#}
-{#        <input class="profile__popupnewpass" type="password" id="changenewpass" name="changenewpass"#}
-{#               placeholder="Enter New Password" required>#}
-{#        <p class="profile__popuplabel">Confirm New Password</p>#}
-{#        <input class="profile__popupconfirmpass" type="password" id="changeconfirmpass" name="changeconfirmpass"#}
-{#               placeholder="Re-enter New Password" required>#}
-{#        <div class="centeredflex">#}
-{#            <input class="profileedit__popupsavebtn" type="" value="Submit">#}
-{#        </div>#}
-{#    </div>#}
-
     <div class="centeredflex">
         <input type="submit" value="Submit" class="profileedit__savebtn">
         <input class="profileedit__cancelbtn" type="button" value="Cancel"
@@ -159,6 +145,20 @@
     </div>
 </form>
 
+<form method="POST" action="{{ url_for('brngyofficial_views.barangay_official_add_residents_password') }}">
+    <div class="profileedit__popup">
+        <button class="profileedit__popupexitbutton" id="editclose">&times;</button>
+        <p class="profileedit__popuplabelnew">New Password</p>
+        <input class="profile__popupnewpass" type="password" id="changenewpass" name="changenewpass"
+               placeholder="Enter New Password" required>
+        <p class="profile__popuplabel">Confirm New Password</p>
+        <input class="profile__popupconfirmpass" type="password" id="changeconfirmpass" name="changeconfirmpass"
+               placeholder="Re-enter New Password" required>
+        <div class="centeredflex">
+            <input class="profileedit__popupsavebtn" type="submit" value="Submit">
+        </div>
+    </div>
+</form>
 
 <script src="{{ url_for('static', filename='scripts/previewimage.js') }}"></script>
 <script src="{{ url_for('static', filename='scripts/editpopup.js') }}"></script>

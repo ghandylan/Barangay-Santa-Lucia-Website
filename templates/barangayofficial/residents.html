@@ -65,8 +65,10 @@
 </div>
 
 <div class="container centeredflex top4em">
-    <input type="text" class="residents__searchtxt" name="search" placeholder="Search a resident">
-    <input type="submit" class="residents__searchbtn" name="submit" value="Enter">
+    <form action="{{ url_for('brngyofficial_views.barangay_official_search_residents') }}" method="POST">
+        <input type="text" class="residents__searchtxt" name="search" placeholder="Search a resident">
+        <input type="submit" class="residents__searchbtn" name="submit" value="Enter">
+    </form>
     <button class="residents__addbtn"
             onclick="window.location.href='{{ url_for('brngyofficial_views.barangay_official_add_residents') }}'">Add
         Resident
@@ -84,44 +86,23 @@
             <td class="residents__tableheader residents__address textalign">Address</td>
             <td class="residents__tableheader residents__operation">Operation</td>
         </tr>
-        <tr class="residents__tablerow">
-            <td class="residents__brdynum">2021100518</td>
-            <td class="residents__name">Harold Russell Potestas Visperas</td>
-            <td class="residents__sex">M</td>
-            <td class="residents__bdate">9/17/2002</td>
-            <td class="residents__relocation">2012</td>
-            <td class="residents__address">B 24 L 15 Malugay Street, Rosario Subdivision</td>
-            <td class="residents__edit" onclick="window.location.href='draft-residents.html'">Edit</td>
-        </tr>
-        <tr class="residents__tablerow">
-            <td class="residents__brdynum">2021100518</td>
-            <td class="residents__name">Harold Russell Potestas Visperas</td>
-            <td class="residents__sex">M</td>
-            <td class="residents__bdate">9/17/2002</td>
-            <td class="residents__relocation">2012</td>
-            <td class="residents__address">B 24 L 15 Malugay Street, Rosario Subdivision</td>
-            <td class="residents__edit" onclick="window.location.href='draft-residents.html'">Edit</td>
-        </tr>
-        <tr class="residents__tablerow">
-            <td class="residents__brdynum">2021100518</td>
-            <td class="residents__name">Harold Russell Potestas Visperas</td>
-            <td class="residents__sex">F</td>
-            <td class="residents__bdate">9/17/2002</td>
-            <td class="residents__relocation">2012</td>
-            <td class="residents__address">B 24 L 15 Malugay Street, Rosario Subdivision</td>
-            <td class="residents__edit" onclick="window.location.href='draft-residents.html'">Edit</td>
-        </tr>
-        <tr class="residents__tablerow">
-            <td class="residents__brdynum">2021100518</td>
-            <td class="residents__name">Harold Russell Potestas Visperas</td>
-            <td class="residents__sex">F</td>
-            <td class="residents__bdate">9/17/2002</td>
-            <td class="residents__relocation">2012</td>
-            <td class="residents__address">B 24 L 15 Malugay Street, Rosario Subdivision</td>
-            <td class="residents__edit" onclick="window.location.href='draft-residents.html'">Edit</td>
-        </tr>
+        {% for data in residents %}
+            <tr class="residents__tablerow">
+                <td class="residents__brdynum">{{ data.barangay_number }}</td>
+                <td class="residents__name">{{ data.full_name }}</td>
+                <td class="residents__sex">{{ data.sex }}</td>
+                <td class="residents__bdate">{{ data.birthdate }}</td>
+                <td class="residents__relocation">{{ data.relocation_year }}</td>
+                <td class="residents__address">{{ data.address }}</td>
+                <td class="residents__edit">
+                    <a id="edit__btn"
+                       href="{{ url_for('brngyofficial_views.barangay_official_edit_residents', barangay_number=data.barangay_number) }}">Edit</a>
+                </td>
+            </tr>
+        {% endfor %}
     </table>
 </div>
 <script src="{{ url_for('static', filename='scripts/logoutconfirm.js') }}"></script>
+<script src="{{ url_for('static', filename='scripts/getuserid.js') }}"></script>
 </body>
 </html>

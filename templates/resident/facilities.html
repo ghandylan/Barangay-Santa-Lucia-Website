@@ -18,12 +18,29 @@
             </div>
             <div class="header__section1-2">
                 <ul>
-                     <li class="firstlist" onclick="window.location.href='{{ url_for('resident_views.resident_home') }}'">Home</li>
-                    <li onclick="window.location.href='{{ url_for('resident_views.resident_the_barangay') }}'">The Barangay</li>
-                    <li onclick="window.location.href='{{ url_for('resident_views.resident_facilities') }}'">Facilities</li>
-                    <li onclick="window.location.href='{{ url_for('resident_views.resident_services') }}'">Services</li>
+                    <li class="firstlist"
+                        onclick="window.location.href='{{ url_for('resident_views.resident_home') }}'">Home
+                    </li>
+                    <li onclick="window.location.href='{{ url_for('resident_views.resident_the_barangay') }}'">The
+                        Barangay
+                    </li>
+                    <li onclick="window.location.href='{{ url_for('resident_views.resident_facilities') }}'">
+                        Facilities
+                    </li>
+                    <li class="header__dropdown">
+                        <p class="header__dropdownbtn">Services</p>
+                        <div class="header__dropdowncontent">
+                            <a href="{{ url_for('resident_views.resident_facilities_court1') }}">Maligaya Court Reservation</a>
+                            <a href="{{ url_for('resident_views.resident_facilities_court2') }}">Countryside Court Reservation</a>
+                            <a href="{{ url_for('resident_views.resident_facilities_tennis_court') }}">Tennis Court Reservation</a>
+                            <a href="{{ url_for('resident_views.resident_services') }}">Item
+                                Reservation</a>
+                        </div>
+                    </li>
                     {% if current_user.is_authenticated %}
-                        <li onclick="window.location.href='{{ url_for('resident_views.resident_profile', username=current_user.username) }}'">Profile</li>
+                        <li onclick="window.location.href='{{ url_for('resident_views.resident_profile', username=current_user.username) }}'">
+                            Profile
+                        </li>
 
                         <li id="logoutBtn">Logout</li>
                     {% else %}
@@ -70,7 +87,9 @@
             We provide and serve as a vibrant place for forming a well-developed
             community that established unity between residents and reaching our
             maximum potential by providing the best services and contributions here in our communit. </p>
-        <button class="reservebtn1 centeredflex" onclick="window.location.href='{{ url_for('resident_views.resident_facilities_tennis_court') }}';"> Reserve Here
+        <button class="reservebtn1 centeredflex"
+                onclick="window.location.href='{{ url_for('resident_views.resident_facilities_tennis_court') }}';">
+            Reserve Here
         </button>
     </div>
 </div>
@@ -85,7 +104,9 @@
             We provide and serve as a vibrant place for forming a well-developed
             community that established unity between residents and reaching our
             maximum potential by providing the best services and contributions here in our community. </p>
-        <button class="reservebtn2 centeredflex" onclick="window.location.href='{{ url_for('resident_views.resident_facilities_court1') }}';"> Reserve Here
+        <button class="reservebtn2 centeredflex"
+                onclick="window.location.href='{{ url_for('resident_views.resident_facilities_court1') }}';"> Reserve
+            Here
         </button>
     </div>
     <div class="fac2__rightcont">
@@ -113,7 +134,9 @@
             community that established unity between residents and reaching our
             maximum potential by providing the best services and contributions here in our community.
         </p>
-        <button class="reservebtn3 centeredflex" onclick="window.location.href='{{ url_for('resident_views.resident_facilities_court2') }}';"> Reserve Here
+        <button class="reservebtn3 centeredflex"
+                onclick="window.location.href='{{ url_for('resident_views.resident_facilities_court2') }}';"> Reserve
+            Here
         </button>
     </div>
 </div>

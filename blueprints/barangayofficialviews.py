@@ -1,6 +1,6 @@
 import uuid
 
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, redirect, url_for
 from flask_login import login_required
 
 from models import Resident, db
@@ -29,31 +29,46 @@ def barangay_official_facilities():
 @brngyofficial_views_blueprint.route('/barangay_official/residents')
 @login_required
 def barangay_official_residents():
-    return render_template('barangayofficial/residents.html')
+    residents = Resident.query.all()
+    return render_template('barangayofficial/residents.html', residents=residents)
 
 
 @brngyofficial_views_blueprint.route('/barangay_official/residents/add', methods=['POST', 'GET'])
 @login_required
 def barangay_official_add_residents():
-    # create a minimized uuidv4
-    resident_id = str(uuid.uuid4())[:8]
-
-    # profile_picture = request.form.get('profile_picture')
-    full_name = request.form.get('fullname')
-    barangay_number = uuid.uuid4()
-    sex = request.form.get('sex')
-    username = request.form.get('username')
-    # password = request.form.get('password')
-
-    birth_date = request.form.get('birthdate')
-    relocation_year = request.form.get('relocationyear')
-    address = request.form.get('address')
     if request.method == 'POST':
+        resident_id = str(uuid.uuid4())[:8]
+
+        # profile_picture = request.form.get('profile_picture')
+        full_name = request.form.get('fullname')
+        barangay_number = uuid.uuid4()
+        sex = request.form.get('sex')
+        username = request.form.get('username')
+
+        birth_date = request.form.get('birthdate')
+        relocation_year = request.form.get('relocationyear')
+        address = request.form.get('address')
         new_resident = Resident(id=resident_id, photo=None, full_name=full_name, barangay_number=barangay_number,
-            sex=sex, username=username, password=None, birthdate=birth_date, relocation_year=relocation_year,
-            address=address)
+                                sex=sex, username=username, password=None, birthdate=birth_date,
+                                relocation_year=relocation_year, address=address)
 
         db.session.add(new_resident)
+        db.session.commit()
+
+        return redirect(url_for('brngyofficial_views.barangay_official_residents'))
+
+    return render_template('barangayofficial/adduser.html')
+
+
+@brngyofficial_views_blueprint.route('/barangay_official/residents/add_password', methods=['POST', 'GET'])
+@login_required
+def barangay_official_add_residents_password():
+    if request.method == 'POST':
+        resident_id = request.form.get('resident_id')
+        password = request.form.get('password')
+
+        resident = Resident.query.filter_by(id=resident_id).first()
+        resident.password = password
         db.session.commit()
 
         return render_template('barangayofficial/residents.html')
@@ -61,7 +76,67 @@ def barangay_official_add_residents():
     return render_template('barangayofficial/adduser.html')
 
 
-# @brngyofficial_views_blueprint.route('/', methods=['GET', 'POST'])
+@brngyofficial_views_blueprint.route('/barangay_official/residents/edit/<string:barangay_number>',
+                                     methods=['POST', 'GET'])
+@login_required
+def barangay_official_edit_residents(barangay_number):
+    # photo = Resident.query.filter_by(barangay_number=barangay_number).first().photo
+    username = Resident.query.filter_by(barangay_number=barangay_number).first().username
+    resident = Resident.query.filter_by(barangay_number=barangay_number).first()
+    sex = Resident.query.filter_by(barangay_number=barangay_number).first().sex
+    full_name = Resident.query.filter_by(barangay_number=barangay_number).first().full_name
+    birth_date = Resident.query.filter_by(barangay_number=barangay_number).first().birthdate
+    relocation_year = Resident.query.filter_by(barangay_number=barangay_number).first().relocation_year
+    address = Resident.query.filter_by(barangay_number=barangay_number).first().address
+    if request.method == 'POST':
+        # new_photo = request.form.get('changeprofileimage')
+        new_full_name = request.form.get('fullname')
+        new_sex = request.form.get('sex')
+        new_username = request.form.get('username')
+        new_birth_date = request.form.get('birthdate')
+        new_relocation_year = request.form.get('relocationyear')
+        new_address = request.form.get('address')
+
+        resident = Resident.query.filter_by(barangay_number=barangay_number).first()
+
+        # resident.photo = new_photo
+        resident.full_name = new_full_name
+        resident.sex = new_sex
+        resident.username = new_username
+        resident.birthdate = new_birth_date
+        resident.relocation_year = new_relocation_year
+        resident.address = new_address
+
+        db.session.add(resident)
+        db.session.commit()
+
+        return redirect(url_for('brngyofficial_views.barangay_official_residents'))
+
+    return render_template('barangayofficial/edituser.html', barangay_number=barangay_number, username=username,
+                           resident=resident, sex=sex, full_name=full_name, birth_date=birth_date,
+                           relocation_year=relocation_year, address=address)
+
+
+@brngyofficial_views_blueprint.route('/barangay_official/residents/delete/<string:barangay_number>', methods=['POST', 'GET'])
+@login_required
+def barangay_official_delete_resident(barangay_number):
+    if request.method == 'POST':
+        resident = Resident.query.filter_by(barangay_number=barangay_number).first()
+        db.session.delete(resident)
+        db.session.commit()
+
+    return redirect(url_for('brngyofficial_views.barangay_official_residents'))
+
+
+@brngyofficial_views_blueprint.route('/barangay_official/residents/search', methods=['POST', 'GET'])
+@login_required
+def barangay_official_search_residents():
+    if request.method == 'POST':
+        search = request.form.get('search')
+        residents = Resident.query.filter(Resident.full_name.contains(search)).all()
+        return render_template('barangayofficial/residents.html', residents=residents)
+    return render_template('barangayofficial/residents.html')
+
 
 @brngyofficial_views_blueprint.route('/barangay_official/services')
 @login_required

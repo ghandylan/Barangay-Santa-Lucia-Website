@@ -2036,6 +2036,10 @@ body {
   text-align: center;
 }
 
+#edit__btn {
+    color: rgba(255, 253, 209, 1);
+    text-decoration: none;
+}
 
 
 

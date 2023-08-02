@@ -17,13 +17,30 @@
                 <p class="header__text2">BARANGAY SANTA LUCIA</p>
             </div>
             <div class="header__section1-2">
-                <ul>
-                   <li class="firstlist" onclick="window.location.href='{{ url_for('resident_views.resident_home') }}'">Home</li>
-                    <li onclick="window.location.href='{{ url_for('resident_views.resident_the_barangay') }}'">The Barangay</li>
-                    <li onclick="window.location.href='{{ url_for('resident_views.resident_facilities') }}'">Facilities</li>
-                    <li onclick="window.location.href='{{ url_for('resident_views.resident_services') }}'">Services</li>
+              <ul>
+                    <li class="firstlist"
+                        onclick="window.location.href='{{ url_for('resident_views.resident_home') }}'">Home
+                    </li>
+                    <li onclick="window.location.href='{{ url_for('resident_views.resident_the_barangay') }}'">The
+                        Barangay
+                    </li>
+                    <li onclick="window.location.href='{{ url_for('resident_views.resident_facilities') }}'">
+                        Facilities
+                    </li>
+                    <li class="header__dropdown">
+                        <p class="header__dropdownbtn">Services</p>
+                        <div class="header__dropdowncontent">
+                            <a href="{{ url_for('resident_views.resident_facilities_court1') }}">Maligaya Court Reservation</a>
+                            <a href="{{ url_for('resident_views.resident_facilities_court2') }}">Countryside Court Reservation</a>
+                            <a href="{{ url_for('resident_views.resident_facilities_tennis_court') }}">Tennis Court Reservation</a>
+                            <a href="{{ url_for('resident_views.resident_services') }}">Item
+                                Reservation</a>
+                        </div>
+                    </li>
                     {% if current_user.is_authenticated %}
-                                                <li onclick="window.location.href='{{ url_for('resident_views.resident_profile', username=current_user.username) }}'">Profile</li>
+                        <li onclick="window.location.href='{{ url_for('resident_views.resident_profile', username=current_user.username) }}'">
+                            Profile
+                        </li>
 
                         <li id="logoutBtn">Logout</li>
                     {% else %}
