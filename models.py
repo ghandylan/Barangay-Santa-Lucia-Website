@@ -26,7 +26,7 @@ class BarangayOfficial(db.Model, UserMixin):
 
 
 class Resident(db.Model, UserMixin):
-    id = db.Column(db.String(255), primary_key=True)
+    id = db.Column(db.String(255), primary_key=True, default="some_default_value")
     photo = db.Column(db.LargeBinary)
     full_name = db.Column(db.String(255))
     barangay_number = db.Column(db.String(255))
@@ -37,8 +37,10 @@ class Resident(db.Model, UserMixin):
     relocation_year = db.Column(db.String(50))
     address = db.Column(db.String(255))
 
-    # Define a one-to-many relationship with MaligayaCourt_ReservationList
+    # Define a one-to-many relationship with MaligayaCourt_ReservationList, CountrysideCourt_ReservationList, TennisCourt_ReservationList
     reservations = db.relationship('MaligayaCourtReservationList', backref='resident', lazy=True)
+    countryside_reservations = db.relationship('CountrysideCourtReservationList', backref='resident', lazy=True)
+    tennis_reservations = db.relationship('TennisCourtReservationList', backref='resident', lazy=True)
 
 
 class MaligayaCourtReservationList(db.Model, UserMixin):
