@@ -41,14 +41,15 @@
         </div>
 
 
-        <div class = "container centeredflex">
+        <div class = "container centeredflex bottom2em">
             <div class = "renting__availabilitycont">
                 <div class = "centeredflex">
                     <img class = "renting__itemiconsfirst" alt="Chair Icon" src="images/chair.png"/>
                 </div>
                 <div class = "renting__availability centeredflex">
                     <p>Available || </p>
-                    <p class = "itemcount">20 sets</p>
+                    <p class = "itemcount">100</p>
+                    <p class = "itemcount">sets</p>
                 </div>
 
                 <div class = "centeredflex">
@@ -56,7 +57,8 @@
                 </div> 
                 <div class = "renting__availability centeredflex">
                     <p>Available || </p>
-                    <p class = "itemcount">25 pcs</p>
+                    <p class = "itemcount">50</p>
+                    <p class = "itemcount">pcs</p>
                 </div>
 
                 <div class = "centeredflex">
@@ -64,11 +66,10 @@
                 </div>
                 <div class = "renting__availability centeredflex">
                     <p>Available || </p>
-                    <p class = "itemcount">10 pcs</p>
+                    <p class = "itemcount">25</p>
+                    <p class = "itemcount">pcs</p>
                 </div>
-
             </div>
-
 
 
 
@@ -77,37 +78,47 @@
 
 
             <div class = "renting__formcont">
-                <div class = "centeredflex">
-                    <p class = "renting__formlabel red">Name</p>
-                    <p class = "renting__input blue">NAME NI USER</p>
-                </div>
-                <div class = "flex blue">
-                    <p>Rent Date</p>
-                    <input class = "renting__input" type="date" name = "rentdate" required>
-                </div>
-                <div class = "flex">
-                    <p>Address</p>
-                    <textarea class = "renting__input" name="address" required>ADDRESS NI USER</textarea>
-                </div>
+                <form action = "" method = "POST">
+                    <div class = "alignedflex top1em">
+                        <p class = "renting__formlabel">Name</p>
+                        <p class = "renting__inputName">NAME NI USER</p>
+                    </div>
+                    <div class = "alignedflex top1em">
+                        <p class = "renting__formlabel">Rent Date</p>
+                        <input class = "renting__input" type="date" name = "rentdate" required>
+                    </div>
+                    <div class = "alignedflex top1em">
+                        <p class = "renting__formlabel">Address</p>
+                        <textarea class = "renting__inputtextarea" name="address" required>ADDRESS NI USER</textarea>
+                    </div>
 
-                <div>
-                    <p>Items to be rented:</p>
-                </div>
-                <div class = "centeredflex">
-                    <p>Chairs:</p>
-                    <input class = "renting__chairinput" type="number" name = "chair" max = "20" required>
-                    <p>sets</p>
-                </div>
-                <div class = "centeredflex">
-                    <p>Tables:</p>
-                    <input class = "renting__tableinput" type="number" name = "table" max = "25" required>
-                    <p>pcs</p>
-                </div>
-                <div class = "centeredflex">
-                    <p>Tents:</p>
-                    <input class = "renting__tentinput" type="number" name = "tent" max = "10" required>
-                    <p>pcs</p>
-                </div>
-                
+                    <div>
+                        <p class = "renting__itemssection">Items to be rented:</p>
+                    </div>
+                    <div class = "centeredflex">
+                        <div class = "centeredflex">
+                            <p class = "renting__itemlabel">Chairs:</p>
+                            <input class = "renting__inputitem" type="number" name = "chair" min = "0" max = "100" value = "0" required>
+                            <p class = "renting__itemlabel">sets</p>
+                        </div>
+                        <div class = "centeredflex">
+                            <p class = "renting__itemlabel">Tables:</p>
+                            <input class = "renting__inputitem" type="number" name = "table" min = "0" max = "50" value = "0" required>
+                            <p class = "renting__itemlabel">pcs</p>
+                        </div>
+                        <div class = "centeredflex">
+                            <p class = "renting__itemlabel">Tents:</p>
+                            <input class = "renting__inputitem" type="number" name = "tent" min = "0" max = "25" value = "0" required>
+                            <p class = "renting__itemlabel">pcs</p>
+                        </div>
+                    </div>
+
+                    <div class = "centeredflex">
+                        <input class = "renting__formsubmit" type="submit" value="Submit">
+                    </div>
+                </form>    
             </div>
+            
+
+            
         </div>

@@ -22,7 +22,7 @@ body {
   margin-right: auto;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  background-color: rgba(255, 0, 0, 0.186);
+  /* background-color: rgba(255, 0, 0, 0.186); */
   /*--------------------tanggal background color--------------------*/
 }
 
@@ -61,6 +61,11 @@ body {
   justify-content: center;
 }
 
+.alignedflex {
+  display: flex;
+  align-items: center;
+}
+
 .rowgreen {
   background-color: rgba(16, 98, 14, 1);
   color: white
@@ -96,6 +101,10 @@ body {
 
 
 /*----------------------------------------------------------------------------------------------------------------------------*/
+
+.top1em {
+    margin-top: 1em;
+}
 
 .top-1em {
     margin-top: -1.5em;
@@ -1479,16 +1488,22 @@ body {
 
 
 .profileedit__savebtn,
+.profileedit__addbtn,
+.profileedit__otherbtns,
 .profileedit__cancelbtn {
   cursor: pointer;
   margin-bottom: 2em;
-  height: 8vh;
-  width: 18vw;
+  height: 6vh;
+  width: 15vw;
   font-size: 1.3em;
   border: none;
   border-radius: 50px;
   color: rgba(255, 253, 209, 1);
   background-color: rgba(55, 120, 32, 1);
+}
+
+.profileedit__otherbtns {
+  margin-left: 5vw;
 }
 
 .profileedit__cancelbtn {
@@ -1626,13 +1641,12 @@ body {
 
 
 .renting {
-  height: 200vh;
   background-color: rgba(255, 253, 209, 1);
 }
 
 .renting__header {
   margin-top: 0em;
-  margin-bottom: 0em;
+  margin-bottom: 1em;
   font-size: 3.5em;
   font-weight: 900;
   -webkit-text-stroke-width: 3px;
@@ -1666,7 +1680,8 @@ body {
   text-align: center;
   border: none;
   border-radius: 30px;
-  background-color: grey;
+  color: rgba(255, 253, 209, 1);
+  background-color: rgba(55, 120, 32, 1);
 }
 
 .renting__availability .itemcount{
@@ -1676,50 +1691,81 @@ body {
 
 
 .renting__formcont {
+  height: fit-content;
   width: 70%;
+  background-color: rgba(55, 120, 32, 1);
+  padding: 1.5em;
+  border: none;
+  border-radius: 30px;
 }
 
 
-.renting__formlabel {
+.renting__formlabel,
+.renting__itemssection {
   width: 20%;
   font-size: 1em;
   font-weight: 900;
-  /* margin-top: 0.6em;
-  margin-bottom: 1em; */
   color: rgba(255, 253, 209, 1);
 }
 
-.formlabelName {
-  margin-top: 0em;
+.renting__itemssection {
+  margin-top: 5em;
+  margin-bottom: 0em;
 }
 
-.renting__input {
+.renting__input, 
+.renting__inputName {
+  height: 2em;
   width: 95%;
   padding: 0.5em;
-  /* margin-left: 1em;
-  margin-right: 1em; */
-  /* margin-bottom: 1em; */
+  margin-right: 1em;
   border: 3px solid #f2f2f2;
   border-radius: 20px;
   font-size: 1em;
   background-color: #f2f2f2;
 }
 
-.reservation__inputName {
-  width: 43.5vw;
+.renting__inputName {
+  height: 2em;
+  font-size: 0.8em;
 }
 
-.reservation__inputPurpose {
-  width: 33.5em;
+.renting__inputtextarea {
+  margin-top: 1em;
+  margin-right: 1em;
+  padding: 0.5em;
+  min-width: 79%;
+  max-width: 79%;
+  min-height: 3em;
+  border: 3px solid #f2f2f2;
+  border-radius: 20px;
+  font-size: 1em;
+  background-color: #f2f2f2;
 }
 
-.reservation__inputAttendees {
-  width: 30.3em;
+.renting__itemlabel {
+  margin-top: 1.8em;
+  color: rgba(255, 253, 209, 1);
 }
 
-.reservation__formsubmit {
+.renting__inputitem {
+  height: 1em;
+  width: 20%;
+  padding: 0.5em;
+  margin-top: 1em;
+  margin-left: 1em;
+  margin-right: 0.5em;
+  border: 3px solid #f2f2f2;
+  border-radius: 20px;
+  font-size: 1em;
+  background-color: #f2f2f2;
+  text-align: right;
+}
+
+.renting__formsubmit {
   cursor: pointer;
-  margin-top: 3vh;
+  margin-top: 8vh;
+  margin-bottom: 2vh;
   height: 6vh;
   width: 15vw;
   font-size: 1em;
@@ -1729,11 +1775,155 @@ body {
   background-color: rgba(255, 253, 209, 1);
 }
 
-.reservation__formsubmit:hover {
+.renting__formsubmit:hover {
   transition: 0.2s;
   color: rgba(255, 253, 209, 1);
   background-color: rgb(48, 48, 48);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+.tracker {
+  background-color: rgba(255, 253, 209, 1);
+}
+
+.tracker__label {
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-size: 3.8em;
+  font-weight: 900;
+  -webkit-text-stroke-width: 3px;
+}
+
+.tracker__availability {
+  margin-right: 4vw;
+  font-size: 1.1em;
+  font-weight: 600;
+  -webkit-text-stroke-width: 1px;
+}
+
+
+.tracker__itemlabel,
+.tracker__itemlabel2 {
+  color: black;
+}
+
+.tracker__itemlabel2 {
+  margin-right: 4em;
+}
+
+.tracker__inputitem {
+  height: 1em;
+  width: 5vw;
+  padding: 0.5em;
+  margin-left: 1em;
+  margin-right: 0.5em;
+  border: 3px solid #f2f2f2;
+  border-radius: 20px;
+  font-size: 1em;
+  background-color: #f2f2f2;
+  text-align: right;
+}
+
+.tracker table {
+  width: 100vw;
+  border-collapse: collapse;
+  background-color: rgba(244, 238, 238, 1);
+}
+
+
+
+
+
+.tracker__tableheader {
+  height: 4vw;
+  font-size: 1em;
+}
+
+.tracker__tablerow {
+  height: 4vw;
+  font-size: 1em;
+  border-bottom: 2px solid rgba(16, 98, 14, 1);
+}
+
+.tracker__name,
+.tracker__namehead {
+  padding-left: 1vw;
+  padding-right: 1vw;
+  width: 25%;
+}
+
+.tracker__rentdate {
+  width: 10%;
+  text-align: center;
+}
+
+.tracker__address {
+  padding-left: 1vw;
+  padding-right: 1vw;
+  width: 50%;
+}
+
+.tracker__chairs {
+  width: 5%;
+  text-align: center;
+}
+
+.tracker__tables {
+  width: 5%;
+  text-align: center;
+}
+
+.tracker__tents {
+  width: 5%;
+  text-align: center;
+}
+
+
 
 
 
