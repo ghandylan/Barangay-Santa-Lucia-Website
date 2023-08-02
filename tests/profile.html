@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Account Profile</title>
+        <link rel="stylesheet" href="styleHarold.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body class = "profile">
+        <div class = header__backgroundtop></div>
+        <div class = header__backgroundbottom></div>
+        <div class = "container">
+            <div class = header__container>
+                <img class = "header__icon" alt="Brgy Logo" src="images/logo.png"/>
+                <div class = header__section1>
+                    <div class = "header__section1-1">
+                        <p class = "header__text1">Pasig City, Metro Manila</p>
+                        <p class = "header__text2">BARANGAY SANTA LUCIA</p>
+                    </div>
+                    <div class = "header__section1-2">
+                        <ul>
+                            <li class = "firstlist" onclick="window.location.href='XXX'">Home</li>
+                            <li onclick="window.location.href='XXX'">The Barangay</li>
+                            <li onclick="window.location.href='XXX'">Facilities</li>
+                            <li onclick="window.location.href='XXX'">Residents</li>
+                            <li onclick="window.location.href='XXX'">Services</li>
+                            <li onclick="window.location.href='XXX'">Profile</li>
+                            <li onclick="window.location.href='XXX'">Logout</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class = "container profile__topinfocont top-1em">
+            <div class = "centeredflex top2em">
+                <img class = "profile__image" alt="Profile Picture" src="images/chairman.jpg"/>
+            </div>
+            <p class = "profile__name">Harold Russell Potestas Visperas</p>
+            <p class = "profile__guidetext">Basic Information</p>
+        </div>
+
+        <div class = "container justifiedflex top2em">
+            <div class = "profile__leftinfocont">
+                <div class = "profile__inforow centeredflex">
+                    <div class = "width30">
+                        <p class = "textleft webkitwidth2">Barangay Number: </p>
+                    </div>
+                    <div class = "width70">
+                        <p class = "textright">2021100518</p>
+                    </div>
+                </div>
+                <div class = "profile__inforow centeredflex">
+                    <div class = "width30">
+                        <p class = "textleft webkitwidth2">Sex: </p>
+                    </div>
+                    <div class = "width70">
+                        <p class = "textright">M</p>
+                    </div>
+                </div>
+                <div class = "profile__inforow centeredflex">
+                    <div class = "width30">
+                        <p class = "textleft webkitwidth2">Username: </p>
+                    </div>
+                    <div class = "width70">
+                        <p class = "textright">haroldrussellvisperas</p>
+                    </div>
+                </div>
+                <div class = "profile__infolastrow flex">
+                    <div class = "width73">
+                        <p class = "textleft webkitwidth2">Password: </p>
+                    </div>
+                    <div>
+                        <p class = "textright profile__changepass" id = "changepass">Change Password?</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class = "profile__rightinfocont">
+                <div class = "profile__inforow centeredflex">
+                    <div class = "width30">
+                        <p class = "textleft webkitwidth2">Birthdate: </p>
+                    </div>
+                    <div class = "width70">
+                        <p class = "textright">9/17/2002</p>
+                    </div>
+                </div>
+                <div class = "profile__inforow centeredflex">
+                    <div class = "width30">
+                        <p class = "textleft webkitwidth2">Relocation Year: </p>
+                    </div>
+                    <div class = "width70">
+                        <p class = "textright">2012</p>
+                    </div>
+                </div>
+                <div class = "profile__infolastrow centeredflex">
+                    <div class = "width30">
+                        <p class = "textleft webkitwidth2">Address: </p>
+                    </div>
+                    <div class = "width70">
+                        <p class = "textright">Blk 29 L 14 Malugay Street, Rosario Subdivision</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class = "profile__popup">
+            <form action = "profile.html" method = "POST">
+                <button class = "profile__popupexitbutton" id = "close">&times;</button>
+                <p class = "profile__popuplabelcurrent">Current Password</p>
+                <input class = "profile__popupcurrent" type="password" id = "changecurrentpass" name = "changecurrentpass" placeholder="Enter Current Password" required>
+                <p class = "profile__popuplabel">New Password</p>
+                <input class = "profile__popupnewpass" type="password" id = "changenewpass" name = "changenewpass" placeholder="Enter New Password" required>
+                <p class = "profile__popuplabel">Confirm New Password</p>
+                <input class = "profile__popupconfirmpass" type="password" id = "changeconfirmpass" name = "changeconfirmpass" placeholder="Re-enter New Password" required>
+                <div class = "centeredflex">
+                    <input class = "profile__popupsavebtn" type = "submit" value = "submit">
+                </div>
+            </form>
+        </div>
+
+
+        <script src="scripts/popup.js"></script>
+    </body>
+</html>

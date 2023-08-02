@@ -6,7 +6,7 @@ h1, h2, h3, h4, h5, h6, p, a, li, ul, span, div, td {
 
 body {
   margin: 0;
-  height: 200vh;
+  height: fit-content;
   width: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -22,7 +22,7 @@ body {
   margin-right: auto;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  /* background-color: rgba(255, 0, 0, 0.186); */
+  background-color: rgba(255, 0, 0, 0.186);
   /*--------------------tanggal background color--------------------*/
 }
 
@@ -54,6 +54,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.justifiedflex {
+  display: flex;
+  justify-content: center;
 }
 
 .rowgreen {
@@ -94,16 +99,67 @@ body {
 
 .top-1em {
     margin-top: -1.5em;
-  }
+}
+
+.top--1em {
+    margin-top: -1em;
+}
+
+.top-4em {
+    margin-top: -1.5em;
+}
 
 .textalign {
     text-align: center;
+}
+
+.textleft {
+    text-align: left;
+}
+
+.textright {
+    text-align: right;
 }
 
 .bottom2em {
     margin-bottom: 2em;
 }
 
+.width20 {
+  width: 20%;
+}
+
+.width30 {
+    width: 30%;
+}
+
+.width40 {
+    width: 40%;
+}
+
+.width50 {
+    width: 50%;
+}
+
+.width60 {
+    width: 60%;
+}
+
+.width70 {
+    width: 70%;
+}
+
+.width73 {
+  width: 73%;
+}
+
+.width80 {
+    width: 80%;
+}
+
+.webkitwidth2 {
+    -webkit-text-stroke-width: 1px;
+}
 
 /*----------------------------------------------------------------------------------------------------------------------------*/
 
@@ -936,7 +992,7 @@ body {
 }
 
 .reservationadmin__tablerow {
-    height: 4vw;
+    min-height: 4vw;
     font-size: 1em;
 }
 
@@ -1004,80 +1060,132 @@ body {
 
 
 .residents {
-  background-color: rgba(255, 253, 209, 1);
+    background-color: rgba(255, 253, 209, 1);
 }
 
 .residents__label {
-  margin-top: 0em;
-  margin-bottom: 0em;
-  font-size: 3.8em;
-  font-weight: 900;
-  -webkit-text-stroke-width: 3px;
-  text-shadow: 0px 7px rgb(157, 157, 157);
+    margin-top: 0em;
+    margin-bottom: 0em;
+    font-size: 3.8em;
+    font-weight: 900;
+    -webkit-text-stroke-width: 3px;
+    /* text-shadow: 0px 7px rgb(157, 157, 157); */
 }
 
 .residents__searchtxt {
-  display: flex;
-  height: 1.8em;
-  width: 11em;
-  padding-left: 2vw;
-  padding-right: 2vw;
-  margin-top: 0vh;
-  margin-left: 4vw;
-  font-size: 1em;
-  color: black;
-  border: none;
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
-  background-color: white;
-  text-align: center;
+    display: flex;
+    height: 2em;
+    width: 35em;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    margin-top: 0vh;
+    margin-left: 4vw;
+    font-size: 1em;
+    color: black;
+    border: none;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    background-color: white;
+    text-align: center;
 }
 
 .residents__searchbtn,
-.residents__deletebtn,
-.residents__addbtn,
-.residents__editbtn {
-  cursor: pointer;
-  height: 1.8em;
-  width: 8em;
-  font-size: 1em;
-  color: white;
-  background-color: rgba(16, 98, 14, 1);
+.residents__addbtn {
+    cursor: pointer;
+    height: 2em;
+    width: 8em;
+    font-size: 1em;
+    color: white;
+    background-color: rgba(16, 98, 14, 1);
 }
 
 .residents__searchbtn {
-  border: none;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-}
-
-.residents__deletebtn {
-  margin-left: 13em;
-  border: none;
-  border-radius: 50px;
+    border: none;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
 }
 
 .residents__addbtn {
-  margin-left: 1em;
-  border: none;
-  border-radius: 50px;
+    margin-left: 10em;
+    width: 10em;
+    border: none;
+    border-radius: 50px;
 }
 
-.residents__editbtn {
-  margin-left: 1em;
-  border: none;
-  border-radius: 50px;
+.residents__searchbtn:hover,
+.residents__addbtn:hover {
+    transition: 0.3s;
+    background-color: rgba(55, 120, 32, 1);
 }
 
 .residents table {
-  width: 90vw;
-  border-collapse: collapse;
-  background-color: white;
-  font-size: 1em;
+    width: 90vw;
+    border-collapse: collapse;
+    background-color: white;
 }
 
 .residents td {
-  border: 1px solid black;
+    border: 1px solid black;
+}
+
+
+
+.residents__tableheader {
+    height: 4vw;
+    font-size: 1em;
+}
+
+.residents__tablerow {
+    height: 4vw;
+    font-size: 1em;
+}
+
+.residents__brdynum {
+    width: 10%;
+    text-align: center;
+}
+
+.residents__name {
+    padding: 0.5vw;
+    width: 25%;
+}
+
+.residents__sex {
+    width: 3%;
+    text-align: center;
+}
+
+.residents__bdate {
+    width: 8%;
+    text-align: center;
+}
+
+.residents__relocation {
+    width: 4%;
+    text-align: center;
+}
+
+.residents__address {
+    padding: 0.5vw;
+    width: 35%;
+}
+
+.residents__operation {
+    width: 5%;
+    text-align: center;
+}
+
+.residents__edit {
+    cursor: pointer;
+    width: 5%;
+    text-align: center;
+    color: white;
+    background-color: rgba(16, 98, 14, 1);
+}
+.residents__edit:hover {
+    transition: 0.2s;
+    color: black;
+    background-color: yellow;
 }
 
 
@@ -1096,6 +1204,536 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+.profile {
+  background-color: rgba(255, 253, 209, 1);
+}
+
+.profile__topinfocont {
+  background-color: white;
+  border: 6px solid rgba(16, 98, 14, 1);
+  border-radius: 30px;
+}
+
+.profile__leftinfocont,
+.profile__rightinfocont {
+  margin-bottom: 2em;
+  width: 46%;
+  background-color: white;
+  border: 6px solid rgba(16, 98, 14, 1);
+  border-radius: 30px;
+}
+
+.profile__rightinfocont {
+  margin-left: 4.5em;
+}
+
+.profile__inforow,
+.profile__infolastrow {
+  padding: 0.5em;
+  border-bottom: 2px solid rgba(16, 98, 14, 1);
+}
+
+.profile__infolastrow {
+  border: none;
+}
+
+.profile__image {
+  height: 21em;
+  width: 21em;
+  border: 5px solid rgba(16, 98, 14, 1);
+  border-radius: 200px;
+}
+
+.profile__name {
+  margin-top: 0.4em;
+  font-size: 2em;
+  text-align: center;
+  color: black;
+  -webkit-text-stroke-width: 2px;
+}
+
+.profile__guidetext {
+  margin-top: -1.9em;
+  margin-bottom: 1.5em;
+  font-size: 1em;
+  text-align: center;
+  color: black;
+}
+
+.profile__changepass {
+  cursor: pointer;
+  text-decoration: underline;
+  color: blue;
+}
+
+.profile__popup {
+  background-color: rgba(55, 120, 32, 1);
+  width: 31em;
+  height: 32em;
+  position: fixed;
+  transform: translate(-50%,-50%);
+  left: 50%;
+  top: 50%;
+  border-radius: 30px;
+  display: none;
+}
+
+.profile__popuplabel,
+.profile__popuplabelcurrent {
+  margin-left: 2.3em;
+  font-size: 1.5em;
+  color: white;
+}
+
+.profile__popuplabelcurrent {
+  margin-top: -0.6em;
+}
+
+.profile__popupcurrent,
+.profile__popupnewpass,
+.profile__popupconfirmpass {
+  width: 25vw;
+  padding: 0.8em;
+  margin-top: -1em;
+  margin-left: 2em;
+  margin-bottom: 1em;
+  border: 3px solid #f2f2f2;
+  border-radius: 20px;
+  font-size: 1em;
+  background-color: #f2f2f2;
+}
+
+.profile__popupexitbutton {
+  display: block;
+  margin:  20px 20px 0 auto;
+  font-size: 30px;
+  color: rgba(55, 120, 32, 1);
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: rgba(255, 253, 209, 1);
+}
+
+.profile__popupexitbutton:hover {
+  transition: 0.2s;
+  color: rgba(255, 253, 209, 1);
+  background-color: rgb(48, 48, 48);
+}
+
+.profile__popupsavebtn {
+  cursor: pointer;
+  margin-top: 3vh;
+  height: 6vh;
+  width: 15vw;
+  font-size: 1em;
+  border: none;
+  border-radius: 50px;
+  color: black;
+  background-color: rgba(255, 253, 209, 1);
+}
+
+.profile__popupsavebtn:hover {
+  transition: 0.2s;
+  color: rgba(255, 253, 209, 1);
+  background-color: rgb(48, 48, 48);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+.profileedit {
+  background-color: rgba(255, 253, 209, 1);
+}
+
+.profileedit input[type="file"]{
+  display: none;
+}
+.profileedit .inputicon {
+  margin-right: 0.5vw;
+  width: 2vw;
+  height: 4vh;
+}
+.profileedit label{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 253, 209, 1);
+  font-size: 1em;
+  height: 6vh;
+  width: 20vw;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  border-radius: 30px;
+  background-color: rgba(55, 120, 32, 1);
+}
+.profileedit label:hover{
+  transition: 0.3s;
+  background-color: rgba(0, 136, 53);
+}
+
+.profileedit__guidetext {
+  margin-top: 0.3em;
+  margin-bottom: 1.5em;
+  font-size: 1em;
+  text-align: center;
+  color: black;
+}
+
+.profileedit__name {
+  width: 25em;
+  margin-top: 0.4em;
+  font-size: 2em;
+  text-align: center;
+  color: black;
+  -webkit-text-stroke-width: 2px;
+}
+
+.profileedit__inforow {
+  width: 70%;
+  height: 3em;
+  text-align: right;
+}
+
+.profileedit__infotextarea {
+  padding-left: 0.5vw;
+  padding-right: 0.5vw;
+  min-width: 70%;
+  max-width: 70%;
+  min-height: 3em;
+  text-align: right;
+}
+
+.profileedit__changepass {
+  cursor: pointer;
+  text-decoration: underline;
+  color: blue;
+}
+
+
+.profileedit__savebtn,
+.profileedit__cancelbtn {
+  cursor: pointer;
+  margin-bottom: 2em;
+  height: 8vh;
+  width: 18vw;
+  font-size: 1.3em;
+  border: none;
+  border-radius: 50px;
+  color: rgba(255, 253, 209, 1);
+  background-color: rgba(55, 120, 32, 1);
+}
+
+.profileedit__cancelbtn {
+  margin-left: 27vw;
+}
+
+.profileedit__savebtn:hover,
+.profileedit__cancelbtn:hover {
+  transition: 0.3s;
+  background-color: rgba(0, 136, 53);
+}
+
+
+
+
+
+
+
+
+.profileedit__popup {
+  background-color: rgba(55, 120, 32, 1);
+  width: 31em;
+  height: 24em;
+  position: fixed;
+  transform: translate(-50%,-50%);
+  left: 50%;
+  top: 50%;
+  border-radius: 30px;
+  display: none;
+}
+
+.profileedit__popuplabel,
+.profileedit__popuplabelnew {
+  margin-left: 2.3em;
+  font-size: 1.5em;
+  color: white;
+}
+
+.profileedit__popuplabelnew {
+  margin-top: -0.6em;
+}
+
+.profileedit__popupnewpass,
+.profileedit__popupconfirmpass {
+  width: 25vw;
+  padding: 0.8em;
+  margin-top: -1em;
+  margin-left: 2em;
+  margin-bottom: 1em;
+  border: 3px solid #f2f2f2;
+  border-radius: 20px;
+  font-size: 1em;
+  background-color: #f2f2f2;
+}
+
+.profileedit__popupexitbutton {
+  display: block;
+  margin:  20px 20px 0 auto;
+  font-size: 30px;
+  color: rgba(55, 120, 32, 1);
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: rgba(255, 253, 209, 1);
+}
+
+.profileedit__popupexitbutton:hover {
+  transition: 0.2s;
+  color: rgba(255, 253, 209, 1);
+  background-color: rgb(48, 48, 48);
+}
+
+.profileedit__popupsavebtn {
+  cursor: pointer;
+  margin-top: 3vh;
+  height: 6vh;
+  width: 15vw;
+  font-size: 1em;
+  border: none;
+  border-radius: 50px;
+  color: black;
+  background-color: rgba(255, 253, 209, 1);
+}
+
+.profileedit__popupsavebtn:hover {
+  transition: 0.2s;
+  color: rgba(255, 253, 209, 1);
+  background-color: rgb(48, 48, 48);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+.renting {
+  height: 200vh;
+  background-color: rgba(255, 253, 209, 1);
+}
+
+.renting__header {
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-size: 3.5em;
+  font-weight: 900;
+  -webkit-text-stroke-width: 3px;
+}
+
+.renting__availabilitycont {
+  width: 30%;
+}
+
+.renting__itemicons,
+.renting__itemiconsfirst {
+  width: 3em;
+  height: 3em;
+  border: none;
+  border-radius: 100px;
+  background-color: white;
+  padding: 1em;
+}
+
+.renting__itemiconsfirst {
+  margin-top: 2em;
+}
+
+.renting__availability {
+  margin-top: 0.5em;
+  margin-bottom: 3em;
+  margin-left: 3em;
+  height: 2em;
+  width: 18vw;
+  font-size: 1.1em;
+  text-align: center;
+  border: none;
+  border-radius: 30px;
+  background-color: grey;
+}
+
+.renting__availability .itemcount{
+  margin-left: 0.5em;
+}
+
+
+
+.renting__formcont {
+  width: 70%;
+}
+
+
+.renting__formlabel {
+  width: 20%;
+  font-size: 1em;
+  font-weight: 900;
+  /* margin-top: 0.6em;
+  margin-bottom: 1em; */
+  color: rgba(255, 253, 209, 1);
+}
+
+.formlabelName {
+  margin-top: 0em;
+}
+
+.renting__input {
+  width: 95%;
+  padding: 0.5em;
+  /* margin-left: 1em;
+  margin-right: 1em; */
+  /* margin-bottom: 1em; */
+  border: 3px solid #f2f2f2;
+  border-radius: 20px;
+  font-size: 1em;
+  background-color: #f2f2f2;
+}
+
+.reservation__inputName {
+  width: 43.5vw;
+}
+
+.reservation__inputPurpose {
+  width: 33.5em;
+}
+
+.reservation__inputAttendees {
+  width: 30.3em;
+}
+
+.reservation__formsubmit {
+  cursor: pointer;
+  margin-top: 3vh;
+  height: 6vh;
+  width: 15vw;
+  font-size: 1em;
+  border: none;
+  border-radius: 50px;
+  color: black;
+  background-color: rgba(255, 253, 209, 1);
+}
+
+.reservation__formsubmit:hover {
+  transition: 0.2s;
+  color: rgba(255, 253, 209, 1);
+  background-color: rgb(48, 48, 48);
+}
 
 
 
