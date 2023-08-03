@@ -20,12 +20,6 @@ def barangay_official_the_barangay():
     return render_template('barangayofficial/the_barangay.html')
 
 
-@brngyofficial_views_blueprint.route('/barangay_official/facilities')
-@login_required
-def barangay_official_facilities():
-    return render_template('barangayofficial/facilities.html')
-
-
 @brngyofficial_views_blueprint.route('/barangay_official/residents')
 @login_required
 def barangay_official_residents():
@@ -139,7 +133,7 @@ def barangay_official_search_residents():
     return render_template('barangayofficial/residents.html')
 
 
-@brngyofficial_views_blueprint.route('/barangay_official/services')
+@brngyofficial_views_blueprint.route('/barangay_official/services/item-renting-tracker')
 @login_required
 def barangay_official_item_tracking():
     return render_template('barangayofficial/itemrenting-admin.html')
