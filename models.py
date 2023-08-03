@@ -71,3 +71,19 @@ class TennisCourtReservationList(db.Model, UserMixin):
     reservation_date = db.Column(db.String(255))
     reservation_time = db.Column(db.String(255))
     resident_id = db.Column(db.String(255), db.ForeignKey('resident.id'), nullable=False)
+
+
+class ItemRentals(db.Model, UserMixin):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    full_name = db.Column(db.String(255))
+    chairs_borrowed = db.Column(db.Integer)
+    tables_borrowed = db.Column(db.Integer)
+    tents_borrowed = db.Column(db.Integer)
+    resident_id = db.Column(db.String(255), db.ForeignKey('resident.id'), nullable=False)
+    borrow_date = db.Column(db.String(255))
+
+
+class Items(db.Model, UserMixin):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    item_name = db.Column(db.String(255))
+    item_quantity = db.Column(db.Integer)

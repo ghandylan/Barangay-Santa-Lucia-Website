@@ -3,7 +3,7 @@ from flask_login import login_required, current_user
 from check_reservation import check_reservation_maligaya, check_reservation_countryside, check_reservation_tennis
 
 from models import Resident, MaligayaCourtReservationList, CountrysideCourtReservationList, db, \
-    TennisCourtReservationList
+    TennisCourtReservationList, Items, ItemRentals
 
 resident_views_blueprint = Blueprint('resident_views', __name__)
 
@@ -464,8 +464,8 @@ def resident_facilities_tennis_court():
                                                                    resident_id=user_id)
 
         check_reservation = TennisCourtReservationList.query.filter_by(reservation_date=reservation_day,
-                                                                            reservation_time=reservation_time,
-                                                                            resident_id=user_id).first()
+                                                                       reservation_time=reservation_time,
+                                                                       resident_id=user_id).first()
         if check_reservation:
             flash('You already reserved a slot for this day and time!', 'danger')
             return redirect(url_for('resident_views.resident_facilities_court2'))
@@ -537,11 +537,56 @@ def resident_facilities_tennis_court():
                            sunday_6pm=sunday_6pm)
 
 
-@resident_views_blueprint.route('/resident/services')
+@resident_views_blueprint.route('/resident/services', methods=['GET', 'POST'])
 @login_required
 def resident_services():
     username = current_user.username
-    return render_template('resident/itemrenting.html', username=username)
+
+    # query all items from the database
+    chairs = Items.query.filter_by(item_name='Chairs').first().item_quantity
+    tables = Items.query.filter_by(item_name='Tables').first().item_quantity
+    tents = Items.query.filter_by(item_name='Tents').first().item_quantity
+
+
+
+    if request.method == 'POST':
+        # get user's details
+        resident_id = current_user.id
+        full_name = current_user.full_name
+        rent_date = request.form.get('rentdate')
+        barangay_number = current_user.barangay_number
+        address = current_user.address
+
+        # get the number of items borrowed from the form
+        chairs_borrowed = request.form.get('chairs')
+        tables_borrowed = request.form.get('tables')
+        tents_borrowed = request.form.get('tents')
+
+        # deducting the borrowed items from the database
+        chair_count = chairs - chairs_borrowed
+        table_count = chairs - tables_borrowed
+        tent_count = chairs - tents_borrowed
+
+        # update the database, deduct the borrowed items
+        Items.query.filter_by(item_name='Chairs').update(dict(item_quantity=chair_count))
+        Items.query.filter_by(item_name='Tables').update(dict(item_quantity=table_count))
+        Items.query.filter_by(item_name='Tents').update(dict(item_quantity=tent_count))
+
+        # add the record to the database
+        borrow_record = ItemRentals(full_name=full_name,
+                                    chairs_borrowed=chairs_borrowed,
+                                    tables_borrowed=tables_borrowed,
+                                    tents_borrowed=tents_borrowed,
+                                    barangay_number=barangay_number,
+                                    id=resident_id,
+                                    borrow_date=rent_date
+                                    )
+        db.session.add(borrow_record)
+        db.session.commit()
+
+        return redirect(url_for('resident_views.resident_services', username=username))
+
+    return render_template('resident/itemrenting.html', username=username, chairs=chairs, tables=tables, tents=tents)
 
 
 @resident_views_blueprint.route('/resident/profile/<username>')

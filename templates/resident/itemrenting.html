@@ -64,7 +64,7 @@
         </div>
         <div class="renting__availability centeredflex">
             <p>Available || </p>
-            <p class="itemcount">100</p>
+            <p class="itemcount">{{ chairs }}</p>
             <p class="itemcount">sets</p>
         </div>
 
@@ -73,7 +73,7 @@
         </div>
         <div class="renting__availability centeredflex">
             <p>Available || </p>
-            <p class="itemcount">50</p>
+            <p class="itemcount">{{ tables }}</p>
             <p class="itemcount">pcs</p>
         </div>
 
@@ -82,7 +82,7 @@
         </div>
         <div class="renting__availability centeredflex">
             <p>Available || </p>
-            <p class="itemcount">25</p>
+            <p class="itemcount">{{ tents }}</p>
             <p class="itemcount">pcs</p>
         </div>
     </div>
@@ -92,7 +92,7 @@
         <form action="" method="POST">
             <div class="alignedflex top1em">
                 <p class="renting__formlabel">Name</p>
-                <p class="renting__inputName">NAME NI USER</p>
+                <p class="renting__inputName">{{ current_user.full_name }}</p>
             </div>
             <div class="alignedflex top1em">
                 <p class="renting__formlabel">Rent Date</p>
@@ -100,7 +100,7 @@
             </div>
             <div class="alignedflex top1em">
                 <p class="renting__formlabel">Address</p>
-                <textarea class="renting__inputtextarea" name="address" required>ADDRESS NI USER</textarea>
+                <textarea class="renting__inputtextarea" name="address" required>{{ current_user.address }}</textarea>
             </div>
 
             <div>
