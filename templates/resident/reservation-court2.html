@@ -65,7 +65,7 @@
                 <div class="reservation__formcont">
                     <div class="flex">
                         <p class="reservation__formlabel">Name</p>
-                        <p class="reservation__inputName formlabelName" name="full_name">NAME NUNG USER</p>
+                        <p class="reservation__inputName formlabelName" name="full_name">{{ full_name }}</p>
                     </div>
                     <div class="flex">
                         <p class="reservation__formlabel">Purpose of Use</p>
@@ -111,6 +111,36 @@
                         <input class="reservation__formsubmit" type="submit" name="submit" value="Submit"/>
                     </div>
                 </div>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            {% if category == 'success' %}
+                                <div class="alert success-alert" role="alert">
+                                    <span class="message">{{ message }}</span>
+                                    <button class="close-btn" onclick="this.parentElement.style.display='none';">
+                                        <span>&times;</span>
+                                    </button>
+                                </div>
+
+                            {% elif category == 'danger' %}
+                                <div class="alert warning-alert" role="alert">
+                                    <span class="message">{{ message }}</span>
+                                    <button class="close-btn" onclick="this.parentElement.style.display='none';">
+                                        <span>&times;</span>
+                                    </button>
+                                </div>
+
+                            {% elif category == 'error' %}
+                                <div class="alert error-alert" role="alert">
+                                    <span class="message">{{ message }}</span>
+                                    <button class="close-btn" onclick="this.parentElement.style.display='none';">
+                                        <span>&times;</span>
+                                    </button>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
             </form>
         </div>
     </div>

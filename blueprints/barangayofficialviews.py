@@ -3,7 +3,7 @@ import uuid
 from flask import Blueprint, render_template, request, redirect, url_for
 from flask_login import login_required
 
-from models import Resident, db
+from models import Resident, db, MaligayaCourtReservationList, CountrysideCourtReservationList
 
 brngyofficial_views_blueprint = Blueprint('brngyofficial_views', __name__)
 
@@ -117,7 +117,8 @@ def barangay_official_edit_residents(barangay_number):
                            relocation_year=relocation_year, address=address)
 
 
-@brngyofficial_views_blueprint.route('/barangay_official/residents/delete/<string:barangay_number>', methods=['POST', 'GET'])
+@brngyofficial_views_blueprint.route('/barangay_official/residents/delete/<string:barangay_number>',
+                                     methods=['POST', 'GET'])
 @login_required
 def barangay_official_delete_resident(barangay_number):
     if request.method == 'POST':
@@ -147,19 +148,43 @@ def barangay_official_item_tracking():
 @brngyofficial_views_blueprint.route('/barangay_official/services/maligaya-court-reservations')
 @login_required
 def barangay_official_maligaya_court_reservations():
-    return render_template('barangayofficial/reservation-admin-court1.html')
+    tuesday = MaligayaCourtReservationList.query.filter_by(reservation_date='Tuesday').all()
+    wednesday = MaligayaCourtReservationList.query.filter_by(reservation_date='Wednesday').all()
+    thursday = MaligayaCourtReservationList.query.filter_by(reservation_date='Thursday').all()
+    friday = MaligayaCourtReservationList.query.filter_by(reservation_date='Friday').all()
+    saturday = MaligayaCourtReservationList.query.filter_by(reservation_date='Saturday').all()
+    sunday = MaligayaCourtReservationList.query.filter_by(reservation_date='Sunday').all()
+
+    return render_template('barangayofficial/reservation-admin-court1.html', tuesday=tuesday, wednesday=wednesday,
+                           thursday=thursday, friday=friday, saturday=saturday, sunday=sunday)
 
 
 @brngyofficial_views_blueprint.route('/barangay_official/services/countryside-court-reservations')
 @login_required
 def barangay_official_countryside_court_reservations():
-    return render_template('barangayofficial/reservation-admin-court2.html')
+    tuesday = CountrysideCourtReservationList.query.filter_by(reservation_date='Tuesday').all()
+    wednesday = CountrysideCourtReservationList.query.filter_by(reservation_date='Wednesday').all()
+    thursday = CountrysideCourtReservationList.query.filter_by(reservation_date='Thursday').all()
+    friday = CountrysideCourtReservationList.query.filter_by(reservation_date='Friday').all()
+    saturday = CountrysideCourtReservationList.query.filter_by(reservation_date='Saturday').all()
+    sunday = CountrysideCourtReservationList.query.filter_by(reservation_date='Sunday').all()
+
+    return render_template('barangayofficial/reservation-admin-court2.html', tuesday=tuesday, wednesday=wednesday,
+                           thursday=thursday, friday=friday, saturday=saturday, sunday=sunday)
 
 
 @brngyofficial_views_blueprint.route('/barangay_official/services/tennis-court-reservations')
 @login_required
 def barangay_official_tennis_court_reservations():
-    return render_template('barangayofficial/reservation-admin-tenniscourt.html')
+    tuesday = CountrysideCourtReservationList.query.filter_by(reservation_date='Tuesday').all()
+    wednesday = CountrysideCourtReservationList.query.filter_by(reservation_date='Wednesday').all()
+    thursday = CountrysideCourtReservationList.query.filter_by(reservation_date='Thursday').all()
+    friday = CountrysideCourtReservationList.query.filter_by(reservation_date='Friday').all()
+    saturday = CountrysideCourtReservationList.query.filter_by(reservation_date='Saturday').all()
+    sunday = CountrysideCourtReservationList.query.filter_by(reservation_date='Sunday').all()
+
+    return render_template('barangayofficial/reservation-admin-tenniscourt.html', tuesday=tuesday, wednesday=wednesday,
+                           thursday=thursday, friday=friday, saturday=saturday, sunday=sunday)
 
 
 @brngyofficial_views_blueprint.route('/barangay_official/profile/<username>')

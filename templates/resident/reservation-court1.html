@@ -17,7 +17,7 @@
                 <p class="header__text2">BARANGAY SANTA LUCIA</p>
             </div>
             <div class="header__section1-2">
-               <ul>
+                <ul>
                     <li class="firstlist"
                         onclick="window.location.href='{{ url_for('resident_views.resident_home') }}'">Home
                     </li>
@@ -30,9 +30,12 @@
                     <li class="header__dropdown">
                         <p class="header__dropdownbtn">Services</p>
                         <div class="header__dropdowncontent">
-                            <a href="{{ url_for('resident_views.resident_facilities_court1') }}">Maligaya Court Reservation</a>
-                            <a href="{{ url_for('resident_views.resident_facilities_court2') }}">Countryside Court Reservation</a>
-                            <a href="{{ url_for('resident_views.resident_facilities_tennis_court') }}">Tennis Court Reservation</a>
+                            <a href="{{ url_for('resident_views.resident_facilities_court1') }}">Maligaya Court
+                                Reservation</a>
+                            <a href="{{ url_for('resident_views.resident_facilities_court2') }}">Countryside Court
+                                Reservation</a>
+                            <a href="{{ url_for('resident_views.resident_facilities_tennis_court') }}">Tennis Court
+                                Reservation</a>
                             <a href="{{ url_for('resident_views.resident_services') }}">Item
                                 Reservation</a>
                         </div>
@@ -111,6 +114,36 @@
                         <input class="reservation__formsubmit" type="submit" name="submit" value="Submit"/>
                     </div>
                 </div>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            {% if category == 'success' %}
+                                <div class="alert success-alert" role="alert">
+                                    <span class="message">{{ message }}</span>
+                                    <button class="close-btn" onclick="this.parentElement.style.display='none';">
+                                        <span>&times;</span>
+                                    </button>
+                                </div>
+
+                            {% elif category == 'danger' %}
+                                <div class="alert warning-alert" role="alert">
+                                    <span class="message">{{ message }}</span>
+                                    <button class="close-btn" onclick="this.parentElement.style.display='none';">
+                                        <span>&times;</span>
+                                    </button>
+                                </div>
+
+                            {% elif category == 'error' %}
+                                <div class="alert error-alert" role="alert">
+                                    <span class="message">{{ message }}</span>
+                                    <button class="close-btn" onclick="this.parentElement.style.display='none';">
+                                        <span>&times;</span>
+                                    </button>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
             </form>
         </div>
     </div>
@@ -155,32 +188,32 @@
         </td>
         <td class="tabled table__tue">
             {% if tuesday_7am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__wed">
             {% if wednesday_7am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__thu">
             {% if thursday_7am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__fri">
             {% if friday_7am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__sat">
             {% if saturday_7am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__sun">
             {% if sunday_7am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
     </tr>
@@ -194,32 +227,32 @@
         </td>
         <td class="tabled table__tue">
             {% if tuesday_8am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__wed">
             {% if wednesday_8am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__thu">
             {% if thursday_8am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__fri">
             {% if friday_8am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__sat">
             {% if saturday_8am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__sun">
             {% if sunday_8am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
     </tr>
@@ -231,32 +264,32 @@
         </td>
         <td class="tabled table__tue">
             {% if tuesday_9am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__wed">
             {% if wednesday_9am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__thu">
             {% if thursday_9am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__fri">
             {% if friday_9am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__sat">
             {% if saturday_9am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__sun">
             {% if sunday_9am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
     </tr>
@@ -268,32 +301,32 @@
         </td>
         <td class="tabled table__tue">
             {% if tuesday_10am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__wed">
             {% if wednesday_10am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__thu">
             {% if thursday_10am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__fri">
             {% if friday_10am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__sat">
             {% if saturday_10am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__sun">
             {% if sunday_10am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
     </tr>
@@ -305,32 +338,32 @@
         </td>
         <td class="tabled table__tue">
             {% if tuesday_11am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__wed">
             {% if wednesday_11am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__thu">
             {% if thursday_11am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__fri">
             {% if friday_11am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__sat">
             {% if saturday_11am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__sun">
             {% if sunday_11am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
     </tr>
@@ -343,32 +376,32 @@
         </td>
         <td class="tabled table__tue">
             {% if tuesday_12am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__wed">
             {% if wednesday_12am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__thu">
             {% if thursday_12am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__fri">
             {% if friday_12am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__sat">
             {% if saturday_12am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__sun">
             {% if sunday_12am %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
     </tr>
@@ -380,32 +413,32 @@
         </td>
         <td class="tabled table__tue">
             {% if tuesday_1pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__wed">
             {% if wednesday_1pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__thu">
             {% if thursday_1pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__fri">
             {% if friday_1pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__sat">
             {% if saturday_1pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__sun">
             {% if sunday_1pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
     </tr>
@@ -417,32 +450,32 @@
         </td>
         <td class="tabled table__tue">
             {% if tuesday_2pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__wed">
             {% if wednesday_2pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__thu">
             {% if thursday_2pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__fri">
             {% if friday_2pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__sat">
             {% if saturday_2pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__sun">
             {% if sunday_2pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
     </tr>
@@ -454,32 +487,32 @@
         </td>
         <td class="tabled table__tue">
             {% if tuesday_3pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__wed">
             {% if wednesday_3pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__thu">
             {% if thursday_3pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__fri">
             {% if friday_3pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__sat">
             {% if saturday_3pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__sun">
             {% if sunday_3pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
     </tr>
@@ -491,32 +524,32 @@
         </td>
         <td class="tabled table__tue">
             {% if tuesday_4pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__wed">
             {% if wednesday_4pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__thu">
             {% if thursday_4pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__fri">
             {% if friday_4pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__sat">
             {% if saturday_4pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__sun">
             {% if sunday_4pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
     </tr>
@@ -528,32 +561,32 @@
         </td>
         <td class="tabled table__tue">
             {% if tuesday_5pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__wed">
             {% if wednesday_5pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__thu">
             {% if thursday_5pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__fri">
             {% if friday_5pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__sat">
             {% if saturday_5pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__sun">
             {% if sunday_5pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
     </tr>
@@ -565,32 +598,32 @@
         </td>
         <td class="tabled table__tue">
             {% if tuesday_6pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__wed">
             {% if wednesday_6pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__thu">
             {% if thursday_6pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__fri">
             {% if friday_6pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__sat">
             {% if saturday_6pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
         <td class="tabled table__sun">
             {% if sunday_6pm %}
-            <p>RESERVED</p>
+                <p>RESERVED</p>
             {% endif %}
         </td>
     </tr>
