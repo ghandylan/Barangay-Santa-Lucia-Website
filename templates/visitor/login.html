@@ -1,34 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="../../static/stylesheet/style.css">
-		<link href='https://fonts.googleapis.com/css?family=Anek Gujarati' rel='stylesheet'>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login Page</title>
-    </head>
-    <body class="login">
-        <form method="POST" action="/login" >
-            <div class="container centeredflex top8em">
-                <div class="login__leftcont ">
-                    <div class = "centeredflex">
-                        <img class = "login__logocont" alt="BRGLogo" src="../../static/images/logo.png">
-                    </div>
-                    <div class="emailtxt centeredflex">
-                        <input name="emaillogin" type = "text" id = "username" placeholder = "Username" required/>
-                    </div>
-                    <div class="passwordtxt centeredflex">
-                        <input name="passwordlogin" type = "password" id = "password" placeholder = "Password" required/>
-                    </div>
-                    <div class = "centeredflex">
-                        <button class="loginbtn" type="submit">LOGIN</button>
-                    </div>
-                </div>
-                <div class = "login__rightcont">
-                    <p class = "login__text1">WELCOME TO</p> 
-                    <p class = "login__text2">BARANGAY</p>
-                    <p class = "login__text2 textgreen">SANTA LUCIA</p>
-                </div>
+<head>
+    <link rel="stylesheet" href="../../static/stylesheet/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Anek Gujarati' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<body class="login">
+<form method="POST" action="/login">
+    <div class="container centeredflex top8em">
+        <div class="login__leftcont ">
+            <div class="centeredflex">
+                <img class="login__logocont" alt="BRGLogo" src="../../static/images/logo.png">
             </div>
-        </form>
-    </body>
+            <div class="emailtxt centeredflex">
+                <input name="emaillogin" type="text" id="username" placeholder="Username" required/>
+            </div>
+            <div class="passwordtxt centeredflex">
+                <input name="passwordlogin" type="password" id="password" placeholder="Password" required/>
+            </div>
+            <br>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        {% if category == 'success' %}
+                            <div class="alert success-alert" role="alert">
+                                <span class="message">{{ message }}</span>
+                            </div>
+
+                        {% elif category == 'danger' %}
+                            <div class="alert warning-alert" role="alert">
+                                <span class="message">{{ message }}</span>
+                            </div>
+
+                        {% elif category == 'error' %}
+                            <div class="alert error-alert" role="alert">
+                                <span class="message">{{ message }}</span>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <div class="centeredflex">
+                <button class="loginbtn" type="submit">LOGIN</button>
+            </div>
+        </div>
+        <div class="login__rightcont">
+            <p class="login__text1">WELCOME TO</p>
+            <p class="login__text2">BARANGAY</p>
+            <p class="login__text2 textgreen">SANTA LUCIA</p>
+        </div>
+    </div>
+</form>
+</body>
 </html>

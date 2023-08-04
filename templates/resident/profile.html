@@ -30,9 +30,12 @@
                     <li class="header__dropdown">
                         <p class="header__dropdownbtn">Services</p>
                         <div class="header__dropdowncontent">
-                            <a href="{{ url_for('resident_views.resident_facilities_court1') }}">Maligaya Court Reservation</a>
-                            <a href="{{ url_for('resident_views.resident_facilities_court2') }}">Countryside Court Reservation</a>
-                            <a href="{{ url_for('resident_views.resident_facilities_tennis_court') }}">Tennis Court Reservation</a>
+                            <a href="{{ url_for('resident_views.resident_facilities_court1') }}">Maligaya Court
+                                Reservation</a>
+                            <a href="{{ url_for('resident_views.resident_facilities_court2') }}">Countryside Court
+                                Reservation</a>
+                            <a href="{{ url_for('resident_views.resident_facilities_tennis_court') }}">Tennis Court
+                                Reservation</a>
                             <a href="{{ url_for('resident_views.resident_services') }}">Item
                                 Reservation</a>
                         </div>
@@ -91,9 +94,10 @@
             <div class="width73">
                 <p class="textleft webkitwidth2">Password: </p>
             </div>
-            <div>
-                <p class="textright profile__changepass" id="changepass">Change Password?</p>
-            </div>
+            <button type="button" class="profile__changepassbutton" id="changepass"
+                    onclick="window.location.href = '{{ url_for('resident_views.resident_change_password') }}'">
+                Change Password
+            </button>
         </div>
     </div>
 
@@ -145,7 +149,6 @@
     </form>
 </div>
 
-<script src="{{ url_for('static', filename='scripts/popup.js') }}"></script>
 <script src="{{ url_for('static', filename='scripts/logoutconfirm.js') }}"></script>
 </body>
 </html>

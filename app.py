@@ -19,12 +19,12 @@ def create_app():
     login_manager.init_app(app)
 
     @login_manager.user_loader
-    def load_user(user_id):
+    def load_user(barangay_number):
         from models import BarangayOfficial, Resident
-        if BarangayOfficial.query.get(int(user_id)):
-            return BarangayOfficial.query.get(int(user_id))
-        elif Resident.query.get(int(user_id)):
-            return Resident.query.get(int(user_id))
+        if BarangayOfficial.query.get(barangay_number):
+            return BarangayOfficial.query.get(barangay_number)
+        elif Resident.query.get(barangay_number):
+            return Resident.query.get(barangay_number)
         else:
             return None
 

@@ -19,21 +19,27 @@
             <div class="header__section1-2">
                 <ul>
                     <li class="firstlist"
-                        onclick="window.location.href='{{ url_for('brngyofficial_views.barangay_official_home') }}'">Home
+                        onclick="window.location.href='{{ url_for('brngyofficial_views.barangay_official_home') }}'">
+                        Home
                     </li>
-                    <li onclick="window.location.href='{{ url_for('brngyofficial_views.barangay_official_the_barangay') }}'">The
+                    <li onclick="window.location.href='{{ url_for('brngyofficial_views.barangay_official_the_barangay') }}'">
+                        The
                         Barangay
                     </li>
-                     <li onclick="window.location.href='{{ url_for('brngyofficial_views.barangay_official_residents') }}'">
+                    <li onclick="window.location.href='{{ url_for('brngyofficial_views.barangay_official_residents') }}'">
                         Residents
                     </li>
                     <li class="header__dropdown">
                         <p class="header__dropdownbtn">Services</p>
                         <div class="header__dropdowncontent">
-                            <a href="{{ url_for('brngyofficial_views.barangay_official_maligaya_court_reservations') }}">Maligaya Court Reservation</a>
-                            <a href="{{ url_for('brngyofficial_views.barangay_official_countryside_court_reservations') }}">Countryside Court Reservation</a>
-                            <a href="{{ url_for('brngyofficial_views.barangay_official_tennis_court_reservations') }}">Tennis Court Reservation</a>
-                            <a href="{{ url_for('brngyofficial_views.barangay_official_item_tracking') }}">Item Reservation</a>
+                            <a href="{{ url_for('brngyofficial_views.barangay_official_maligaya_court_reservations') }}">Maligaya
+                                Court Reservation</a>
+                            <a href="{{ url_for('brngyofficial_views.barangay_official_countryside_court_reservations') }}">Countryside
+                                Court Reservation</a>
+                            <a href="{{ url_for('brngyofficial_views.barangay_official_tennis_court_reservations') }}">Tennis
+                                Court Reservation</a>
+                            <a href="{{ url_for('brngyofficial_views.barangay_official_item_tracking') }}">Item
+                                Reservation</a>
                         </div>
                     </li>
                     {% if current_user.is_authenticated %}
@@ -55,7 +61,7 @@
     <div class="centeredflex top2em">
         <img class="profile__image" alt="Profile Picture" src="../../static/images/chairman.jpg"/>
     </div>
-    <p class="profile__name">Harold Russell Potestas Visperas</p>
+    <p class="profile__name">{{ full_name }}</p>
     <p class="profile__guidetext">Basic Information</p>
 </div>
 
@@ -66,7 +72,7 @@
                 <p class="textleft webkitwidth2">Barangay Number: </p>
             </div>
             <div class="width70">
-                <p class="textright">2021100518</p>
+                <p class="textright">{{ barangay_number }}</p>
             </div>
         </div>
         <div class="profile__inforow centeredflex">
@@ -74,7 +80,7 @@
                 <p class="textleft webkitwidth2">Sex: </p>
             </div>
             <div class="width70">
-                <p class="textright">M</p>
+                <p class="textright">{{ sex }}</p>
             </div>
         </div>
         <div class="profile__inforow centeredflex">
@@ -82,7 +88,7 @@
                 <p class="textleft webkitwidth2">Username: </p>
             </div>
             <div class="width70">
-                <p class="textright">haroldrussellvisperas</p>
+                <p class="textright">{{ username }}</p>
             </div>
         </div>
         <div class="profile__infolastrow flex">
@@ -90,8 +96,12 @@
                 <p class="textleft webkitwidth2">Password: </p>
             </div>
             <div>
-                <p class="textright profile__changepass" id="changepass">Change Password?</p>
+                <button type="button" class="profile__changepassbutton" id="changepass"
+                        onclick="window.location.href = '{{ url_for('brngyofficial_views.barangay_official_change_password') }}'">
+                    Change Password
+                </button>
             </div>
+
         </div>
     </div>
 
@@ -102,7 +112,7 @@
                 <p class="textleft webkitwidth2">Birthdate: </p>
             </div>
             <div class="width70">
-                <p class="textright">9/17/2002</p>
+                <p class="textright">{{ birth_date }}</p>
             </div>
         </div>
         <div class="profile__inforow centeredflex">
@@ -110,7 +120,7 @@
                 <p class="textleft webkitwidth2">Relocation Year: </p>
             </div>
             <div class="width70">
-                <p class="textright">2012</p>
+                <p class="textright">{{ relocation_year }}</p>
             </div>
         </div>
         <div class="profile__infolastrow centeredflex">
@@ -118,7 +128,7 @@
                 <p class="textleft webkitwidth2">Address: </p>
             </div>
             <div class="width70">
-                <p class="textright">Blk 29 L 14 Malugay Street, Rosario Subdivision</p>
+                <p class="textright">{{ address }}</p>
             </div>
         </div>
     </div>
@@ -143,7 +153,7 @@
     </form>
 </div>
 
-<script src="{{ url_for('static', filename='scripts/popup.js') }}"></script>
+{#<script src="{{ url_for('static', filename='scripts/popup.js') }}"></script>#}
 <script src="{{ url_for('static', filename='scripts/logoutconfirm.js') }}"></script>
 </body>
 </html>

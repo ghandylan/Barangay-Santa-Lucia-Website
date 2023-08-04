@@ -56,12 +56,12 @@
     </div>
 </div>
 
-<form action="{{ url_for('brngyofficial_views.barangay_official_edit_residents', barangay_number=barangay_number) }}"
+<form action="{{ url_for('brngyofficial_views.barangay_official_edit_residents', id=id) }}"
       method="POST">
     <div class="container profile__topinfocont top-1em">
         <div class="centeredflex top2em">
             <img class="profile__image" id="profileimage" alt="Profile Picture"
-                 src="/../../static/images/defaultphoto.png"/>
+                 src="{{ url_for('brngyofficial_views.barangay_official_edit_residents',photo=photo.id,id=id) }}"/>
         </div>
         <div class="centeredflex">
             <input type="file" accept="image/*" id="changeprofileimage" name="changeprofileimage"/>
@@ -87,7 +87,7 @@
                     <p class="textleft webkitwidth2">Barangay Number: </p>
                 </div>
                 <input class="profileedit__inforow" type="number" name="brgynum"
-                       placeholder="{{ barangay_number }}" disabled/>
+                       placeholder="{{ id }}" disabled/>
             </div>
             <div class="profile__inforow centeredflex">
                 <div class="width30">
@@ -106,9 +106,10 @@
                 <div class="width73">
                     <p class="textleft webkitwidth2">Password: </p>
                 </div>
-                <div>
-                    <p class="textright profileedit__changepass" id="editchangepass">Change Password?</p>
-                </div>
+                <button type="button" class="profile__changepassbutton" id="changepass"
+                        onclick="window.location.href = '{{ url_for('brngyofficial_views.barangay_official_change_password_resident', id=id) }}'">
+                    Change Password
+                </button>
             </div>
         </div>
 
@@ -144,32 +145,16 @@
         <input class="profileedit__savebtn" type="submit" value="Save Changes">
 
 
-
         <input class="profileedit__otherbtns" type="button" value="Cancel Changes"
                onclick="window.location.href='{{ url_for('brngyofficial_views.barangay_official_residents') }}'">
     </div>
-
-
-    {#    <div class="profileedit__popup">#}
-    {#        <button class="profileedit__popupexitbutton" id="editclose">&times;</button>#}
-    {#        <p class="profileedit__popuplabelnew">New Password</p>#}
-    {#        <input class="profile__popupnewpass" type="password" id="changenewpass" name="changenewpass"#}
-    {#               placeholder="Enter New Password" required>#}
-    {#        <p class="profile__popuplabel">Confirm New Password</p>#}
-    {#        <input class="profile__popupconfirmpass" type="password" id="changeconfirmpass" name="changeconfirmpass"#}
-    {#               placeholder="Re-enter New Password" required>#}
-    {#        <div class="centeredflex">#}
-    {#            <input class="profileedit__popupsavebtn" type="submit" value="Submit">#}
-    {#        </div>#}
-    {#    </div>#}
 </form>
-<form action="{{ url_for('brngyofficial_views.barangay_official_delete_resident', barangay_number=barangay_number) }}"
-              method="POST">
-            <input class="profileedit__otherbtns" type="submit" value="Delete User">
+<form action="{{ url_for('brngyofficial_views.barangay_official_delete_resident', id=id) }}"
+      method="POST">
+    <input class="profileedit__otherbtns" type="submit" value="Delete User">
 </form>
 
 <script src="{{ url_for('static', filename='scripts/previewimage.js') }}"></script>
-<script src="{{ url_for('static', filename='scripts/editpopup.js') }}"></script>
 <script src="{{ url_for('static', filename='scripts/logoutconfirm.js') }}"></script>
 <script src="{{ url_for('static', filename='scripts/deleteuser.js') }}"></script>
 </body>

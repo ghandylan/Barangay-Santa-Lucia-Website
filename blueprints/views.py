@@ -1,4 +1,4 @@
-from flask import redirect, render_template, request, Blueprint, url_for
+from flask import redirect, render_template, request, Blueprint, url_for, flash
 from flask_login import login_required, login_user, logout_user
 
 from models import *
@@ -24,6 +24,7 @@ def login():
                 login_user(user)
                 return redirect(url_for('brngyofficial_views.barangay_official_home'))
             else:
+                flash("Incorrect Password", category='error')
                 return render_template('visitor/login.html', error="Incorrect Password")
         else:
             user = Resident.query.filter_by(username=username, password=password).first()
@@ -32,8 +33,10 @@ def login():
                     login_user(user)
                     return redirect(url_for('resident_views.resident_home'))
                 else:
+                    flash("Incorrect Password", category='error')
                     return render_template('visitor/login.html', error="Incorrect Password")
             else:
+                flash("User does not exist", category='error')
                 return render_template('visitor/login.html', error="User does not exist")
 
     return render_template('visitor/login.html')

@@ -58,7 +58,7 @@
 </div>
 
 
-<form action="{{ url_for('brngyofficial_views.barangay_official_add_residents')}}" method="POST">
+<form action="{{ url_for('brngyofficial_views.barangay_official_add_residents') }}" method="POST" enctype="multipart/form-data">
     <div class="container profile__topinfocont top-1em">
         <div class="centeredflex top2em">
             <img class="profile__image" id="profileimage" alt="Profile Picture"
@@ -105,7 +105,8 @@
                     <p class="textleft webkitwidth2">Password: </p>
                 </div>
                 <div>
-                    <p class="textright profileedit__changepass" id="editchangepass">Add Password?</p>
+                    <input class="profileedit__inforow" type="password" name="password"
+                           placeholder="Enter User Password"/>
                 </div>
             </div>
         </div>

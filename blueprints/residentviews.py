@@ -132,37 +132,7 @@ def resident_facilities_court1():
             db.session.add(maligaya_court_reservation_list)
             db.session.commit()
 
-        return render_template('resident/reservation-court1.html', username=username, full_name=full_name,
-                               tuesday_7am=tuesday_7am, tuesday_8am=tuesday_8am, tuesday_9am=tuesday_9am,
-                               tuesday_10am=tuesday_10am, tuesday_11am=tuesday_11am, tuesday_12pm=tuesday_12pm,
-                               tuesday_1pm=tuesday_1pm, tuesday_2pm=tuesday_2pm, tuesday_3pm=tuesday_3pm,
-                               tuesday_4pm=tuesday_4pm, tuesday_5pm=tuesday_5pm, tuesday_6pm=tuesday_6pm,
-
-                               wednesday_7am=wednesday_7am, wednesday_8am=wednesday_8am, wednesday_9am=wednesday_9am,
-                               wednesday_10am=wednesday_10am, wednesday_11am=wednesday_11am,
-                               wednesday_12pm=wednesday_12pm, wednesday_1pm=wednesday_1pm, wednesday_2pm=wednesday_2pm,
-                               wednesday_3pm=wednesday_3pm, wednesday_4pm=wednesday_4pm, wednesday_5pm=wednesday_5pm,
-                               wednesday_6pm=wednesday_6pm,
-
-                               thursday_7am=thursday_7am, thursday_8am=thursday_8am, thursday_9am=thursday_9am,
-                               thursday_10am=thursday_10am, thursday_11am=thursday_11am, thursday_12pm=thursday_12pm,
-                               thursday_1pm=thursday_1pm, thursday_2pm=thursday_2pm, thursday_3pm=thursday_3pm,
-                               thursday_4pm=thursday_4pm, thursday_5pm=thursday_5pm, thursday_6pm=thursday_6pm,
-
-                               friday_7am=friday_7am, friday_8am=friday_8am, friday_9am=friday_9am,
-                               friday_10am=friday_10am, friday_11am=friday_11am, friday_12pm=friday_12pm,
-                               friday_1pm=friday_1pm, friday_2pm=friday_2pm, friday_3pm=friday_3pm,
-                               friday_4pm=friday_4pm, friday_5pm=friday_5pm, friday_6pm=friday_6pm,
-
-                               saturday_7am=saturday_7am, saturday_8am=saturday_8am, saturday_9am=saturday_9am,
-                               saturday_10am=saturday_10am, saturday_11am=saturday_11am, saturday_12pm=saturday_12pm,
-                               saturday_1pm=saturday_1pm, saturday_2pm=saturday_2pm, saturday_3pm=saturday_3pm,
-                               saturday_4pm=saturday_4pm, saturday_5pm=saturday_5pm, saturday_6pm=saturday_6pm,
-
-                               sunday_7am=sunday_7am, sunday_8am=sunday_8am, sunday_9am=sunday_9am,
-                               sunday_10am=sunday_10am, sunday_11am=sunday_11am, sunday_12pm=sunday_12pm,
-                               sunday_1pm=sunday_1pm, sunday_2pm=sunday_2pm, sunday_3pm=sunday_3pm,
-                               sunday_4pm=sunday_4pm, sunday_5pm=sunday_5pm, sunday_6pm=sunday_6pm)
+        return redirect(url_for('resident_views.resident_facilities'))
 
     return render_template('resident/reservation-court1.html', username=username, full_name=full_name,
                            tuesday_7am=tuesday_7am, tuesday_8am=tuesday_8am, tuesday_9am=tuesday_9am,
@@ -542,30 +512,27 @@ def resident_facilities_tennis_court():
 def resident_services():
     username = current_user.username
 
-    # query all items from the database
     chairs = Items.query.filter_by(item_name='Chairs').first().item_quantity
     tables = Items.query.filter_by(item_name='Tables').first().item_quantity
-    tents = Items.query.filter_by(item_name='Tents').first().item_quantity
-
-
+    tents = Items.query.filter_by(item_name='Tent').first().item_quantity
 
     if request.method == 'POST':
         # get user's details
         resident_id = current_user.id
         full_name = current_user.full_name
         rent_date = request.form.get('rentdate')
-        barangay_number = current_user.barangay_number
+        barangay_number = current_user.id
         address = current_user.address
 
         # get the number of items borrowed from the form
-        chairs_borrowed = request.form.get('chairs')
-        tables_borrowed = request.form.get('tables')
-        tents_borrowed = request.form.get('tents')
+        chairs_borrowed = int(request.form.get('chair'))
+        tables_borrowed = int(request.form.get('table'))
+        tents_borrowed = int(request.form.get('tent'))
 
         # deducting the borrowed items from the database
-        chair_count = chairs - chairs_borrowed
-        table_count = chairs - tables_borrowed
-        tent_count = chairs - tents_borrowed
+        chair_count = int(chairs) - int(chairs_borrowed)
+        table_count = int(chairs) - int(tables_borrowed)
+        tent_count = int(chairs) - int(tents_borrowed)
 
         # update the database, deduct the borrowed items
         Items.query.filter_by(item_name='Chairs').update(dict(item_quantity=chair_count))
@@ -573,14 +540,9 @@ def resident_services():
         Items.query.filter_by(item_name='Tents').update(dict(item_quantity=tent_count))
 
         # add the record to the database
-        borrow_record = ItemRentals(full_name=full_name,
-                                    chairs_borrowed=chairs_borrowed,
-                                    tables_borrowed=tables_borrowed,
-                                    tents_borrowed=tents_borrowed,
-                                    barangay_number=barangay_number,
-                                    id=resident_id,
-                                    borrow_date=rent_date
-                                    )
+        borrow_record = ItemRentals(resident_id=barangay_number, chairs_borrowed=chairs_borrowed,
+                                    tables_borrowed=tables_borrowed, tents_borrowed=tents_borrowed,
+                                    borrow_date=rent_date, )
         db.session.add(borrow_record)
         db.session.commit()
 
@@ -593,7 +555,7 @@ def resident_services():
 @login_required
 def resident_profile(username):
     resident_full_name = Resident.query.filter_by(username=username).first().full_name
-    resident_barangay_number = Resident.query.filter_by(username=username).first().barangay_number
+    resident_barangay_number = Resident.query.filter_by(username=username).first().id
     resident_sex = Resident.query.filter_by(username=username).first().sex
     resident_username = Resident.query.filter_by(username=username).first().username
     resident_birthdate = Resident.query.filter_by(username=username).first().birthdate
@@ -604,3 +566,22 @@ def resident_profile(username):
                            resident_barangay_number=resident_barangay_number, resident_sex=resident_sex,
                            resident_username=resident_username, resident_birthdate=resident_birthdate,
                            resident_relocation_year=resident_relocation_year, resident_address=resident_address)
+
+
+@resident_views_blueprint.route('/resident/profile/change-password', methods=['GET', 'POST'])
+@login_required
+def resident_change_password():
+    id = current_user.id
+
+    new_password = request.form.get('new_password')
+    confirm_password = request.form.get('confirm_password')
+
+    if request.method == 'POST':
+        if new_password != confirm_password:
+            flash('Password does not match!', 'danger')
+        else:
+            Resident.query.filter_by(id=id).update(dict(password=new_password))
+            db.session.commit()
+            flash('Password changed successfully!', 'success')
+            return redirect(url_for('resident_views.resident_home'))
+    return render_template('resident/changepassword.html')

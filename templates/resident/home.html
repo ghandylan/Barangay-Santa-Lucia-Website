@@ -3,6 +3,7 @@
 <head>
     <title>Home</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet/style.css') }}">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body class="home">
@@ -30,9 +31,12 @@
                     <li class="header__dropdown">
                         <p class="header__dropdownbtn">Services</p>
                         <div class="header__dropdowncontent">
-                            <a href="{{ url_for('resident_views.resident_facilities_court1') }}">Maligaya Court Reservation</a>
-                            <a href="{{ url_for('resident_views.resident_facilities_court2') }}">Countryside Court Reservation</a>
-                            <a href="{{ url_for('resident_views.resident_facilities_tennis_court') }}">Tennis Court Reservation</a>
+                            <a href="{{ url_for('resident_views.resident_facilities_court1') }}">Maligaya Court
+                                Reservation</a>
+                            <a href="{{ url_for('resident_views.resident_facilities_court2') }}">Countryside Court
+                                Reservation</a>
+                            <a href="{{ url_for('resident_views.resident_facilities_tennis_court') }}">Tennis Court
+                                Reservation</a>
                             <a href="{{ url_for('resident_views.resident_services') }}">Item
                                 Reservation</a>
                         </div>
