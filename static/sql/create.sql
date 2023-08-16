@@ -13,7 +13,9 @@ CREATE TABLE Photo
 CREATE TABLE Resident
 (
     id              VARCHAR(255) PRIMARY KEY,
+    role            VARCHAR(255),
     photo           int,
+
     full_name       VARCHAR(255),
     sex             VARCHAR(50),
     username        VARCHAR(50),
@@ -32,13 +34,13 @@ ALTER TABLE Photo
 CREATE TABLE Barangay_Official
 (
     id              VARCHAR(255) PRIMARY KEY,
-
+    role            VARCHAR(255),
     photo           int,
+
     full_name       VARCHAR(255),
     sex             VARCHAR(50),
     username        VARCHAR(50),
     password        VARCHAR(50),
-
     birthdate       VARCHAR(50),
     relocation_year VARCHAR(50),
     address         VARCHAR(255),
@@ -124,10 +126,11 @@ VALUES ('Chairs', 100),
        ('Tents', 25);
 
 # for debugging only
-INSERT INTO barangay_official(id, photo, full_name, sex, username, password, birthdate, relocation_year,
+INSERT INTO barangay_official(id, role, photo, full_name, sex, username, password, birthdate, relocation_year,
                               address)
 
 VALUES (UUID(),
+        'barangay_official',
         null,
         'Dylan Louis Tayag',
         'Male',

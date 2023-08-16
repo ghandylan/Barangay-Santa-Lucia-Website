@@ -9,30 +9,22 @@ db = SQLAlchemy()
 # 2. flask db migrate
 # 3. flask db upgrade
 
-
-class BarangayOfficial(db.Model, UserMixin):
-    id = db.Column(db.String(255), primary_key=True)
-
-    photo = db.Column(db.Integer, db.ForeignKey('photo.id'))
-    full_name = db.Column(db.String(255))
-    sex = db.Column(db.String(50))
-    username = db.Column(db.String(50))
-    password = db.Column(db.String(50))
-
-    birthdate = db.Column(db.String(50))
-    relocation_year = db.Column(db.String(50))
-    address = db.Column(db.String(255))
+class Photo(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    file_name = db.Column(db.String(255))
+    data = db.Column(db.LargeBinary)
+    owner_id = db.Column(db.String(255), db.ForeignKey('resident.id'), nullable=False)
 
 
 class Resident(db.Model, UserMixin):
     id = db.Column(db.String(255), primary_key=True)
-
+    role = db.Column(db.String(255))
     photo = db.Column(db.Integer, db.ForeignKey('photo.id'))
+
     full_name = db.Column(db.String(255))
     sex = db.Column(db.String(50))
     username = db.Column(db.String(50))
     password = db.Column(db.String(50))
-
     birthdate = db.Column(db.String(50))
     relocation_year = db.Column(db.String(50))
     address = db.Column(db.String(255))
@@ -42,11 +34,18 @@ class Resident(db.Model, UserMixin):
     tennis_reservations = db.relationship('TennisCourtReservationList', backref='resident', lazy=True)
 
 
-class Photo(db.Model):
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    file_name = db.Column(db.String(255))
-    data = db.Column(db.LargeBinary)
-    owner_id = db.Column(db.String(255), db.ForeignKey('resident.id'), nullable=False)
+class BarangayOfficial(db.Model, UserMixin):
+    id = db.Column(db.String(255), primary_key=True)
+    role = db.Column(db.String(255))
+    photo = db.Column(db.Integer, db.ForeignKey('photo.id'))
+
+    full_name = db.Column(db.String(255))
+    sex = db.Column(db.String(50))
+    username = db.Column(db.String(50))
+    password = db.Column(db.String(50))
+    birthdate = db.Column(db.String(50))
+    relocation_year = db.Column(db.String(50))
+    address = db.Column(db.String(255))
 
 
 class MaligayaCourtReservationList(db.Model, UserMixin):
@@ -97,9 +96,11 @@ class Items(db.Model, UserMixin):
 class ItemRentals(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     resident_id = db.Column(db.String(255), db.ForeignKey('resident.id'), nullable=False)
+
     chairs_borrowed = db.Column(db.Integer)
     tables_borrowed = db.Column(db.Integer)
     tents_borrowed = db.Column(db.Integer)
+
     borrow_date = db.Column(db.String(255))
 
     resident = db.relationship('Resident', backref='item_rentals', lazy=True)

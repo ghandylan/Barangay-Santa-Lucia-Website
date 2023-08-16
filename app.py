@@ -14,7 +14,7 @@ def create_app():
     app.config.from_object(Config)
 
     login_manager = LoginManager()
-    login_manager.login_view = 'login'
+    login_manager.login_view = 'views.login'
     login_manager.init_app(app)
 
     @login_manager.user_loader
