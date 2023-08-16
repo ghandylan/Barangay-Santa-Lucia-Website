@@ -1,7 +1,7 @@
 from flask import redirect, render_template, request, Blueprint, url_for, flash
 from flask_login import login_required, login_user, logout_user
 
-from models import *
+from models import BarangayOfficial, Resident
 
 views_blueprint = Blueprint('views', __name__)
 

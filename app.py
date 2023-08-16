@@ -1,6 +1,5 @@
 from flask import Flask
 from flask_login import LoginManager
-from flask_migrate import Migrate
 
 from blueprints.barangayofficialviews import brngyofficial_views_blueprint
 from blueprints.residentviews import resident_views_blueprint
@@ -15,7 +14,7 @@ def create_app():
     app.config.from_object(Config)
 
     login_manager = LoginManager()
-    login_manager.login_view = 'login'
+    login_manager.login_view = 'views.login'
     login_manager.init_app(app)
 
     @login_manager.user_loader
@@ -28,10 +27,6 @@ def create_app():
         else:
             return None
 
-    # initialize the db
-    migrate = Migrate()
-    # register the db to the migration tool
-    migrate.init_app(app, db)
     # register the db to the app
     db.init_app(app)
 
