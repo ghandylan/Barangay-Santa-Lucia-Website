@@ -152,7 +152,7 @@ def barangay_official_search_residents():
 def barangay_official_item_tracking():
     chairs = Items.query.filter_by(item_name='Chairs').first().item_quantity
     tables = Items.query.filter_by(item_name='Tables').first().item_quantity
-    tents = Items.query.filter_by(item_name='Tent').first().item_quantity
+    tents = Items.query.filter_by(item_name='Tents').first().item_quantity
 
     item_rentals = ItemRentals.query.all()
 
