@@ -2,7 +2,7 @@ drop database if exists barangay_db;
 create database if not exists barangay_db;
 use barangay_db;
 
-CREATE TABLE Photo
+CREATE TABLE photo
 (
     id        int          NOT NULL AUTO_INCREMENT primary key,
     file_name varchar(255) NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE Photo
     owner_id  VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE Resident
+CREATE TABLE resident
 (
     id              VARCHAR(255) PRIMARY KEY,
     role            VARCHAR(255),
@@ -24,14 +24,14 @@ CREATE TABLE Resident
     relocation_year VARCHAR(50),
     address         VARCHAR(255),
 
-    FOREIGN KEY (photo) REFERENCES Photo (id)
+    FOREIGN KEY (photo) REFERENCES photo (id)
 );
 
-ALTER TABLE Photo
-    ADD FOREIGN KEY (owner_id) REFERENCES Resident (id);
+ALTER TABLE photo
+    ADD FOREIGN KEY (owner_id) REFERENCES resident (id);
 
 
-CREATE TABLE Barangay_Official
+CREATE TABLE barangay_official
 (
     id              VARCHAR(255) PRIMARY KEY,
     role            VARCHAR(255),
@@ -45,12 +45,12 @@ CREATE TABLE Barangay_Official
     relocation_year VARCHAR(50),
     address         VARCHAR(255),
 
-    FOREIGN KEY (photo) REFERENCES Photo (id)
+    FOREIGN KEY (photo) REFERENCES photo (id)
 );
 
 
 
-CREATE TABLE Maligaya_Court_Reservation_List
+CREATE TABLE maligaya_court_reservation_list
 (
     id                  INTEGER PRIMARY KEY AUTO_INCREMENT,
 
@@ -63,10 +63,10 @@ CREATE TABLE Maligaya_Court_Reservation_List
 
     resident_id         VARCHAR(255),
 
-    FOREIGN KEY (resident_id) REFERENCES Resident (id)
+    FOREIGN KEY (resident_id) REFERENCES resident (id)
 );
 
-CREATE TABLE Countryside_Court_Reservation_List
+CREATE TABLE countryside_court_reservation_list
 (
     id                  INTEGER PRIMARY KEY AUTO_INCREMENT,
 
@@ -79,10 +79,10 @@ CREATE TABLE Countryside_Court_Reservation_List
 
     resident_id         VARCHAR(255),
 
-    FOREIGN KEY (resident_id) REFERENCES Resident (id)
+    FOREIGN KEY (resident_id) REFERENCES resident (id)
 );
 
-CREATE TABLE Tennis_Court_Reservation_List
+CREATE TABLE tennis_court_reservation_List
 (
     id                  INTEGER PRIMARY KEY AUTO_INCREMENT,
 
@@ -95,10 +95,10 @@ CREATE TABLE Tennis_Court_Reservation_List
 
     resident_id         VARCHAR(255),
 
-    FOREIGN KEY (resident_id) REFERENCES Resident (id)
+    FOREIGN KEY (resident_id) REFERENCES resident (id)
 );
 
-CREATE TABLE Items
+CREATE TABLE items
 (
     id            INTEGER PRIMARY KEY AUTO_INCREMENT,
     item_name     VARCHAR(255),
@@ -106,7 +106,7 @@ CREATE TABLE Items
 );
 
 
-CREATE TABLE Item_Rentals
+CREATE TABLE item_rentals
 (
     id              int          NOT NULL AUTO_INCREMENT primary key,
     resident_id     VARCHAR(255) NOT NULL,
@@ -120,7 +120,7 @@ CREATE TABLE Item_Rentals
     FOREIGN KEY (resident_id) REFERENCES resident (id)
 );
 
-INSERT INTO items (item_name, item_quantity)@localhost
+INSERT INTO items (item_name, item_quantity)
 VALUES ('Chairs', 100),
        ('Tables', 50),
        ('Tents', 25);
