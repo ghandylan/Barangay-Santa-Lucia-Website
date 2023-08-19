@@ -120,7 +120,7 @@ CREATE TABLE Item_Rentals
     FOREIGN KEY (resident_id) REFERENCES resident (id)
 );
 
-INSERT INTO items (item_name, item_quantity)
+INSERT INTO items (item_name, item_quantity)@localhost
 VALUES ('Chairs', 100),
        ('Tables', 50),
        ('Tents', 25);
