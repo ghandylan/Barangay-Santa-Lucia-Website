@@ -26,7 +26,7 @@ The public can see and reserve venues of the facilities inside the subdivision
 
 ### Getting started
 
-1. Before getting started, create an .env file containing the following:
+1. Create an .env file containing the following:
    ```
    DATABASE_URL='mysql://localhost:3306/'
    DATABASE_NAME='<name-of-db>'
