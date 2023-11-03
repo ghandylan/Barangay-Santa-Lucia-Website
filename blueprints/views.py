@@ -1,3 +1,4 @@
+import bcrypt
 from flask import redirect, render_template, request, Blueprint, url_for, flash
 from flask_login import login_required, login_user, logout_user
 
@@ -18,26 +19,30 @@ def login():
         password = request.form.get("passwordlogin")
 
         # check if user is a BarangayOfficial or Resident
-        user = BarangayOfficial.query.filter_by(username=username, password=password).first()
+        user = BarangayOfficial.query.filter_by(username=username).first()
         if user:
-            if user.password == password:
+            if bcrypt.checkpw(password.encode('utf-8'), user.password.encode('utf-8')):
                 login_user(user)
                 return redirect(url_for('brngyofficial_views.barangay_official_home'))
             else:
                 flash("Incorrect Password", category='error')
                 return render_template('visitor/login.html', error="Incorrect Password")
         else:
-            user = Resident.query.filter_by(username=username, password=password).first()
-            if user:
-                if user.password == password:
-                    login_user(user)
-                    return redirect(url_for('resident_views.resident_home'))
-                else:
-                    flash("Incorrect Password", category='error')
-                    return render_template('visitor/login.html', error="Incorrect Password")
+            if bcrypt.checkpw(bytes(password, encoding='utf-8'), bytes(user.password, encoding='utf-8')):
+                login_user(user)
+                return redirect(url_for('resident_views.resident_home'))
+
+        # TODO: update the password checking
+        if user:
+            if user.password == password:
+                login_user(user)
+                return redirect(url_for('resident_views.resident_home'))
             else:
-                flash("User does not exist", category='error')
-                return render_template('visitor/login.html', error="User does not exist")
+                flash("Incorrect Password", category='error')
+                return render_template('visitor/login.html', error="Incorrect Password")
+        else:
+            flash("User does not exist", category='error')
+            return render_template('visitor/login.html', error="User does not exist")
 
     return render_template('visitor/login.html')
 
