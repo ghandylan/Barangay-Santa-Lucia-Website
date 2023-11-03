@@ -1,10 +1,11 @@
 import uuid
 
+import bcrypt
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 from flask_login import login_required, current_user
 
 from models import Resident, db, MaligayaCourtReservationList, CountrysideCourtReservationList, Items, ItemRentals, \
-    BarangayOfficial, Photo
+    BarangayOfficial
 from rbac import barangay_official_required
 
 brngyofficial_views_blueprint = Blueprint('brngyofficial_views', __name__)
@@ -54,11 +55,11 @@ def barangay_official_add_residents():
         db.session.commit()
 
         # upload picture
-        profile_picture = request.files['changeprofileimage']
-        upload = Photo(file_name=profile_picture.filename, data=profile_picture.read(), owner_id=resident_id)
-
-        db.session.add(upload)
-        db.session.commit()
+        # profile_picture = request.files['changeprofileimage']
+        # upload = Photo(file_name=profile_picture.filename, data=profile_picture.read(), owner_id=resident_id)
+        #
+        # db.session.add(upload)
+        # db.session.commit()
 
         return redirect(url_for('brngyofficial_views.barangay_official_residents'))
 
@@ -74,7 +75,7 @@ def barangay_official_add_residents_password():
         password = request.form.get('password')
 
         resident = Resident.query.filter_by(id=resident_id).first()
-        resident.password = password
+        resident.password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
         db.session.commit()
 
         return render_template('barangayofficial/residents.html')
@@ -86,7 +87,7 @@ def barangay_official_add_residents_password():
 @login_required
 @barangay_official_required('barangay_official')
 def barangay_official_edit_residents(id):
-    photo = Photo.query.filter_by(owner_id=id).first()
+    # photo = Photo.query.filter_by(owner_id=id).first()
     username = Resident.query.filter_by(id=id).first().username
     resident = Resident.query.filter_by(id=id).first()
     sex = Resident.query.filter_by(id=id).first().sex
@@ -118,7 +119,7 @@ def barangay_official_edit_residents(id):
 
         return redirect(url_for('brngyofficial_views.barangay_official_residents'))
 
-    return render_template('barangayofficial/edituser.html', id=id, photo=photo, username=username, resident=resident,
+    return render_template('barangayofficial/edituser.html', id=id, username=username, resident=resident,
                            sex=sex,
                            full_name=full_name, birth_date=birth_date, relocation_year=relocation_year, address=address)
 
