@@ -41,20 +41,23 @@ def create_app():
 
     # create an admin user if not exists
     with app.app_context():
-        admin_init = BarangayOfficial.query.filter_by(username="admin").first()
-        if admin_init is None:
-            admin_init = BarangayOfficial(
-                id=uuid.uuid4(),
-                role="barangay_official",
-                full_name="admin",
-                sex="male",
-                username="admin",
-                password=bcrypt.hashpw("admin".encode('utf-8'), bcrypt.gensalt()),
-                birthdate="1999-01-01",
-                relocation_year="1999",
-                address="admin")
-            db.session.add(admin_init)
-            db.session.commit()
+        try:
+            admin_init = BarangayOfficial.query.filter_by(username="admin").first()
+            if admin_init is None:
+                admin_init = BarangayOfficial(
+                    id=uuid.uuid4(),
+                    role="barangay_official",
+                    full_name="admin",
+                    sex="male",
+                    username="admin",
+                    password=bcrypt.hashpw("admin".encode('utf-8'), bcrypt.gensalt()),
+                    birthdate="1999-01-01",
+                    relocation_year="1999",
+                    address="admin")
+                db.session.add(admin_init)
+                db.session.commit()
+        except Exception as e:
+            print(e)
 
     return app
 
