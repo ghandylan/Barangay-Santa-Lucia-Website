@@ -126,17 +126,17 @@ VALUES ('Chairs', 100),
        ('Tents', 25);
 
 # for debugging only
-INSERT INTO barangay_official(id, role, photo, full_name, sex, username, password, birthdate, relocation_year,
-                              address)
+# INSERT INTO barangay_official(id, role, photo, full_name, sex, username, password, birthdate, relocation_year,
+#                               address)
 
-VALUES (UUID(),
-        'barangay_official',
-        null,
-        'Dylan Louis Tayag',
-        'Male',
-        'ghandylan',
-        'password',
-        '1999-09-09',
-        '2000',
-        'Brgy. Maligaya, San Jose City, Nueva Ecija');
+# VALUES (UUID(),
+#         'barangay_official',
+#         null,
+#         'Dylan Louis Tayag',
+#         'Male',
+#         'ghandylan',
+#         'password',
+#         '1999-09-09',
+#         '2000',
+#         'Brgy. Maligaya, San Jose City, Nueva Ecija');
 
