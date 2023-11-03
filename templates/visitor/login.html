@@ -14,10 +14,12 @@
                 <img class="login__logocont" alt="BRGLogo" src="../../static/images/logo.png">
             </div>
             <div class="emailtxt centeredflex">
-                <input name="emaillogin" type="text" id="username" placeholder="Username" required/>
+                <input name="emaillogin" type="text" id="username" placeholder="Username" required
+                       autocomplete="false"/>
             </div>
             <div class="passwordtxt centeredflex">
-                <input name="passwordlogin" type="password" id="password" placeholder="Password" required/>
+                <input name="passwordlogin" type="password" id="password" placeholder="Password" required
+                       autocomplete="false"/>
             </div>
             <br>
             {% with messages = get_flashed_messages(with_categories=true) %}

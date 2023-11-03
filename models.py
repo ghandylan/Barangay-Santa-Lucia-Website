@@ -9,22 +9,22 @@ db = SQLAlchemy()
 # 2. flask db migrate
 # 3. flask db upgrade
 
-class Photo(db.Model):
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    file_name = db.Column(db.String(255))
-    data = db.Column(db.LargeBinary)
-    owner_id = db.Column(db.String(255), db.ForeignKey('resident.id'), nullable=False)
+# class Photo(db.Model):
+#     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+#     file_name = db.Column(db.String(255))
+#     data = db.Column(db.LargeBinary)
+#     owner_id = db.Column(db.String(255), db.ForeignKey('resident.id'), nullable=False)
 
 
 class Resident(db.Model, UserMixin):
     id = db.Column(db.String(255), primary_key=True)
     role = db.Column(db.String(255))
-    photo = db.Column(db.Integer, db.ForeignKey('photo.id'))
+    # photo = db.Column(db.Integer, db.ForeignKey('photo.id'))
 
     full_name = db.Column(db.String(255))
     sex = db.Column(db.String(50))
     username = db.Column(db.String(50))
-    password = db.Column(db.String(50))
+    password = db.Column(db.String(255))
     birthdate = db.Column(db.String(50))
     relocation_year = db.Column(db.String(50))
     address = db.Column(db.String(255))
@@ -37,12 +37,12 @@ class Resident(db.Model, UserMixin):
 class BarangayOfficial(db.Model, UserMixin):
     id = db.Column(db.String(255), primary_key=True)
     role = db.Column(db.String(255))
-    photo = db.Column(db.Integer, db.ForeignKey('photo.id'))
+    # photo = db.Column(db.Integer, db.ForeignKey('photo.id'))
 
     full_name = db.Column(db.String(255))
     sex = db.Column(db.String(50))
     username = db.Column(db.String(50))
-    password = db.Column(db.String(50))
+    password = db.Column(db.String(255))
     birthdate = db.Column(db.String(50))
     relocation_year = db.Column(db.String(50))
     address = db.Column(db.String(255))
