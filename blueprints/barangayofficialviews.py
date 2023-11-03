@@ -120,7 +120,9 @@ def barangay_official_edit_residents(id):
 def barangay_official_delete_resident(id):
     if request.method == 'POST':
         resident = Resident.query.filter_by(id=id).first()
+        photo = Photo.query.filter_by(owner_id=id).first()
         db.session.delete(resident)
+        db.session.delete(photo)
         db.session.commit()
 
     return redirect(url_for('brngyofficial_views.barangay_official_residents'))
@@ -141,7 +143,7 @@ def barangay_official_search_residents():
 def barangay_official_item_tracking():
     chairs = Items.query.filter_by(item_name='Chairs').first().item_quantity
     tables = Items.query.filter_by(item_name='Tables').first().item_quantity
-    tents = Items.query.filter_by(item_name='Tent').first().item_quantity
+    tents = Items.query.filter_by(item_name='Tents').first().item_quantity
 
     item_rentals = ItemRentals.query.all()
 

@@ -514,7 +514,7 @@ def resident_services():
 
     chairs = Items.query.filter_by(item_name='Chairs').first().item_quantity
     tables = Items.query.filter_by(item_name='Tables').first().item_quantity
-    tents = Items.query.filter_by(item_name='Tent').first().item_quantity
+    tents = Items.query.filter_by(item_name='Tents').first().item_quantity
 
     if request.method == 'POST':
         # get user's details

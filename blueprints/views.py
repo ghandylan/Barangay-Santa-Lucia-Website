@@ -8,7 +8,7 @@ views_blueprint = Blueprint('views', __name__)
 
 @views_blueprint.route('/')
 def hello_world():  # put application's code here
-    return redirect('/login')
+    return redirect('/home')
 
 
 @views_blueprint.route('/login', methods=['GET', 'POST'])
