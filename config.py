@@ -5,5 +5,5 @@ load_dotenv()
 
 
 class Config:
-    SQLALCHEMY_DATABASE_URI = "mysql://ghandylan2:8AWqNfQ-fWuhSt_@ghandylan2.mysql.pythonanywhere-services.com/ghandylan2$barangay_db"
+    SQLALCHEMY_DATABASE_URI = "mysql+mysqlconnector://{username}:{password}@{hostname}/{databasename}"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
