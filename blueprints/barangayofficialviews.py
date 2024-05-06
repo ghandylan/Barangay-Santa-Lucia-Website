@@ -43,13 +43,15 @@ def barangay_official_add_residents():
         full_name = request.form.get('fullname')
         sex = request.form.get('sex')
         username = request.form.get('username')
+        password = request.form.get('password')
+        hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
 
         birth_date = request.form.get('birthdate')
         relocation_year = request.form.get('relocationyear')
         address = request.form.get('address')
 
         new_resident = Resident(id=resident_id, role="resident", full_name=full_name, sex=sex, username=username,
-                                password=None, birthdate=birth_date, relocation_year=relocation_year, address=address)
+                                password=hashed_password, birthdate=birth_date, relocation_year=relocation_year, address=address)
 
         db.session.add(new_resident)
         db.session.commit()

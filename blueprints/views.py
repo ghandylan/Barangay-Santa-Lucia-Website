@@ -27,19 +27,12 @@ def login():
             else:
                 flash("Incorrect Password", category='error')
                 return render_template('visitor/login.html', error="Incorrect Password")
-        else:
+        elif user.role == "resident":
+            user = Resident.query.filter_by(username=username).first()
             if bcrypt.checkpw(bytes(password, encoding='utf-8'), bytes(user.password, encoding='utf-8')):
                 login_user(user)
                 return redirect(url_for('resident_views.resident_home'))
 
-        # TODO: update the password checking
-        if user:
-            if user.password == password:
-                login_user(user)
-                return redirect(url_for('resident_views.resident_home'))
-            else:
-                flash("Incorrect Password", category='error')
-                return render_template('visitor/login.html', error="Incorrect Password")
         else:
             flash("User does not exist", category='error')
             return render_template('visitor/login.html', error="User does not exist")
